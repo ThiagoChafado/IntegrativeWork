@@ -1,4 +1,5 @@
 Cash Management System with Enhanced Features
+
 The proposed system aims to develop a Cash Management System with added functionalities. The primary motivation behind this initiative is to address the current practice of manually recording sales transactions in notebooks. This manual process is time-consuming and error-prone, particularly when it involves calculating total sales and manually verifying cash balance.
 
 Several key functionalities will be implemented within this system:
