@@ -24,6 +24,8 @@ In this README.md file, there is a brief summary of the software . To view the P
 | RNF4 | Usability                  | Provide users with a simple, modern, and responsive interface that adapts to each device used by the user.                                    |                     |
 | RNF5 | Security                   | User identification, informing the system of who is using it.                                                                                 |                     |
 
+<h1>Use case diagram</h1>
+<img src="documentation/img/Use cases.png">
 <h1>Prototypes</h1>
 <h2>Wireframe Add New Sale</h2>
 <img src="documentation/img/Wireframe - 1.png">
