@@ -2,7 +2,9 @@ Developed by Thiago Chafado Almeida & João Eduardo Ferrari
 
 
 
-In this README.md file, there is a brief summary of the software requirements. To view the PDF file in Portuguese, please access it in the "Documentation" directory.
+In this README.md file, there is a brief summary of the software . To view the PDF file in Portuguese, please access it in the "Documentation" directory.
+
+###Requirements
 
 | ID   | Functionality              | Description                                                                                                                                  | User Type           |
 | ---- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
