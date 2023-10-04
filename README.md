@@ -4,27 +4,20 @@ Developed by Thiago Chafado Almeida & João Eduardo Ferrari
 
 In this README.md file, there is a brief summary of the software requirements. To view the PDF file in Portuguese, please access it in the "Documentation" directory.
 
-Cash Management System with Enhanced Features
-
-The proposed system aims to develop a Cash Management System with added functionalities. The primary motivation behind this initiative is to address the current practice of manually recording sales transactions in notebooks. This manual process is time-consuming and error-prone, particularly when it involves calculating total sales and manually verifying cash balance.
-
-Several key functionalities will be implemented within this system:
-
-Add New Sale:
-
-Users will have the ability to add new sales transactions. This feature will include fields for entering the sale's description, amount, payment method, and the associated salesperson for commission allocation.
-Add Expense:
-
-The system will allow users to record various expenses. This feature will include fields for entering the expense's description and amount.
-Generate Reports:
-
-The system will incorporate a reporting mechanism that utilizes data from the database to generate comprehensive monthly reports. These reports will encompass:
-
-Total sales for the period.
-Total expenses for the period.
-Commissions earned by individual salespeople.
-The system will include a main dashboard that dynamically displays newly added sales transactions. This dashboard will also provide a running subtotal of sales and expenses. Additionally, efforts will be made to implement a feature allowing the generation of daily sales reports in PDF format. These reports can be automatically sent to the system owner via email.
-
-For the system's development, a web-based application will be utilized, along with a PostgreSQL database. In addition, various APIs will be integrated to ensure seamless functionality.
-
-The user interface is expected to be intuitive, user-friendly, and responsive. It aims to streamline the process of entering new information while maintaining a visually appealing and modern presentation.
+| ID   | Functionality              | Description                                                                                                                                  | User Type           |
+| ---- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| RF1  | Add Sale                   | Users will be able to add a new sale, including a description of the sale, value, payment method, and the responsible seller.              | Employee/Admin      |
+| RF2  | Add Expense                | Users will be able to add a new financial expense, including a description of the expense and the corresponding value.                     | Employee/Admin      |
+| RF3  | Add Seller                 | The owner (Super user) will be able to add a new seller. Each seller will have a name, commission percentage, and date of birth. They will have their own monthly and annual sales table. | Admin               |
+| RF4  | Generate Report            | The system will be able to generate monthly reports, consolidating sums of sales, expenses, and commissions for each seller.                | Admin               |
+| RF5  | Cash Monitoring            | There will be a table on the main screen showing daily sales, along with a subtotal.                                                        | Employee/Admin      |
+| RF6  | Dashboard                  | One of the screens will be a dashboard, containing charts, tables, and sales statistics, comparing with other months and previous years, etc.  | Admin               |
+| RF7  | Login                      | The initial screen will be the store's login. The system will prompt for login or registration of a store profile.                            | Employee/Admin      |
+| RF8  | Registration               | The super user will be able to create a new store profile, specifying its name and a password.                                             | Admin               |
+| RF9  | Cash Closure               | The super user will be able to close the daily cash register. Once closed, it cannot be altered by employees, only by the admin.               | Admin               |
+| RF10 | Manage Employee            | The system will have a section to modify employee data.                                                                                        | Admin               |
+| RNF1 | Portability                | The system must be compatible with the most popular web browsers (Chrome, Edge, Firefox, Opera, etc).                                      |                     |
+| RNF2 | Availability               | Access to the system should be available 24 hours a day, 7 days a week.                                                                       |                     |
+| RNF3 | Development/Implementation Requirement | Programming Language: Javascript Database: PostgreSQL.                                                                     |                     |
+| RNF4 | Usability                  | Provide users with a simple, modern, and responsive interface that adapts to each device used by the user.                                    |                     |
+| RNF5 | Security                   | User identification, informing the system of who is using it.                                                                                 |                     |
