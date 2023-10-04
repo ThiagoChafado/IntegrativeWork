@@ -26,5 +26,11 @@ In this README.md file, there is a brief summary of the software . To view the P
 
 <h1>Prototypes</h1>
 <h2>Wireframe Add New Sale</h2>
-![Wireframe - 1](https://github.com/ThiagoChafado/IntegrativeWork/Documentation/Wireframe - 1.png)
+<img src="documentation/img/Wireframe - 1.png">
+
+<h2>Wireframe Add New Exit</h2>
+<img src="documentation/img/Wireframe New Exit.png">
+
+<h2> Wireframe Sales Table</h2>
+<img src="documentation/img/Wiereframe Sales Table.png">
 
