@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 Thiago Almeida, João Ferrari
+Copyright (c) 2023 Thiago Chafado Almeida, João Eduardo Ferrari
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
