@@ -4,7 +4,7 @@ Developed by Thiago Chafado Almeida & João Eduardo Ferrari
 
 In this README.md file, there is a brief summary of the software . To view the PDF file in Portuguese, please access it in the "Documentation" directory.
 
-<h1>Requirements<h1/>
+<h1>Requirements</h1>
 
 | ID   | Functionality              | Description                                                                                                                                  | User Type           |
 | ---- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
