@@ -23,3 +23,7 @@ In this README.md file, there is a brief summary of the software . To view the P
 | RNF3 | Development/Implementation Requirement | Programming Language: Javascript Database: PostgreSQL.                                                                     |                     |
 | RNF4 | Usability                  | Provide users with a simple, modern, and responsive interface that adapts to each device used by the user.                                    |                     |
 | RNF5 | Security                   | User identification, informing the system of who is using it.                                                                                 |                     |
+
+<h1>Prototypes</h1>
+<h2>Wireframe Add New Sale</h2>
+![Wireframe - 1](https://github.com/ThiagoChafado/IntegrativeWork/assets/107228793/7628bf53-4cb2-4512-b5c1-5e32f1c85606)
