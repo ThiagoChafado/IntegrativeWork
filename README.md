@@ -25,7 +25,7 @@ In this README.md file, there is a brief summary of the software . To view the P
 | RNF5 | Security                   | User identification, informing the system of who is using it.                                                                                 |                     |
 
 <h1>Use case diagram</h1>
-<img src="documentation/img/UseCases.png">
+<img src="documentation/img/Use_Cases.png">
 <h1>Prototypes</h1>
 <h2>Wireframe Add New Sale</h2>
 <img src="documentation/img/Wireframe - 1.png">
