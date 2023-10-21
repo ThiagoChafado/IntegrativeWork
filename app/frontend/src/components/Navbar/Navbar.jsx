@@ -24,7 +24,19 @@ function Navbar(){
         
         <li class="nav-itme">
           <a class="nav-link " href="#">Dashboard</a>
+
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tabelas
+          </a>
+          <ul class="dropdown-menu ms-auto ">
+            <li><a class="dropdown-item " href="#">Tabela de vendas</a></li>
+            <li><a class="dropdown-item" href="#">Tabela de saídas</a></li>
+            <li><a class="dropdown-item" href="#">Tabela geral?   </a></li>
+          </ul>
+          </li>
+        
         
         <div class="d-flex justify-content-end"> 
         <li class="nav-item dropdown">
