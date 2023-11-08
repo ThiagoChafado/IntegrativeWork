@@ -15,7 +15,7 @@ In this README.md file, there is a brief summary of the software . To view the P
 | RF5  | Cash Monitoring            | There will be a table on the main screen showing daily sales, along with a subtotal.                                                        | Employee/Admin      |
 | RF6  | Dashboard                  | One of the screens will be a dashboard, containing charts, tables, and sales statistics, comparing with other months and previous years, etc.  | Employee/Admin               |
 | RF7  | Login                      | The initial screen will be the store's login. The system will prompt for login or registration of a store profile.                            | Employee/Admin      |
-| RF8  | Registration               | The super user will be able to create a new store profile, specifying its name and a password.                                             | Admin               |
+| RF8  | Registration               | The super user will be able to create a new store profile, specifying its name and a password. Usefull in case the admin open new stores.                                             | Admin               |
 | RF9  | Cash Closure               | The super user will be able to close the daily cash register. Once closed, it cannot be altered by employees, only by the admin.               | Admin               |
 | RF10 | Manage Employee            | The system will have a section to modify employee data.                                                                                        | Admin               |
 | RNF1 | Portability                | The system must be compatible with the most popular web browsers (Chrome, Edge, Firefox, Opera, etc).                                      |                     |
