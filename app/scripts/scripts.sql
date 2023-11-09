@@ -42,4 +42,6 @@ create table if not exists shop (
 );
 
 insert into shop (shopname) values ('TestShop');
-insert into seller (cpf,sellername,dtbirth,pccommision) values (13047747712,'Pedro Rosa','12-12-2000',3);
+insert into seller (cpf,sellername,dtbirth,pccommision) values ('13047747712','Pedro Rosa','12-12-2000',3);
+insert into cash (dtcash) values ('22-11-2023');
+insert into sell (descr,sellvalue,mtdpayment,sellercpf,dtcash) values ('1 Mouse',22,1,'13047747712','22-11-2023');
