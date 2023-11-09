@@ -26,6 +26,8 @@ In this README.md file, there is a brief summary of the software . To view the P
 
 <h1>Use case diagram</h1>
 <img src="documentation/img/Use_Cases.png">
+<h1> Conceptual model</h1>
+<img src="documentation/img/modelbdEn-us.png">
 <h1>Prototypes</h1>
 <h2>Wireframe Add New Sale</h2>
 <img src="documentation/img/Wireframe - 1.png">
