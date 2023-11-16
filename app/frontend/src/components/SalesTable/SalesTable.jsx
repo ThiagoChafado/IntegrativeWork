@@ -96,12 +96,6 @@ function SalesTable(){
       <td>Larry the Bird</td>
       <td>@twitter</td>
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    
    
   </tbody>
 </table>

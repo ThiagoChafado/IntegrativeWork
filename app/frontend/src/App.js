@@ -2,18 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import SalesTable from './components/SalesTable/SalesTable';
-import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import ExitsTable from './components/ExitsTable/ExitsTable';
-import AddSale from './components/AddSale/AddSale';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
+      <Login/>
       <Navbar/>
-      
-      {/*<ExitsTable/>*/}
-       {/* <Login/>*/}
+      <ExitsTable/>
       <SalesTable/>
       <Footer/>
     </div>
