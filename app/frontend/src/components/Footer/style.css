@@ -1,26 +1,10 @@
-.footer{
-    bottom: 0%;
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #2b3035;
     width: 100%;
+    height: 80px
 }
-.contact-area{
-    text-align: center;
-    background-color: #212529;
-    color: #fff;
-}
-
-.contact-box{
-    padding: 10px;
-    border-bottom: 1px solid #fff ;
-}
-
-.contact-box p{
-    font-size: 16px;
-}
-
-.contact-title{
-    font-weight: bold;
-}
-
-h3{
-    padding: 10px;
+.col-md-3{
+    color: aliceblue;
 }
