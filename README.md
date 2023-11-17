@@ -8,8 +8,8 @@ In this README.md file, there is a brief summary of the software . To view the P
 
 | ID   | Functionality              | Description                                                                                                                                  | User Type           |
 | ---- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| RF1  | Add Sale                   | Users will be able to add a new sale, including a description of the sale, value, payment method, and the responsible seller.              | Employee/Admin      |
-| RF2  | Add Expense                | Users will be able to add a new financial expense, including a description of the expense and the corresponding value.                     | Employee/Admin      |
+| RF1  | Add Sale                   | Users will be able to add a new sale, including a description of the sale, value, payment method, and the responsible seller. Each sale has a daily cash register associated  | Employee/Admin      |
+| RF2  | Add Expense                | Users will be able to add a new financial expense, including a description of the expense and the corresponding value. Each expense has a daily cash register associated                    | Employee/Admin      |
 | RF3  | Add Seller                 | The owner (Super user) will be able to add a new seller. Each seller will have a name, commission percentage, and date of birth. They will have their own monthly and annual sales table. | Admin               |
 | RF4  | Generate Report            | The system will be able to generate monthly reports, consolidating sums of sales, expenses, and commissions for each seller.                | Admin               |
 | RF5  | Cash Monitoring            | There will be a table on the main screen showing daily sales, along with a subtotal.                                                        | Employee/Admin      |
