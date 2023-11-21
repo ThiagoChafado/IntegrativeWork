@@ -1,3 +1,7 @@
+create database novatec;
+
+\c novatec
+
 
 create table if not exists cash (
 	dtcash date not null, 

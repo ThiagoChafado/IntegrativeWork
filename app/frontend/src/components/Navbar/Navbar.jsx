@@ -16,12 +16,12 @@ function Navbar(){
                 <li class="nav-item">
                   <a class="nav-link" href="#">Adicionar Saída</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                   <a class="nav-link" href="#">Dashboard</a>
                 </li>
                 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle text-light bg-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Tabelas
                   </a>
                       <ul class="dropdown-menu ms-auto ">
