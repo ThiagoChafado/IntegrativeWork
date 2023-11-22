@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -11,6 +11,8 @@
     "express": "^4.18.2",
     "node": "^20.7.0",
     "nodemon": "^3.0.1",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "pkg": "^5.8.1",
+    "pool": "^0.4.1"
   }
 }

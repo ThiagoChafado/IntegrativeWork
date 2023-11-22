@@ -1,4 +1,6 @@
-import { Pool } from "pg";
+const pg=require('pg');
+
+const { Pool } = pg;
 
 const db = new Pool({
     user: process.env.DB_USER,
@@ -8,4 +10,4 @@ const db = new Pool({
     database: "novatec"
 });
 
-export default db;
+module.exports = db;
