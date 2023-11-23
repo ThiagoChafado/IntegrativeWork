@@ -20,8 +20,6 @@ const port = 3001;
 
 app.listen(port, () => console.log(`Server running on port ${port}...`));
 
-app.use(cors());
-app.use(express.json());
 app.get("/", (req, res) => {
     res.send("Hello, world!");
 });
@@ -31,11 +29,7 @@ app.get("/sales",async (req,res) => {
         
         const sales = await db.any("SELECT * FROM  sell;");
         res.json(sales).status(200);
-        const idSell = sales.idsell
-        const sellerName = req.body.sellername;
-        const dtBirth = req.body.dtbirth;
-        const pcCommision = req.body.pccommision;
-        console.log(`idSell:${idSell}, sellerName:${sellerName},dtBirth:${dtBirth},pcCommision:${pcCommision}`);
+        
         
     }catch (error){
         console.log(error);
