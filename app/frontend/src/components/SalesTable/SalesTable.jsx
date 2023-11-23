@@ -1,16 +1,9 @@
 import axios from "axios";
 import React from "react";
 axios.defaults.baseURL = 'http://localhost:3001';
-  
 
  function SalesTable(){
-   const [nameSale,setNameSale] = React.useState("");
-   const [idSale,setIdSale] = React.useState("");
-   const [payment,setPayment] = React.useState("");
-   const [sellValue,setSellValue] = React.useState("");
-   const [Seller,setSellerSale] = React.useState("");
-
-  const [sellList,setSellList] = React.useState([]);
+   const [sellList,setSellList] = React.useState([]);
 
   React.useEffect(()=>{
     getData();
@@ -25,44 +18,41 @@ axios.defaults.baseURL = 'http://localhost:3001';
       setSellList([]);
     }
   }
-      return(
-        <>
-        {sellList.length > 0 &&
-         <div class="container-fluid p-0">
-         <table class="table">
-   <thead class="table-dark">
-     <tr>
-       <th scope="col">Id</th>
-       <th scope="col">Descrição</th>
-       <th scope="col">Valor</th>
-       <th scope="col">Forma de pagamento</th>
-       <th scope="col">Vendedor</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <th scope="row">{sellList[0].idsell}</th>
-       <td>{sellList[0].descr}</td>
-       <td>{sellList[0].sellvalue}</td>
-       <td>{sellList[0].mtdpayment}</td>
-       <td>{sellList[0].sellercpf}</td>
+    return(
+    <>
+    {sellList.length > 0 &&
+     <div class="container-fluid p-0">
+     <table class="table">
+<thead class="table-dark">
+ <tr>
+   <th scope="col">ID</th>
+   <th scope="col">Descrição</th>
+   <th scope="col">Valor</th>
+   <th scope="col">Forma de pagamento</th>
+   <th scope="col">Vendedor</th>
+ </tr>
+</thead>
+<tbody>
+{/* Populate table */}
+  {sellList.map(i =>{
+    console.log(i);
+    return(
+    <tr>
+     <th scope="row">{i.idsell}</th>
+     <td>{i.descr}</td>
+     <td>{i.sellvalue}</td>
+     <td>{i.mtdpayment}</td>
+     <td>{i.sellercpf}</td>
      </tr> 
-     </tbody>
-  </table>
-  </div>
-     } 
-         
-      
-      </>
-        
-     
-    
-      );
-  }
+    )
+  })}
+ </tbody>
+</table>
+</div>
+ } 
 
-
-
-  
-
-
+  </>
+    )
+      ;}
+ 
 export default SalesTable
