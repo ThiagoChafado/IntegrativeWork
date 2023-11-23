@@ -11,8 +11,8 @@ function App() {
     <div className="App">
        <Navbar/> 
         <SalesTable/>   
-       <Login/>  
-      <ExitsTable/> 
+       {/* <Login/>   */}
+      {/* <ExitsTable/>  */}
       <Footer/>
     </div>
   );
