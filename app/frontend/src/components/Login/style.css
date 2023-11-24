@@ -1,0 +1,117 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+.main{
+    height: 100vh;
+    background: #000;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+   
+}
+
+img{
+    width: 15em;
+    height: 10em;
+}
+
+.center{
+    width: 50vw;
+    height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+   
+}
+
+.card{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #212529;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+    margin-bottom: 1em;
+    
+}
+
+.card  h1 {
+    color: #fff;
+    font-family: 'Roboto';
+    font-weight: 600;
+    margin: 0;
+
+}
+
+.text {
+    font-family: 'Roboto';
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px; 
+}
+
+.text input {
+    font-family: 'Roboto';
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #272c31;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.text label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.text input::placeholder{
+    color: #f0ffff94
+}
+
+.loginB{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    background: #212529;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #fff;
+}
+
+/* mobile */
+
+@media only screen and (max-width: 950px){
+    .main{
+        flex-direction: column;
+    }
+    img{
+        margin-top: 3em;
+    }
+    .center{
+        width: 100%;
+    }
+    .card{
+        width: 90%;
+        height: 75%;
+        margin-bottom: 5em;
+        
+    }
+}

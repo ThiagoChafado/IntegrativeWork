@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+
 axios.defaults.baseURL = 'http://localhost:3001';
 
  function SalesTable(){
@@ -13,14 +14,14 @@ axios.defaults.baseURL = 'http://localhost:3001';
     try{
       const res = await axios.get("/sales");
       setSellList(res.data);
-      console.log(sellList);
+      console.log(sellList);//objeto dos dados do back //fazer botao data - separar
     }catch(error){
       setSellList([]);
     }
   }
     return(
     <>
-    {sellList.length > 0 &&
+    {sellList.length > 0 && //deixar
      <div class="container-fluid p-0">
      <table class="table">
 <thead class="table-dark">
@@ -35,10 +36,10 @@ axios.defaults.baseURL = 'http://localhost:3001';
 <tbody>
 {/* Populate table */}
   {sellList.map(i =>{
-    console.log(i);
+    console.log(i);//itens
     return(
     <tr>
-     <th scope="row">{i.idsell}</th>
+     <th scope="row">{i.idsell}</th> {/* Acessando elementos*/}
      <td>{i.descr}</td>
      <td>{i.sellvalue}</td>
      <td>{i.mtdpayment}</td>
