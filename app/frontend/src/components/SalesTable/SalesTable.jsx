@@ -5,22 +5,66 @@ axios.defaults.baseURL = 'http://localhost:3001';
 
  function SalesTable(){
    const [sellList,setSellList] = React.useState([]);
+   const [date,setDate] = React.useState();
+  
+   React.useEffect(()=>{
+    getData();
+  },[date]);
+
+
+
 
   React.useEffect(()=>{
-    getData();
+    getDefaultDate();
   },[]);
 
-  async function getData(){
+  
+
+
+
+   function getDefaultDate(){
+    const pcDate = new Date();
+    const year = pcDate.getFullYear();
+    const month = pcDate.getMonth()+1;   //Month 0-11
+    const day = pcDate.getDate();
+    const currentDate = `${year}-${month}-${day}`
+
+    setDate(currentDate);
+
+    const dateControl = document.querySelector('input[type="date"]');
+    dateControl.value = date;
+    
+  }
+
+  
+  
+
+   async function getData(){
     try{
-      const res = await axios.get("/sales");
+      const res = await axios.get("/salesdate/" + date);
       setSellList(res.data);
-      console.log(sellList);//objeto dos dados do back //fazer botao data - separar
+      //objeto dos dados do back //fazer botao data - separar
     }catch(error){
       setSellList([]);
     }
   }
     return(
     <>
+
+<div>
+        <input
+          type="date"
+          id="dateInput"
+          value={date || ''}
+          onChange={(e) => setDate(e.currentTarget.value)}
+        />
+  </div>
+
+      
+      
+  
+
+
     {sellList.length > 0 && //deixar
      <div class="container-fluid p-0">
      <table class="table">
@@ -35,8 +79,7 @@ axios.defaults.baseURL = 'http://localhost:3001';
 </thead>
 <tbody>
 {/* Populate table */}
-  {sellList.map(i =>{
-    console.log(i);//itens
+  {sellList.map(i =>{//itens
     return(
     <tr>
      <th scope="row">{i.idsell}</th> {/* Acessando elementos*/}
