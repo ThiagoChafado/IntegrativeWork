@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* mobile */
+.dropdown{
+    text-align: start !important;
+    color: #fff;
+    font-family: 'Roboto';
+}
+
+.dropdown-toggle{
+    margin-bottom: 1em;
+  
+}
+
+.nav-link{
+    font-family: 'Roboto';
+}
+
+li{
+    list-style-type: none;
+}
+
+img{
+    height: 3em;
+
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    justify-content: start;
+
+}
+
+.navbar-toggler{
+    margin-left: 4.5em;
+}
+
+.navbar-brand{
+    font-family: 'Roboto';
+}
+
+
+/*Demais midias*/
+@media (min-width: 576px){
+    #table{
+        margin-right: 25em;
+    }
+    #user{
+        margin-right: 6em;
+    }
+    .dropdown-toggle{
+        margin-bottom: 0.5em;
+    }
+
+    img{
+        height: 6em;
+        width: 10em;
+    }
+}

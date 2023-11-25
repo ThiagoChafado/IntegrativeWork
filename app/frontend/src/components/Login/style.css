@@ -1,18 +1,20 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 
+/* .body{
+      overflow: hidden;
+} */
 
-.main{
+.mainLogin{
     height: 100vh;
     background: #000;
     display: flex; 
     flex-direction: column;
     justify-content: center; 
-    align-items: center; 
-   
+    align-items: center;  
 }
 
-img{
+.mainLogin img{
     width: 15em;
     height: 10em;
 }
@@ -98,11 +100,11 @@ img{
 
 /* mobile */
 
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 768px){
     .main{
         flex-direction: column;
     }
-    img{
+    .mainLogin img{
         margin-top: 3em;
     }
     .center{

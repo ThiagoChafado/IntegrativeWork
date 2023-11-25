@@ -4,7 +4,7 @@ import logo from '../../assets/logoNovatecNoBackground.png';
 function Login(){
     return(
         <>
-          <div className='main'>
+          <div className='mainLogin'>
               <img src={logo} alt="Logo" />
               <div className='center'>
                 <div className='card'>
