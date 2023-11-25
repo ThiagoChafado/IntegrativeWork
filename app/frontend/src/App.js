@@ -17,6 +17,7 @@ function App() {
       {/* <SalesTable/>     */}
       {/* <ExitsTable/> */}
       {/* <Footer/>   */}
+
     </div>
   );
 }

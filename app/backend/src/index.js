@@ -24,10 +24,14 @@ app.get("/", (req, res) => {
     res.send("Hello, world!");
 });
 
-app.get("/sales",async (req,res) => {
-    try{
+
+
+app.get("/salesdate/:date",async (req,res) => {
         
-        const sales = await db.any("SELECT * FROM  sell;");
+    try{
+        const aux = (req.params.date);
+        console.log(aux);
+        const sales = await db.any("SELECT * FROM sell WHERE dtcash = $1;",[aux]);
         res.json(sales).status(200);
         
         
@@ -36,5 +40,7 @@ app.get("/sales",async (req,res) => {
         res.sendStatus(400);
     }
 });
+
+
 
 
