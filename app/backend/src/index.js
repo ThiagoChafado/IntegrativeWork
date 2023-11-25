@@ -26,6 +26,11 @@ app.get("/", (req, res) => {
 
 
 
+app.post("/addsale",async (req,res)=>{
+    //Continue
+})
+
+
 app.get("/salesdate/:date",async (req,res) => {
         
     try{
