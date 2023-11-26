@@ -2,94 +2,77 @@
 
 /*mobile*/
 
-.container{
+.containerExit{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background-color: #212529;
     height: 100vh;
 }
 
-.title{
+.titleExit{
     text-align: center;
     font-family: 'Roboto';
     margin-top: 2em;
     color: #fff;
 }
 
-.description{
+.descriptionExit{
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-top: 1em;
 }
 
-.description label{
+.descriptionExit label{
     color: #fff;
     font-family: 'Roboto';
     margin-bottom: 1em;
 }
 
-.description input{
+.descriptionExit input{
     height: 10em;
     width: 18em;
     border-radius: 5px;
     background-color: #404750;
     color: #fff;
 }
-.description input::placeholder{
+.descriptionExit input::placeholder{
     color: #fff;
     text-align: center;
 }
-.values{
+.valuesExit{
     display: flex;
     flex-direction: column;
     margin-top: 1em;
 }
 
-.values label{
+.valuesExit label{
     color: #fff;
     font-family: 'Roboto';
     text-align: center;
     margin-top: 0.5em;
 }
 
-.values input{
-    margin-top: 0.5em;
+.valuesExit input{
+    margin-top: 0.8em;
     border-radius: 5px;
     background-color: #383e45;
     text-align: center;
     padding: 5px;
+    width: 18em;
 }
 
-.values input::placeholder{
+.valuesExit input::placeholder{
     color: #fff;
 }
 
-.dropdown{
-    margin-top: 0.5em;
-    text-align: center;
-    
-}
-
-.dropdown-toggle{
-    margin-bottom: 0;
-}
-
-.btn-secondary{
-    background-color: #383e45;
-    padding: 10px;
-    border: none;
-    width: 12em;
-}
-
-.buttonC{
+.buttonCExit{
     display: flex;
-    margin-top: 4em;
+    margin-top: 2em;
 }
 
-.buttonC button{
+.buttonCExit button{
     background-color: #383e45;
     font-family: 'Roboto';
     color: #fff;
@@ -101,36 +84,31 @@
 /* tablet */
 
 @media (min-width: 576px) and (max-width:1024px){
-    .container, .container-sm {
+    .containerExit, .container-sm {
         max-width: 100%;
         overflow: hidden;
     }
 
-    .description input{
+    .descriptionExit input{
         height: 20em;
         width: 44em;
     }
 
-    .values{
+    .valuesExit{
         display: flex;
         flex-direction: row;
     }
     
-    .values input{
-        margin-left: 0.5em;
-        margin-right: 0.3em;
+    .valuesExit input{
+        margin-left: 1em;
+        margin-right: 1em;
         height: 2.75em;
-        width: 9em;
+        width: 21em;
     
     }
     
-    .btn-secondary{
-        margin-left: 0.5em;
-        width: 12em;
-    }
-    
-    .buttonC{
-        margin-top: 8em;
+    .buttonCExit{
+        margin-top: 4em;
     }
     
 
@@ -140,36 +118,31 @@
 /* desktop */
 
 @media (min-width: 1024px){
-.container, .container-sm {
+.containerExit, .container-sm {
     max-width: 100%;
     overflow: hidden;
 }
 
-.description input{
+.descriptionExit input{
     width: 47.5em;
     height: 10em;
 }
 
-.values{
+.valuesExit{
     display: flex;
     flex-direction: row;
 }
 
-.values input{
-    margin-left: 0.5em;
-    margin-right: 0.1em;
+.valuesExit input{
+    margin-left: 0.8em;
+    margin-right: 0.8em;
     height: 2.75em;
-    width: 11em;
+    width: 23em;
 
 }
 
-.btn-secondary{
-    margin-left: 0.5em;
-    width: 12em;
-}
-
-.buttonC{
-    margin-top: 8em;
+.buttonCExit{
+    margin-top: 4em;
 }
 
 

@@ -11,16 +11,9 @@ axios.defaults.baseURL = 'http://localhost:3001';
     getData();
   },[date]);
 
-
-
-
   React.useEffect(()=>{
     getDefaultDate();
   },[]);
-
-  
-
-
 
    function getDefaultDate(){
     const pcDate = new Date();
@@ -35,9 +28,6 @@ axios.defaults.baseURL = 'http://localhost:3001';
     dateControl.value = date;
     
   }
-
-  
-  
 
    async function getData(){
     try{
