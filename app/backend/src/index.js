@@ -60,7 +60,6 @@ app.get("/sellers", async (req, res) => {
     const sellers = await db.any(
       "SELECT * FROM seller;"
     );
-    console.log(sellers)
     res.json(sellers).status(200);
   } catch (error) {
     console.log(error);

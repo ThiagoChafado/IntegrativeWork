@@ -15,6 +15,12 @@ function SalesTable() {
     getDefaultDate();
   }, []);
 
+  function subTotal() {
+    return sellList
+      .reduce((total, item) => total + parseFloat(item.sellvalue), 0)
+      .toFixed(2);
+  }
+
   function getDefaultDate() {
     const pcDate = new Date();
     const year = pcDate.getFullYear();
@@ -35,7 +41,6 @@ function SalesTable() {
       //return backend Object
     } catch (error) {
       setSellList([]);
-      
     }
   }
   return (
@@ -58,8 +63,8 @@ function SalesTable() {
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Valor</th>
                 <th scope="col">Forma de pagamento</th>
+                <th scope="col">Valor</th>
                 <th scope="col">Vendedor</th>
               </tr>
             </thead>
@@ -68,22 +73,30 @@ function SalesTable() {
               {sellList.map((i) => {
                 //itens
                 return (
-                  <tr>
-                    <th scope="row">{i.idsell}</th> {/* Getting elements*/}
-                    <td>{i.descr}</td>
-                    <td>{i.sellvalue}</td>
-                    <>
-                      {i.mtdpayment == 1 && <td>Dinheiro</td>}
-                      {i.mtdpayment == 2 && <td>Cartão de crédito</td>}
-                      {i.mtdpayment == 3 && <td>Cartão de débito</td>}
-                      {i.mtdpayment == 4 && <td>Pix</td>}
-                    </>
-                    <td>{i.sellername}</td>
-                  </tr>
+                  <>
+                    <tr>
+                      <th scope="row">{i.idsell}</th> {/* Getting elements*/}
+                      <td>{i.descr}</td>
+                      <>
+                        {i.mtdpayment == 1 && <td>Dinheiro</td>}
+                        {i.mtdpayment == 2 && <td>Cartão de crédito</td>}
+                        {i.mtdpayment == 3 && <td>Cartão de débito</td>}
+                        {i.mtdpayment == 4 && <td>Pix</td>}
+                      </>
+                      <td>{i.sellvalue}</td>
+                      <td>{i.sellername}</td>
+                    </tr>
+                  </>
                 );
               })}
+              <th scope="row"></th>
+              <th scope="row"></th>
+              <th scope="row"></th>
+              <th scope="row">Subtotal:</th>
+              <th scope="row">{subTotal()}</th>
             </tbody>
           </table>
+
         </div>
       )}
     </>

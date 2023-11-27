@@ -1,9 +1,6 @@
 import '../AddSale/styleSale.css'
 
 
-
-
-
 function AddSale() {
   return (
     <div className='container'>

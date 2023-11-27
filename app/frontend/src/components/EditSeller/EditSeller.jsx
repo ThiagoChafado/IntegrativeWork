@@ -1,10 +1,15 @@
 import axios from "axios";
 import React from "react";
-
+import edit from '../../assets/editimg.png';
+import './styleEdit.css';
 axios.defaults.baseURL = "http://localhost:3001";
 
 function EditSeller() {
   const [sellerList, setSellerList] = React.useState([]);
+  const [editor,setEditor] = React.useState(false);
+  
+
+  
 
   React.useEffect(() => {
     getData();
@@ -30,6 +35,7 @@ function EditSeller() {
                 <th scope="col">Nome</th>
                 <th scope="col">Data de nascimento</th>
                 <th scope="col">Comissão</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -42,6 +48,9 @@ function EditSeller() {
                     <td>{i.sellername}</td>
                     <td>{i.dtbirth}</td>
                     <td>{i.pccommision}%</td>
+                    <td>
+                      <button className="editButton"><img src={edit} className="edit"></img></button>
+                    </td>
                   </tr>
                 );
               })}
