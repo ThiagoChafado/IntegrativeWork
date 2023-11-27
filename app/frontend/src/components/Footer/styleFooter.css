@@ -133,7 +133,11 @@ svg{
         margin-right: 35px;
         width: 75em;
         color: #fff;
-    }   
+    } 
+
+    #git:hover{
+        color: grey !important;
+    }
     
     
   }

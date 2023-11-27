@@ -39,7 +39,7 @@ function Footer(){
                     <hr></hr>
 
                     <div className='copy'>
-                        <p>Desenvolvido por <a href="https://github.com/ThiagoChafado/IntegrativeWork.git" className='text-light'>Thiago Chafado e João Ferrari</a> - 2023</p>
+                        <p>Desenvolvido por <a href="https://github.com/ThiagoChafado/IntegrativeWork.git" className='text-light' id='git'>Thiago Chafado e João Ferrari</a> - 2023</p>
                     </div>
 
                 </div>
