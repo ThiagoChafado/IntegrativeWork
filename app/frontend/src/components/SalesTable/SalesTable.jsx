@@ -33,9 +33,10 @@ axios.defaults.baseURL = 'http://localhost:3001';
     try{
       const res = await axios.get("/salesdate/" + date);
       setSellList(res.data);
-      //objeto dos dados do back //fazer botao data - separar
+      //return backend Object
     }catch(error){
       setSellList([]);
+      <p>LALA</p>
     }
   }
     return(
@@ -49,13 +50,11 @@ axios.defaults.baseURL = 'http://localhost:3001';
           onChange={(e) => setDate(e.currentTarget.value)}
         />
   </div>
-
-      
-      
+  {sellList.length==0 &&
+    <p>Empty</p>//CSS this
   
-
-
-    {sellList.length > 0 && //deixar
+  }
+    {sellList.length > 0 && 
      <div class="container-fluid p-0">
      <table class="table">
 <thead class="table-dark">
@@ -72,7 +71,7 @@ axios.defaults.baseURL = 'http://localhost:3001';
   {sellList.map(i =>{//itens
     return(
     <tr>
-     <th scope="row">{i.idsell}</th> {/* Acessando elementos*/}
+     <th scope="row">{i.idsell}</th> {/* Getting elements*/}
      <td>{i.descr}</td>
      <td>{i.sellvalue}</td>
      <td>{i.mtdpayment}</td>

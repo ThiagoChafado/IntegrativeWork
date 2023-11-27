@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       
+
       {/* <Login/> */}
       {/* responsivo */}
 
@@ -32,6 +33,7 @@ function App() {
 
       {/* <Footer/> */}
       {/* responsivo - falta tablet; esperar rotas    */}
+
 
     </div>
   );
