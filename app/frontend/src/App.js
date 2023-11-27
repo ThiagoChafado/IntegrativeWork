@@ -7,6 +7,7 @@ import ExitsTable from "./components/ExitsTable/ExitsTable";
 import Footer from "./components/Footer/Footer";
 import AddSale from "./components/AddSale/AddSale";
 import AddExit from "./components/AddExit/AddExit";
+import EditSeller from "./components/EditSeller/EditSeller";
 
 function App() {
   return (
@@ -23,10 +24,11 @@ function App() {
       {/* <AddExit/>  */}
       {/* responsivo */}
 
-      {/* <SalesTable /> */}
+      <SalesTable />
       {/* precisa fazer */}
 
-      <ExitsTable/>
+      {/* <ExitsTable/> */}
+      {/* <EditSeller/> */}
       {/* precisa fazer */}
 
       {/* <Footer/> */}

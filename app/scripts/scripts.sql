@@ -4,10 +4,6 @@ create database novatec;
 \c novatec
 
 
-create table if not exists cash (
-	dtcash date not null, 
-	constraint pk_cash primary key (dtcash)
-);
 
 create table if not exists seller (
 	cpf varchar(11) not null,

@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
 app.post("/addsale", async (req, res) => {
   //Continue
 });
-// select s.idsell,s.descr,s.sellvalue,s.mtdpayment,sl.sellername,s.dtcash from sell s natural join seller sl;
 
 app.get("/salesdate/:date", async (req, res) => {
   try {
@@ -47,9 +46,22 @@ app.get("/exitsdate/:date", async (req, res) => {
     console.log(aux);
     const exits = await db.any(
       "SELECT s.idout,s.descr,s.outvalue,sl.sellername,s.dtcash FROM sellout s JOIN seller sl ON s.sellercpf = sl.cpf WHERE dtcash = $1;",
-      [aux] 
+      [aux]
     );
     res.json(exits).status(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(400);
+  }
+});
+
+app.get("/sellers", async (req, res) => {
+  try {
+    const sellers = await db.any(
+      "SELECT * FROM seller;"
+    );
+    console.log(sellers)
+    res.json(sellers).status(200);
   } catch (error) {
     console.log(error);
     res.sendStatus(400);

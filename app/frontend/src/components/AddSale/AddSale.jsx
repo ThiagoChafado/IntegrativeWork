@@ -18,7 +18,7 @@ function AddSale() {
 
       <div className='values'>
 
-        <input type="data" placeholder='Data'/>
+        <input type="date" placeholder='Data'/>
         <input type="text" placeholder='Valor'/>
 
         <div class="dropdown">
