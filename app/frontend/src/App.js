@@ -6,17 +6,34 @@ import Login from './components/Login/Login';
 import ExitsTable from './components/ExitsTable/ExitsTable';
 import Footer from './components/Footer/Footer';
 import AddSale from './components/AddSale/AddSale';
+import AddExit from './components/AddExit/AddExit';
 
 function App() {
   return (
     <div className="App">
       
-      {/* <Login/>  */}
-      <Navbar/>  
-      {/* <AddSale/> */}
-      <SalesTable/>
+
+      {/* <Login/> */}
+      {/* responsivo */}
+
+      {/* <Navbar/>   */}
+      {/* responsivo - falta tablet; esperar rotas */}
+
+      {/* <AddSale/>   */}
+      {/* responsivo */}
+
+      <AddExit/> 
+      {/* responsivo */}
+
+      {/* <SalesTable/> */}
+      {/* precisa fazer */}
+
       {/* <ExitsTable/> */}
-      <Footer/>   
+      {/* precisa fazer */}
+
+      {/* <Footer/> */}
+      {/* responsivo - falta tablet; esperar rotas    */}
+
 
     </div>
   );
