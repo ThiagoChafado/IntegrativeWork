@@ -1,91 +1,93 @@
 import axios from "axios";
 import React from "react";
 
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = "http://localhost:3001";
 
- function SalesTable(){
-   const [sellList,setSellList] = React.useState([]);
-   const [date,setDate] = React.useState();
-  
-   React.useEffect(()=>{
+function SalesTable() {
+  const [sellList, setSellList] = React.useState([]);
+  const [date, setDate] = React.useState();
+
+  React.useEffect(() => {
     getData();
-  },[date]);
+  }, [date]);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     getDefaultDate();
-  },[]);
+  }, []);
 
-   function getDefaultDate(){
+  function getDefaultDate() {
     const pcDate = new Date();
     const year = pcDate.getFullYear();
-    const month = pcDate.getMonth()+1;   //Month 0-11
+    const month = pcDate.getMonth() + 1; //Month 0-11
     const day = pcDate.getDate();
-    const currentDate = `${year}-${month}-${day}`
+    const currentDate = `${year}-${month}-${day}`;
 
     setDate(currentDate);
 
     const dateControl = document.querySelector('input[type="date"]');
     dateControl.value = date;
-    
   }
 
-   async function getData(){
-    try{
+  async function getData() {
+    try {
       const res = await axios.get("/salesdate/" + date);
       setSellList(res.data);
       //return backend Object
-    }catch(error){
+    } catch (error) {
       setSellList([]);
-      <p>LALA</p>
+      
     }
   }
-    return(
+  return (
     <>
-
-<div>
+      <div>
         <input
           type="date"
           id="dateInput"
-          value={date || ''}
+          value={date || ""}
           onChange={(e) => setDate(e.currentTarget.value)}
         />
-  </div>
-  {sellList.length==0 &&
-    <p>Empty</p>//CSS this
-  
-  }
-    {sellList.length > 0 && 
-     <div class="container-fluid p-0">
-     <table class="table">
-<thead class="table-dark">
- <tr>
-   <th scope="col">ID</th>
-   <th scope="col">Descrição</th>
-   <th scope="col">Valor</th>
-   <th scope="col">Forma de pagamento</th>
-   <th scope="col">Vendedor</th>
- </tr>
-</thead>
-<tbody>
-{/* Populate table */}
-  {sellList.map(i =>{//itens
-    return(
-    <tr>
-     <th scope="row">{i.idsell}</th> {/* Getting elements*/}
-     <td>{i.descr}</td>
-     <td>{i.sellvalue}</td>
-     <td>{i.mtdpayment}</td>
-     <td>{i.sellercpf}</td>
-     </tr> 
-    )
-  })}
- </tbody>
-</table>
-</div>
- } 
+      </div>
+      {
+        sellList.length == 0 && <p>Empty</p> //CSS this
+      }
+      {sellList.length > 0 && (
+        <div class="container-fluid p-0">
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Forma de pagamento</th>
+                <th scope="col">Vendedor</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* Populate table */}
+              {sellList.map((i) => {
+                //itens
+                return (
+                  <tr>
+                    <th scope="row">{i.idsell}</th> {/* Getting elements*/}
+                    <td>{i.descr}</td>
+                    <td>{i.sellvalue}</td>
+                    <>
+                      {i.mtdpayment == 1 && <td>Dinheiro</td>}
+                      {i.mtdpayment == 2 && <td>Cartão de crédito</td>}
+                      {i.mtdpayment == 3 && <td>Cartão de débito</td>}
+                      {i.mtdpayment == 4 && <td>Pix</td>}
+                    </>
+                    <td>{i.sellername}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </>
+  );
+}
 
-  </>
-    )
-      ;}
- 
-export default SalesTable
+export default SalesTable;

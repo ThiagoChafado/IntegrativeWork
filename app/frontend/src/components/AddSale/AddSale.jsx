@@ -1,5 +1,9 @@
 import '../AddSale/styleSale.css'
 
+
+
+
+
 function AddSale() {
   return (
     <div className='container'>
@@ -22,20 +26,24 @@ function AddSale() {
               Método de Pagamento
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li> 
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li >
+            <li><a class="dropdown-item" href="#">Dinheiro</a></li>
+              <li><a class="dropdown-item" href="#">Cartão de Crédito</a></li>
+              <li><a class="dropdown-item" href="#">Cartão de Débito</a></li>
+              <li><a class="dropdown-item" href="#">Pix</a></li>
             </ul>
         </div>
 
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Vendedor
+
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Dinheiro</a></li>
+              <li><a class="dropdown-item" href="#">Cartão de Crédito</a></li>
+              <li><a class="dropdown-item" href="#">Cartão de Débito</a></li>
+              <li><a class="dropdown-item" href="#">Pix</a></li>
+              
             </ul>
         </div>
           
