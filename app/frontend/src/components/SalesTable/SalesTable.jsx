@@ -36,6 +36,7 @@ axios.defaults.baseURL = 'http://localhost:3001';
       //return backend Object
     }catch(error){
       setSellList([]);
+      <p>LALA</p>
     }
   }
     return(
@@ -49,6 +50,10 @@ axios.defaults.baseURL = 'http://localhost:3001';
           onChange={(e) => setDate(e.currentTarget.value)}
         />
   </div>
+  {sellList.length==0 &&
+    <p>Empty</p>//CSS this
+  
+  }
     {sellList.length > 0 && 
      <div class="container-fluid p-0">
      <table class="table">
