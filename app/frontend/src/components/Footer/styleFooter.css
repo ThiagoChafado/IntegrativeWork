@@ -58,14 +58,6 @@ svg{
     text-decoration: none;
   }
   
-  /* demais midias */
-  .icon::hover{
-    background-color: #fff;
-    color: #029e3b;
-    font-weight: 900;
-    box-shadow: 2px 2px 20px #5fe690;
-  }
-
   .copy{
     font-family: 'Roboto';
     font-size: 13px;
@@ -104,6 +96,10 @@ svg{
         font-size: 15px;
     }
 
+    .whatsapp a:hover{
+        color: green;
+    }
+    
     .adress{
         margin-top: 0.8em;
     }
@@ -137,8 +133,11 @@ svg{
         margin-right: 35px;
         width: 75em;
         color: #fff;
-    }   
-  
+    } 
 
+    #git:hover{
+        color: grey !important;
+    }
+    
     
   }

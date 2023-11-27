@@ -24,14 +24,14 @@ function App() {
       {/* <AddExit/>  */}
       {/* responsivo */}
 
-      <SalesTable />
+      {/* <SalesTable /> */}
       {/* precisa fazer */}
 
       {/* <ExitsTable/> */}
       {/* <EditSeller/> */}
       {/* precisa fazer */}
 
-      {/* <Footer/> */}
+      <Footer/>
       {/* responsivo - falta tablet; esperar rotas    */}
     </div>
   );
