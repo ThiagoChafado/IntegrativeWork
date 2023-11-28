@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import AddSale from "./components/AddSale/AddSale";
 import AddExit from "./components/AddExit/AddExit";
 import EditSeller from "./components/EditSeller/EditSeller";
+import PreferencesPage from "./components/PreferencesPage/PreferencesPage";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       {/* <Login/> */}
       {/* responsivo */}
 
-      {/* <Navbar/>   */}
+      <Navbar/>  
       {/* responsivo - falta tablet; esperar rotas */}
 
       {/* <AddSale/>   */}
@@ -31,7 +32,10 @@ function App() {
       {/* <EditSeller/> */}
       {/* precisa fazer */}
 
-      <Footer/>
+      <PreferencesPage/>
+      {/* nao terminei ainda */}
+
+      {/* <Footer/> */}
       {/* responsivo - falta tablet; esperar rotas    */}
     </div>
   );
