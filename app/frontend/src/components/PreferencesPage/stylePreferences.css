@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+.mainPreferences{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #212529;
+
+}
+
+.mainPreferences h1{
+    text-align: center;
+    margin-top: 2em;
+    font-family: 'Roboto';
+    font-size: 1em;
+}
+
+.mainPreferences button{
+    background-color: #383e45 !important;
+    color: #fff;
+    font-family: 'Roboto';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    height: 4em;
+    width: 20em;
+    background-color: #212529;
+    border-radius: 8px;
+
+}
