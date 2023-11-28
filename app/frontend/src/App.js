@@ -24,7 +24,7 @@ function App() {
       {/* <AddExit/>  */}
       {/* responsivo */}
 
-      {/* <SalesTable /> */}
+      <SalesTable />
       {/* precisa fazer */}
 
       {/* <ExitsTable/> */}
