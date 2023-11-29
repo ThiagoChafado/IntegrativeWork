@@ -1,19 +1,16 @@
 import axios from "axios";
 import React from "react";
-import edit from '../../assets/editimg.png';
-import './styleEdit.css';
+import edit from "../../assets/editimg.png";
+import "./styleEdit.css";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function EditSeller() {
   const [sellerList, setSellerList] = React.useState([]);
-  const [editor,setEditor] = React.useState(false);
-  
-
-  
+  const [editor, setEditor] = React.useState(false);
 
   React.useEffect(() => {
     getData();
-  },[]);
+  }, []);
 
   async function getData() {
     try {
@@ -49,7 +46,9 @@ function EditSeller() {
                     <td>{i.dtbirth}</td>
                     <td>{i.pccommision}%</td>
                     <td>
-                      <button className="editButton"><img src={edit} className="edit"></img></button>
+                      <button className="editButton">
+                        <img src={edit} className="edit"></img>
+                      </button>
                     </td>
                   </tr>
                 );

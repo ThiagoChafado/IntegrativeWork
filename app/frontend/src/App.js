@@ -10,33 +10,14 @@ import AddExit from "./components/AddExit/AddExit";
 import EditSeller from "./components/EditSeller/EditSeller";
 import PreferencesPage from "./components/PreferencesPage/PreferencesPage";
 
+import {Outlet} from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
-      {/* <Login/> */}
-      {/* responsivo */}
-
-      <Navbar/>  
-      {/* responsivo - falta tablet; esperar rotas */}
-
-      {/* <AddSale/>   */}
-      {/* responsivo */}
-
-      {/* <AddExit/>  */}
-      {/* responsivo */}
-
-      <SalesTable />
-      {/* precisa fazer */}
-
-      {/* <ExitsTable/> */}
-      {/* <EditSeller/> */}
-      {/* precisa fazer */}
-
-      <PreferencesPage/>
-      {/* nao terminei ainda */}
-
-      {/* <Footer/> */}
-      {/* responsivo - falta tablet; esperar rotas    */}
+      <Navbar/>
+      <Outlet/>
+      <Footer/>
     </div>
   );
 }
