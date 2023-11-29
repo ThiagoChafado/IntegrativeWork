@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import './styleSalesTable.css';
 
 axios.defaults.baseURL = "http://localhost:3001";
 
