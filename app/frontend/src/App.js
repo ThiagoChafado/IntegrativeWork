@@ -13,11 +13,12 @@ import PreferencesPage from "./components/PreferencesPage/PreferencesPage";
 function App() {
   return (
     <div className="App">
+
       {/* <Login/> */}
       {/* responsivo */}
 
       <Navbar/>  
-      {/* responsivo - falta tablet; esperar rotas */}
+      {/* responsivo/}
 
       {/* <AddSale/>   */}
       {/* responsivo */}
@@ -29,14 +30,17 @@ function App() {
       {/* precisa fazer */}
 
       {/* <ExitsTable/> */}
+      {/* precisa fazer */}
+
       {/* <EditSeller/> */}
       {/* precisa fazer */}
 
       <PreferencesPage/>
-      {/* nao terminei ainda */}
+      {/* responsivo - da pra mudar */}
 
       {/* <Footer/> */}
-      {/* responsivo - falta tablet; esperar rotas    */}
+      {/* responsivo - falta tablet;*/}
+      
     </div>
   );
 }

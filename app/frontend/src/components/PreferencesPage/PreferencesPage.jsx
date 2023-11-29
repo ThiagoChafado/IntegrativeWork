@@ -6,22 +6,20 @@ function PreferencesPage() {
       <div className="mainPreferences">
 
           <h1>CONFIGURAÇÕES GERAIS</h1>
-
-          <button >Editar Funcionário</button>
+          <hr></hr>
+          <button>Editar Funcionário</button>
+          <hr></hr>
           <button>Editar Caixa</button>
+          <hr></hr>
           <button>Configuração 3</button>
+          <hr></hr>
           <button>Configuração 4</button>
+          <hr></hr>
 
       </div>
       
     </>
   );
 }
-
-{/* <div>
-        <button>Editar funcionarios</button>
-        <button>Editar caixa</button>
-      </div> */}
-
 
 export default PreferencesPage;
