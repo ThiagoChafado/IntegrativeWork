@@ -1,13 +1,67 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//routes
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./routes/Home";
+import ErrorPage from "./routes/ErrorPage";
+import RSalesTable from "./routes/RSalesTable";
+import RExitsTable from "./routes/RExitsStable";
+import LoginPage from "./routes/LoginPage";
+import AddSalePage from "./routes/AddSalePage";
+import AddExitPage from "./routes/AddExitPage";
+import EditSellerPage from "./routes/EditSellerPage";
+import PreferencesPageRoute from "./routes/PreferencesPageRoute";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path: "/",
+        element: <Home/>,
+      },
+      {
+        path: "salestable",
+        element: <RSalesTable/>
+      },
+      {
+        path: "exitstable",
+        element: <RExitsTable/>
+      },
+      {
+        path: "addsale",
+        element: <AddSalePage/>
+      },
+      {
+        path: "addexit",
+        element: <AddExitPage/>
+      },
+      {
+        path: "preferences/editseller",
+        element: <EditSellerPage/>
+      },
+      {
+        path: "preferences",
+        element: <PreferencesPageRoute/>
+      }
+    ]
+  },
+  {
+    path: "/login",
+    element: <LoginPage/>,
+  }
+ 
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
