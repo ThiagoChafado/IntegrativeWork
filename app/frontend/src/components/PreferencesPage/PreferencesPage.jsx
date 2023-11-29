@@ -27,16 +27,11 @@ function PreferencesPage() {
           <button onClick={handleconfig3}>Configuração 3</button>
           <button onClick={handleconfig4}>Configuração 4</button>
 
+
       </div>
       
     </>
   );
 }
-
-{/* <div>
-        <button>Editar funcionarios</button>
-        <button>Editar caixa</button>
-      </div> */}
-
 
 export default PreferencesPage;
