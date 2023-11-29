@@ -18,9 +18,9 @@ function App() {
       {/* responsivo */}
 
       <Navbar/>  
-      {/* responsivo/}
+      {/* responsivo*/}
 
-      {/* <AddSale/>   */}
+      <AddSale/>
       {/* responsivo */}
 
       {/* <AddExit/>  */}
@@ -35,10 +35,10 @@ function App() {
       {/* <EditSeller/> */}
       {/* precisa fazer */}
 
-      <PreferencesPage/>
+      {/* <PreferencesPage/> */}
       {/* responsivo - da pra mudar */}
 
-      {/* <Footer/> */}
+      <Footer/>
       {/* responsivo - falta tablet;*/}
       
     </div>
