@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #212529;
+    background-color: #101010;
     height: 100vh;
 }
 
@@ -86,7 +86,6 @@
 @media (min-width: 576px) and (max-width:1024px){
     .containerExit, .container-sm {
         max-width: 100%;
-        overflow: hidden;
     }
 
     .descriptionExit input{
@@ -120,7 +119,6 @@
 @media (min-width: 1024px){
 .containerExit, .container-sm {
     max-width: 100%;
-    overflow: hidden;
 }
 
 .descriptionExit input{
@@ -142,7 +140,7 @@
 }
 
 .buttonCExit{
-    margin-top: 4em;
+    margin-top: 1em;
 }
 
 

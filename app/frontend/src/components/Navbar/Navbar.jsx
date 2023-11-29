@@ -19,10 +19,13 @@ function Navbar(){
                       <Link className="nav-link active" to={"addsale"}> Adicionar Venda</Link>
                     </li>
                     <li class="nav-item">
-                    <Link className="nav-link active" to={"addexit"}> Adicionar Saída</Link>
+                      <Link className="nav-link active" to={"addexit"}> Adicionar Saída</Link>
                     </li>
                     <li class="nav-item">
-                    <Link className="nav-link active" to={"dashboard"}> Dashboard </Link>
+                      <Link className="nav-link active" to={"dashboard"}> Dashboard </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link className="nav-link active" to={"preferences"}> Configurações </Link>
                     </li>
                   </ul>
                   <li class="nav-item dropdown">
@@ -46,8 +49,6 @@ function Navbar(){
                       <li> <Link className='dropdown-item' to={"login"}> Sair </Link></li>
                       </ul>
                   </li>
-
-
                 </div>
             </div>
 </nav>

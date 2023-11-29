@@ -102,7 +102,6 @@
 @media (min-width: 576px) and (max-width:1024px){
     .container, .container-sm {
         max-width: 100%;
-        overflow: hidden;
     }
 
     .description input{
@@ -139,7 +138,6 @@
 @media (min-width: 1024px){
 .container, .container-sm {
     max-width: 100%;
-    overflow: hidden;
 }
 
 .description input{
@@ -166,7 +164,7 @@
 }
 
 .buttonC{
-    margin-top: 8em;
+    margin-top: 1em;
 }
 
 

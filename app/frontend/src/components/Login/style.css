@@ -1,7 +1,7 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 
- body { overflow-y: hidden; }
+ /* body { overflow-y: hidden; } */
 
 .mainLogin{
     height: 100vh;
@@ -10,7 +10,6 @@
     flex-direction: column;
     justify-content: center; 
     align-items: center;  
-    overflow: hidden;
 }
 
 .mainLogin img{

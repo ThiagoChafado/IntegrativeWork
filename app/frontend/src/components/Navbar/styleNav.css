@@ -47,6 +47,7 @@ img{
 /* tablet */
 @media (min-width: 576px) and (max-width:1024px){ 
 
+    .navbar{width: 100vw;}
     .navbar-toggler{margin-left: 18em;}
 
     .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
@@ -54,6 +55,7 @@ img{
         margin-top: 1em;
         margin-bottom: 1em;
         align-items: center;
+        width: 100%;
     }
 
     img{height: 5em;}
@@ -71,8 +73,10 @@ img{
 /* desktop */
 @media (min-width: 1024px){
 
+    .navbar{width: 100vw;}
+
     .dropdown-toggle#table{
-        margin-right: 23em;
+        margin-right: 15.5em;
         margin-bottom: 0.5em;
     }
 

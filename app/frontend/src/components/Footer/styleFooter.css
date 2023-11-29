@@ -4,8 +4,7 @@ footer{
     height: 33em;
     width: 100vw;
     background-color: #000;
-    /* position: relative; */
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     text-align: center;
@@ -14,7 +13,7 @@ footer{
 .titleCopy h1{
     color: #fff;
     font-family: 'Roboto';
-    margin-top: 1em;
+    padding-top: 0.5em;
 }
 
 .titleCopy hr{
@@ -64,8 +63,9 @@ svg{
   }
 
 
-  /* demais midias  */
-  @media (min-width: 576px){
+  /* tablet*/
+  @media (min-width: 576px) and (max-width:1024px){ 
+
     footer{
         height: 22em;
     }
@@ -73,6 +73,88 @@ svg{
     .titleCopy{
         font-size: 5px;
     }
+   
+    .titleCopy hr{
+        display: flex;
+        width: 90vw;
+        margin-left: 35px;
+        margin-right: 35px;
+        color: #fff;
+    }
+
+    .icons{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    .icons hr{display: none;}
+
+    .whatsapp{
+      margin-top: 0.5em;
+      margin-left: 1em;
+    }
+
+    .whatsapp h4{
+        font-size: 15px;
+    }
+
+    .whatsapp a:hover{
+        color: green;
+    }
+    
+    .adress{
+        margin-top: 0.8em;
+        margin-right: 5em;
+        margin-left: 3em;
+    }
+
+    .adress h4{
+        font-size: 15px;
+        
+    }
+    .adress h4{
+        margin-bottom: 0;
+    }
+    .email{
+        margin-top: 0.8em;
+        margin-right: 5em;
+    }
+
+    .email h4{
+        font-size: 15px;
+    }
+    .email h4{
+        margin-bottom: 0;
+    }
+
+    .mainFooter h2{
+        margin-bottom: 0.5em;
+        
+    }
+    .mainFooter hr{
+        margin-left: 35px;
+        margin-right: 35px;
+        width: 45em;
+        color: #fff;
+    } 
+
+    #git:hover{
+        color: grey !important;
+    }
+    
+  }
+
+  /* desktop */
+  @media (min-width: 1024px){
+    footer{
+        height: 22em;
+    }
+
+    .titleCopy{
+        font-size: 5px;
+    }
+
     .titleCopy hr{
         display: flex;
         margin-left: 35px;
@@ -138,6 +220,4 @@ svg{
     #git:hover{
         color: grey !important;
     }
-    
-    
   }
