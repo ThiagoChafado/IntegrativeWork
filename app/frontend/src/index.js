@@ -15,6 +15,7 @@ import AddSalePage from "./routes/AddSalePage";
 import AddExitPage from "./routes/AddExitPage";
 import EditSellerPage from "./routes/EditSellerPage";
 import PreferencesPageRoute from "./routes/PreferencesPageRoute";
+import RouteProtector from "./routes/RouteProtector";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,18 +43,19 @@ const router = createBrowserRouter([
         element: <AddExitPage/>
       },
       {
-        path: "preferences/editseller",
+        path: "login/preferences/editseller",
         element: <EditSellerPage/>
       },
       {
-        path: "preferences",
-        element: <PreferencesPageRoute/>
+        path: "/login/preferences",
+        element: <RouteProtector element={<PreferencesPageRoute />} />
       }
     ]
   },
   {
     path: "/login",
-    element: <LoginPage/>,
+    element: <RouteProtector element={<LoginPage/>} />
+    
   }
  
 ]);

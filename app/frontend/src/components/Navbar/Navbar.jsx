@@ -45,7 +45,7 @@ function Navbar(){
                         Usuário
                       </a>
                       <ul class="dropdown-menu">
-                      <li> <Link className='dropdown-item' to={"preferences"}> Preferencias </Link></li>
+                      <li> <Link className='dropdown-item' to={"login/preferences"}> Preferencias </Link></li>
                       <li> <Link className='dropdown-item' to={"login"}> Sair </Link></li>
                       </ul>
                   </li>

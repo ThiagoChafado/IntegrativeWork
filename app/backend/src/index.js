@@ -1,24 +1,87 @@
+//imports
 require("dotenv").config({ path: "../.env" });
+const bcrypt  = require("bcrypt");
 const pgp = require("pg-promise")({});
 const USER = process.env.DB_USER;
 const PASS = process.env.DB_PASS;
 const PORT = process.env.DB_PORT;
 const NAME = process.env.DB_NAME;
+const JWT = process.env.JWT_SECRET;
 const db = pgp(`postgres://${USER}:${PASS}@localhost:${PORT}/${NAME}`);
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
 const express = require("express");
-
 const app = express();
-
 app.use(cors());
 app.use(express.json());
-
 const port = 3001;
+
 
 app.listen(port, () => console.log(`Server running on port ${port}...`));
 
+
+function verifyJWT(req, res, next) {
+
+  const token = req.headers['authorization'];
+  
+  if (!token) return res.status(401).json({ auth: false, message: "No token provided" });
+
+  const cleanToken = token.replace("Bearer ", "");
+  
+
+  jwt.verify(cleanToken, JWT, function (err, decoded) {
+    if (err) {
+      console.error("Error verifying JWT:", err.message);
+      return res.status(500).json({ auth: false, message: "Failed to authenticate token" });
+    }
+
+    req.username = decoded.username;
+    next();
+  });
+}
+
+
+
+
+
+
 app.get("/", (req, res) => {
   res.send("Hello, world!");
+});
+
+//password
+app.post("/login",  async (req,res) =>{
+  try{
+    const superuser = req.body.username
+    const password = req.body.password 
+    hashPassword = await bcrypt.hash(password,10);
+
+    const userdb = await db.one("SELECT superuser FROM adminuser;")
+    console.log(userdb.superuser);
+    if (superuser === userdb.superuser){
+      const passdb = await db.one("SELECT pass FROM adminuser");
+      const isValid = await bcrypt.compare(password,passdb.pass);
+      if(isValid){
+        console.log("Logged")
+        const token = jwt.sign({superuser},JWT,{
+          expiresIn:"1h"
+        })
+        res.json({auth:true,token:token});
+      }else{
+        console.log("Invalid password");
+      }
+    }else{
+      console.log("Invalid username")
+    }
+
+  }catch(error){
+    console.log(error)
+  }
+  
+})
+
+app.get("/verifyToken", verifyJWT, (req, res) => {
+  res.status(200).json({ valid: true, message: "Token is valid" });
 });
 
 app.post("/addsale", async (req, res) => {

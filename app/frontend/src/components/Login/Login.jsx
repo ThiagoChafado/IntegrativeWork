@@ -1,29 +1,64 @@
-import './style.css'
-import logo from '../../assets/logoNovatecNoBackground.png';
+import "./style.css";
+import logo from "../../assets/logoNovatecNoBackground.png";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function Login(){
-    return(
-        <>
-          <div className='mainLogin'>
-              <img src={logo} alt="Logo" />
-              <div className='center'>
-                <div className='card'>
-                  <h1>LOGIN</h1>
-                  <div className='text'>
-                      <label htmlFor="user">Usuário</label>
-                      <input type='text' placeholder='Usuário'></input>
-                  </div>
 
-                  <div className='text'>
-                      <label htmlFor="pass">Senha</label>
-                      <input type='password' placeholder='Senha'></input>
-                  </div>
 
-                  <button className='loginB'>Login</button>
-                </div>
-              </div>
+function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  async function handleSubmit() {
+    try {
+      const res = await axios.post("/login", { username, password });
+      if (res.data.auth) {
+        const token = res.data.token;
+        localStorage.setItem("token", token);
+
+        navigate("preferences");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  return (
+    <>
+      <div className="mainLogin">
+        <img src={logo} alt="Logo" />
+        <div className="center">
+          <div className="card">
+            <h1>LOGIN</h1>
+            <div className="text">
+              <label htmlFor="user">Usuário</label>
+              <input
+                type="text"
+                className="btnuser"
+                onChange={(e) => setUsername(e.currentTarget.value)}
+                placeholder="Usuário"
+              />
+            </div>
+
+            <div className="text">
+              <label htmlFor="pass">Senha</label>
+              <input
+                type="password"
+                onChange={(e) => setPassword(e.currentTarget.value)}
+                placeholder="Senha"
+              />
+            </div>
+
+            <button onClick={handleSubmit} className="loginB">
+              Login
+            </button>
           </div>
-        </>
-    );
+        </div>
+      </div>
+    </>
+  );
 }
+
 export default Login;
