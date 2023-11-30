@@ -19,7 +19,7 @@ const port = 3001;
 
 app.listen(port, () => console.log(`Server running on port ${port}...`));
 
-
+//Middleware to check JWT
 function verifyJWT(req, res, next) {
 
   const token = req.headers['authorization'];
@@ -40,12 +40,7 @@ function verifyJWT(req, res, next) {
   });
 }
 
-
-app.get("/", (req, res) => {
-  res.send("Hello, world!");
-});
-
-//password
+//Password: hashing,compare,send token
 app.post("/login",  async (req,res) =>{
   try{
     const superuser = req.body.username
@@ -76,6 +71,7 @@ app.post("/login",  async (req,res) =>{
   
 })
 
+//Checks if the token is valid
 app.get("/verifyToken", verifyJWT, (req, res) => {
   res.status(200).json({ valid: true, message: "Token is valid" });
 });
@@ -84,6 +80,8 @@ app.post("/addsale", async (req, res) => {
   //Continue
 });
 
+
+app.put("")
 app.get("/salesdate/:date", async (req, res) => {
   try {
     const aux = req.params.date;

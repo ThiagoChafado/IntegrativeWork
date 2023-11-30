@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
   "dependencies": {
     "axios": "^1.6.2",
     "bcrypt": "^5.1.1",

@@ -1,9 +1,9 @@
-import EditSeller from "../components/EditSeller/EditSeller"
+import CurrentSellers from "../components/CurrentSeller/CurrentSeller"
 
 function EditSellerPage(){
     return(
         <div>
-            <EditSeller/>
+           <CurrentSellers/>
         </div>
     )
 }
