@@ -123,3 +123,7 @@ app.get("/sellers", async (req, res) => {
     res.sendStatus(400);
   }
 });
+
+app.get("/hi",(req,res)=>{
+  res.sendStatus(400);
+})
