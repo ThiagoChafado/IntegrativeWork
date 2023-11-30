@@ -15,7 +15,6 @@ function Login() {
     try {
       const res = await axios.post("/login", { username, password });
       if (res.data.auth) {
-        // Após a obtenção do token no login
         const token = res.data.token;
         localStorage.setItem("token", token);
 
