@@ -41,10 +41,6 @@ function verifyJWT(req, res, next) {
 }
 
 
-
-
-
-
 app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
