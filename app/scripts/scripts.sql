@@ -1,8 +1,8 @@
-drop database novatec;
-create database novatec;
+drop database novatec_dbpg;
+create database novatec_dbpg;
 set datestyle to 'ISO,YMD';
 
-\c novatec
+\c novatec_dbpg
 
 create table if not exists adminuser (
 	superuser varchar(50) not null,

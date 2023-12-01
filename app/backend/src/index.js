@@ -82,7 +82,7 @@ app.post("/addsale", async (req, res) => {
 });
 
 
-app.put("")
+
 app.get("/salesdate/:date", async (req, res) => {
   try {
     const aux = req.params.date;
@@ -91,7 +91,7 @@ app.get("/salesdate/:date", async (req, res) => {
       "SELECT s.idsell,s.descr,s.sellvalue,s.mtdpayment,sl.sellername,s.dtcash FROM sell s JOIN seller sl ON s.sellercpf=sl.cpf WHERE dtcash = $1;",
       [aux]
     );
-    await res.json(sales).status(200);
+     res.json(sales).status(200);
   } catch (error) {
     console.log(error);
     res.sendStatus(400);
