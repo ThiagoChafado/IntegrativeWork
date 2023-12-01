@@ -3,8 +3,8 @@ import React from "react";
 import './styleSalesTable.css';
 
 
-const URL = process.env.URL
-axios.defaults.baseURL = `${URL}`;
+const URL = process.env.REACT_APP_URL;  
+axios.defaults.baseURL = URL;
 
 function SalesTable() {
   const [sellList, setSellList] = React.useState([]);
