@@ -91,7 +91,7 @@ app.get("/salesdate/:date", async (req, res) => {
       "SELECT s.idsell,s.descr,s.sellvalue,s.mtdpayment,sl.sellername,s.dtcash FROM sell s JOIN seller sl ON s.sellercpf=sl.cpf WHERE dtcash = $1;",
       [aux]
     );
-    res.json(sales).status(200);
+    await res.json(sales).status(200);
   } catch (error) {
     console.log(error);
     res.sendStatus(400);

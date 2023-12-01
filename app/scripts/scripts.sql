@@ -1,5 +1,6 @@
 drop database novatec;
 create database novatec;
+set datestyle to 'ISO,YMD';
 
 \c novatec
 
@@ -44,5 +45,5 @@ create table if not exists sellout(
 
 insert into adminuser (superuser,pass) values ('Novatec','$2b$10$er1XHIhRoN9wvXx2YRkHM.OYWYuwoM5zaUdmym6oN3upyIl1FOx/S');
 insert into seller (cpf,sellername,dtbirth,pccommision) values ('13047747712','Pedro Rosa','12-12-2000',3);
-insert into sell (descr,sellvalue,mtdpayment,sellercpf,dtcash) values ('1 Mouse',22.00,1,'13047747712','22-11-2023');
-insert into sellout (descr,outvalue,sellercpf,dtcash) values ('Almoço',24.00,'13047747712','22-11-2023');
+insert into sell (descr,sellvalue,mtdpayment,sellercpf,dtcash) values ('1 Mouse',22.00,1,'13047747712','2023-11-22');
+insert into sellout (descr,outvalue,sellercpf,dtcash) values ('Almoço',24.00,'13047747712','2023-11-22');

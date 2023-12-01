@@ -2,7 +2,8 @@ import axios from "axios";
 import React from "react";
 import './styleSalesTable.css';
 
-axios.defaults.baseURL = "http://localhost:3001";
+const URL = process.env.URL
+axios.defaults.baseURL = `${URL}`;
 
 function SalesTable() {
   const [sellList, setSellList] = React.useState([]);
