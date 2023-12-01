@@ -41,10 +41,12 @@
     color: #fff;
     text-align: center;
 }
+
 .valuesExit{
     display: flex;
     flex-direction: column;
     margin-top: 1em;
+   
 }
 
 .valuesExit label{
@@ -58,13 +60,14 @@
     margin-top: 0.8em;
     border-radius: 5px;
     background-color: #383e45;
-    text-align: center;
     padding: 5px;
     width: 18em;
+    color: #fff;
 }
 
 .valuesExit input::placeholder{
     color: #fff;
+    text-align: center;
 }
 
 .buttonCExit{
@@ -103,7 +106,6 @@
         margin-right: 1em;
         height: 2.75em;
         width: 21em;
-    
     }
     
     .buttonCExit{
@@ -124,6 +126,10 @@
 .descriptionExit input{
     width: 47.5em;
     height: 10em;
+    display: flex;
+    align-items: start;
+
+    
 }
 
 .valuesExit{
@@ -136,6 +142,7 @@
     margin-right: 0.8em;
     height: 2.75em;
     width: 23em;
+   
 
 }
 

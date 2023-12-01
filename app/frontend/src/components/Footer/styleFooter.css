@@ -184,14 +184,12 @@ svg{
     
     .adress{
         margin-top: 0.8em;
+        margin-right: 9em;
+        margin-left: 8em;
     }
 
     .adress h4{
         font-size: 15px;
-        margin-right: 8em;
-        margin-left: 8em;
-    }
-    .adress h4{
         margin-bottom: 0;
     }
     .email{
