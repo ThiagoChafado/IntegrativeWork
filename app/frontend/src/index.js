@@ -16,6 +16,10 @@ import AddExitPage from "./routes/AddExitPage";
 import EditSellerPage from "./routes/EditSellerPage";
 import PreferencesPageRoute from "./routes/PreferencesPageRoute";
 import RouteProtector from "./routes/RouteProtector";
+import  axios  from "axios";
+const URL = process.env.REACT_APP_URL;
+axios.defaults.baseURL = URL;
+
 const router = createBrowserRouter([
   {
     path: "/",
