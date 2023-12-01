@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+.mainDash{
+    height: 100vh;
+    background-color: #101010;
+}
+
+.mainDash h1{
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+.rowBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    width: 20em;
+    height: 20em;
+    border: 1px solid white;
+    margin-right: 3em;
+}

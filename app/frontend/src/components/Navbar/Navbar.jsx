@@ -9,7 +9,7 @@ function Navbar(){
             <div class="container-fluid">
               <img src={logo} alt="Logo" />
                 
-                <Link className="navbar-brand" to={"/"}>NOVATEC</Link>
+                <Link className="navbar-brand" to={"/dashboard"}>NOVATEC</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>

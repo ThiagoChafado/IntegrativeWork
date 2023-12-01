@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 //routes
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./routes/Home";
+
 import ErrorPage from "./routes/ErrorPage";
 import RSalesTable from "./routes/RSalesTable";
 import RExitsTable from "./routes/RExitsStable";
@@ -16,6 +16,8 @@ import AddExitPage from "./routes/AddExitPage";
 import EditSellerPage from "./routes/EditSellerPage";
 import PreferencesPageRoute from "./routes/PreferencesPageRoute";
 import RouteProtector from "./routes/RouteProtector";
+import DashboardPage from "./routes/DashboardPage";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,8 +25,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage/>,
     children: [
       {
-        path: "/",
-        element: <Home/>,
+        path: "dashboard",
+        element: <DashboardPage/>,
       },
       {
         path: "salestable",

@@ -1,11 +1,12 @@
+import Dashboard from "../components/Dashboard/Dashboard";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 
-function Home() {
+function DashboardPage() {
   return (
     <div>
-      
+      <Dashboard/>
     </div>
   );
 }
-export default Home;    
+export default DashboardPage;    
