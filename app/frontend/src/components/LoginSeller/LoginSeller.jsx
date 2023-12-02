@@ -17,7 +17,7 @@ function LoginSeller() {
       if (res.data.auth) {
         const token = res.data.token;
         localStorage.setItem("token", token);
-        navigate("/addsale");
+        navigate("/selectshop");
       }
     } catch (error) {
       console.log(error);

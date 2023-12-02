@@ -1,5 +1,5 @@
 import './styleExits.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import React from "react";
 axios.defaults.baseURL = "http://localhost:3001";
@@ -9,6 +9,7 @@ function ExitsTable(){
   const [exitList, setExitList] = React.useState([]);
   const [date, setDate] = React.useState();
   const navigate = useNavigate();
+  const shopname = useParams();
 
   React.useEffect(()=>{
     if(!localStorage.getItem("token")){
@@ -47,7 +48,7 @@ function ExitsTable(){
 
   async function getData() {
     try {
-      const res = await axios.get("/exitsdate/" + date);
+      const res = await axios.get("/exitsdate/" + date +"/"+ shopname.shopname);
       setExitList(res.data);
       //return backend Object
     } catch (error) {

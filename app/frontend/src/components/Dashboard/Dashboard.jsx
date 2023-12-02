@@ -1,7 +1,16 @@
+import React from 'react';
 import './styleDash.css'
-
+import { useNavigate } from "react-router-dom";
 
 function Dashboard(){
+    const navigate = useNavigate();
+
+    React.useEffect(()=>{
+        if (!localStorage.getItem("token")){
+            navigate("/")
+        }
+    })
+
     return(
         <>
             <div className="mainDash">

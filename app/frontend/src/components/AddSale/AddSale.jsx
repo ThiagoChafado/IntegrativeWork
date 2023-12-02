@@ -1,16 +1,27 @@
 import React from 'react';
 import '../AddSale/styleSale.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 
 
 function AddSale() {
+  const [seller,setSeller] = React.useState("");
+  const shopname = useParams();
   const navigate = useNavigate();
   React.useEffect(()=>{
     if(!localStorage.getItem("token")){
       navigate("/");
     }
-  },[navigate])
-  
+  },[navigate]);
+
+  React.useEffect(()=>{
+
+  },[])
+
+  function getSeller(){
+    //continue
+    
+  }
+
   return (
     <div className='container'>
       <div className="title">
@@ -41,15 +52,8 @@ function AddSale() {
 
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" id='seller' type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Vendedor
-            </button>
-            <ul class="dropdown-menu bg-secondary">
-            <li><a class="dropdown-item bg-secondary" href="#">Dinheiro</a></li>
-              <li><a class="dropdown-item bg-secondary" href="#">Cartão de Crédito</a></li>
-              <li><a class="dropdown-item bg-secondary" href="#">Cartão de Débito</a></li>
-              <li><a class="dropdown-item bg-secondary" href="#">Pix</a></li>
               
-            </ul>
+            </button>
         </div>
           
       </div>

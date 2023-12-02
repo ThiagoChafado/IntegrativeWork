@@ -1,13 +1,14 @@
 import axios from "axios";
 import React from "react";
 import "./styleSalesTable.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function SalesTable() {
   const [sellList, setSellList] = React.useState([]);
   const [date, setDate] = React.useState();
   const navigate = useNavigate();
+  const shopname = useParams();
 
   React.useEffect(()=>{
     if(!localStorage.getItem("token")){
@@ -53,7 +54,7 @@ function SalesTable() {
 
   async function getData() {
     try {
-      const res = await axios.get("/salesdate/" + date);
+      const res = await axios.get("/salesdate/" + date +"/"+ shopname.shopname);
       setSellList(res.data);
       //return backend Object
     } catch (error) {

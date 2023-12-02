@@ -5,7 +5,9 @@ import Navbar from "../components/Navbar/Navbar";
 function DashboardPage() {
   return (
     <div>
+      <Navbar/>
       <Dashboard/>
+      <Footer/>
     </div>
   );
 }

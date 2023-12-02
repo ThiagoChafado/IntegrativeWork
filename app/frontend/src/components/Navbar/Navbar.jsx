@@ -1,7 +1,10 @@
 import logo from '../../assets/logoNovatecNoBackground.png';
 import './styleNav.css'
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
+
+
 function Navbar(){
+    const shopname = useParams();
     return(
      <>
         <nav class="navbar navbar-expand-lg navbar bg-dark border-bottom border-body" data-bs-theme="dark">
@@ -9,20 +12,20 @@ function Navbar(){
             <div class="container-fluid">
               <img src={logo} alt="Logo" />
                 
-                <Link className="navbar-brand" to={"/dashboard"}>NOVATEC</Link>
+                <Link className="navbar-brand" to={`/dashboard/${shopname.sho}`}>NOVATEC</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <Link className="nav-link active" to={"/addsale"}> Adicionar Venda</Link>
+                      <Link className="nav-link active" to={`/addsale/${shopname.shopname}`}> Adicionar Venda</Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link active" to={"/addexit"}> Adicionar Saída</Link>
+                      <Link className="nav-link active" to={`/addexit/${shopname.shopname}`}> Adicionar Saída</Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link active" to={"/dashboard"}> Dashboard </Link>
+                      <Link className="nav-link active" to={`/dashboard/${shopname.sho}`}> Dashboard </Link>
                     </li>
                   </ul>
                   <li class="nav-item dropdown">
@@ -31,9 +34,9 @@ function Navbar(){
                       </a>
                       <ul class="dropdown-menu">
                       
-                        <li> <Link className='dropdown-item' to={"/salestable"}> Vendas</Link></li>
-                        <li> <Link className='dropdown-item' to={"/exitstable"}> Saídas</Link></li>
-                        <li> <Link className='dropdown-item' to={"/alltable"}> Geral </Link></li>
+                        <li> <Link className='dropdown-item' to={`/salestable/${shopname.shopname}`}> Vendas</Link></li>
+                        <li> <Link className='dropdown-item' to={`/exitstable/${shopname.shopname}`}> Saídas</Link></li>
+                        <li> <Link className='dropdown-item' to={`/alltables/${shopname.shopname}`}> Geral </Link></li>
                       </ul>
                   </li>
 
@@ -43,7 +46,7 @@ function Navbar(){
                       </a>
                       <ul class="dropdown-menu">
                       <li> <Link className='dropdown-item' to={"/loginsuper"}> Preferencias </Link></li>
-                      <li> <Link className='dropdown-item' to={"/addsale"}> Sair </Link></li>
+                      <li> <Link className='dropdown-item' to={"/"}> Trocar usuário </Link></li>
                       </ul>
                   </li>
                 </div>

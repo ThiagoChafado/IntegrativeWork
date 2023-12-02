@@ -14,7 +14,7 @@ function CurrentSellers() {
     if (!localStorage.getItem("tokensuper")){
       navigate("/loginsuper")
     }
-  },[navigate])
+  },[])
 
   React.useEffect(() => {
     getData();

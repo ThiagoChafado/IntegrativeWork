@@ -4,7 +4,6 @@ import "./index.css";
 
 //routes
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import ErrorPage from "./routes/ErrorPage";
 import RSalesTable from "./routes/RSalesTable";
 import RExitsTable from "./routes/RExitsStable";
@@ -13,10 +12,9 @@ import AddSalePage from "./routes/AddSalePage";
 import AddExitPage from "./routes/AddExitPage";
 import EditSellerPage from "./routes/EditSellerPage";
 import PreferencesPageRoute from "./routes/PreferencesPageRoute";
-
 import LoginSuperPage from "./routes/LoginSuperPage";
 import DashboardPage from "./routes/DashboardPage";
-
+import SelectShopPage from "./routes/SelectShopPage";
 
 const router = createBrowserRouter([
   {
@@ -26,19 +24,19 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/addsale",
+    path: "/addsale/:shopname",
     element: <AddSalePage />,
   },
   {
-    path: "/addexit",
+    path: "/addexit/:shopname",
     element: <AddExitPage />,
   },
   {
-    path: "/salestable",
+    path: "/salestable/:shopname",
     element: <RSalesTable />,
   },
   {
-    path: "/exitstable",
+    path: "/exitstable/:shopname",
     element: <RExitsTable />,
   },
   {
@@ -46,16 +44,24 @@ const router = createBrowserRouter([
     element: <LoginSuperPage />,
   },
   {
-    path: "/preferences",
+    path: "/preferences/:shopname",
     element: <PreferencesPageRoute />,
   },
   {
-    path: "/editseller",
+    path: "/editseller/:shopname",
     element: <EditSellerPage/>
   },
   {
-    path: "/editsells",
+    path: "/editsells/:shopname",
     element: <ErrorPage/>
+  },
+  {
+    path: "/dashboard/:shopname",
+    element: <DashboardPage/>
+  },
+  {
+    path: "/selectshop",
+    element: <SelectShopPage/>
   }
 ]);
 
