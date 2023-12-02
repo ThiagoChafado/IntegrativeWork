@@ -1,5 +1,5 @@
 import './styleExits.css'
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React from "react";
 axios.defaults.baseURL = "http://localhost:3001";
@@ -8,6 +8,13 @@ axios.defaults.baseURL = "http://localhost:3001";
 function ExitsTable(){
   const [exitList, setExitList] = React.useState([]);
   const [date, setDate] = React.useState();
+  const navigate = useNavigate();
+
+  React.useEffect(()=>{
+    if(!localStorage.getItem("token")){
+      navigate("/");
+    }
+  })
 
   React.useEffect(() => {
     getData();
@@ -22,12 +29,20 @@ function ExitsTable(){
     const year = pcDate.getFullYear();
     const month = pcDate.getMonth() + 1; //Month 0-11
     const day = pcDate.getDate();
-    const currentDate = `${year}-${month}-${day}`;
+    if (day < 10) {
+      const newday = `0${day}`;
+      const currentDate = `${year}-${month}-${newday}`;
+      setDate(currentDate);
+      console.log(date);
 
-    setDate(currentDate);
-
-    const dateControl = document.querySelector('input[type="date"]');
-    dateControl.value = date;
+      const dateControl = document.querySelector('input[type="date"]');
+      dateControl.value = date;
+    } else {
+      const currentDate = `${year}-${month}-${day}`;
+      setDate(currentDate);
+      const dateControl = document.querySelector('input[type="date"]');
+      dateControl.value = date;
+    }
   }
 
   async function getData() {

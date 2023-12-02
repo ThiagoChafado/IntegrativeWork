@@ -5,7 +5,9 @@ import SalesTable from "../components/SalesTable/SalesTable";
 function RSalesTable() {
   return (
     <div>
-      <SalesTable />
+      <Navbar/>
+      <SalesTable/>
+      <Footer/>
     </div>
   );
 }

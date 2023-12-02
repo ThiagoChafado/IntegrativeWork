@@ -1,24 +1,23 @@
-import "./style.css";
+
 import logo from "../../assets/logoNovatecNoBackground.png";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
 
-function Login() {
+function LoginSeller() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  async function handleSubmit() {
+   async function handleSubmit() {
     try {
       const res = await axios.post("/login", { username, password });
       if (res.data.auth) {
         const token = res.data.token;
         localStorage.setItem("token", token);
-
-        navigate("preferences");
+        navigate("/addsale");
       }
     } catch (error) {
       console.log(error);
@@ -61,4 +60,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginSeller;

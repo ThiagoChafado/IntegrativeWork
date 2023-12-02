@@ -1,12 +1,20 @@
 import axios from "axios";
 import React from "react";
-import './styleSalesTable.css';
-
+import "./styleSalesTable.css";
+import { useNavigate } from "react-router-dom";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function SalesTable() {
   const [sellList, setSellList] = React.useState([]);
   const [date, setDate] = React.useState();
+  const navigate = useNavigate();
+
+  React.useEffect(()=>{
+    if(!localStorage.getItem("token")){
+      navigate("/");
+    }
+  })
+
 
   React.useEffect(() => {
     getData();
@@ -27,12 +35,20 @@ function SalesTable() {
     const year = pcDate.getFullYear();
     const month = pcDate.getMonth() + 1; //Month 0-11
     const day = pcDate.getDate();
-    const currentDate = `${year}-${month}-${day}`;
+    if (day < 10) {
+      const newday = `0${day}`;
+      const currentDate = `${year}-${month}-${newday}`;
+      setDate(currentDate);
+      console.log(date);
 
-    setDate(currentDate);
-
-    const dateControl = document.querySelector('input[type="date"]');
-    dateControl.value = date;
+      const dateControl = document.querySelector('input[type="date"]');
+      dateControl.value = date;
+    } else {
+      const currentDate = `${year}-${month}-${day}`;
+      setDate(currentDate);
+      const dateControl = document.querySelector('input[type="date"]');
+      dateControl.value = date;
+    }
   }
 
   async function getData() {
@@ -55,7 +71,13 @@ function SalesTable() {
         />
       </div>
       {
-        sellList.length == 0 && <p>Empty</p> //CSS this
+        sellList.length == 0 && (
+          <div>
+            
+          </div>
+
+
+        ) //CSS this
       }
       {sellList.length > 0 && (
         <div class="container-fluid p-0">
@@ -97,7 +119,6 @@ function SalesTable() {
               <th scope="row">{subTotal()}</th>
             </tbody>
           </table>
-
         </div>
       )}
     </>

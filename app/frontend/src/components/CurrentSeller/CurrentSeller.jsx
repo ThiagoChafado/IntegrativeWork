@@ -2,11 +2,19 @@ import axios from "axios";
 import React from "react";
 import edit from "../../assets/editimg.png";
 import "./styleEdit.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 axios.defaults.baseURL = "http://localhost:3001";
+
 
 function CurrentSellers() {
   const [sellerList, setSellerList] = React.useState([]);
+  const navigate = useNavigate();
+
+  React.useEffect(()=>{
+    if (!localStorage.getItem("tokensuper")){
+      navigate("/loginsuper")
+    }
+  },[navigate])
 
   React.useEffect(() => {
     getData();
@@ -41,7 +49,7 @@ function CurrentSellers() {
                 //itens
                 return (
                   <tr>
-                    <th scope="row">{i.cpf}</th> {/* Getting elements*/}
+                    <th scope="row">{i.sellercpf}</th> {/* Getting elements*/}
                     <td>{i.sellername}</td>
                     <td>{i.dtbirth}</td>
                     <td>{i.pccommision}%</td>
