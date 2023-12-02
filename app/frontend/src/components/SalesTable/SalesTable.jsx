@@ -74,17 +74,45 @@ function SalesTable() {
       </div>
       {
         sellList.length == 0 && (
+        
+          <div className="divTable">
+            <table className="beforeTable">
+               <tr>
+                  <th scope="col" className="headerTable">ID</th>
+                  <th scope="col"className="headerTable">Descrição</th>
+                  <th scope="col" className="headerTable">Forma de pagamento</th>
+                  <th scope="col" className="headerTable">Valor</th>
+                  <th scope="col" className="headerTable">Vendedor</th>
+                </tr>
 
-            
-      <table className="beforeTable">
-      <tr>
-            <th scope="col" className="headerTable">ID</th>
-            <th scope="col"className="headerTable">Descrição</th>
-            <th scope="col" className="headerTable">Forma de pagamento</th>
-            <th scope="col" className="headerTable">Valor</th>
-            <th scope="col" className="headerTable">Vendedor</th>
-      </tr>
-      </table>
+                <tr>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                </tr>
+
+                <tr>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                </tr>
+
+                <tr>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                  <td className="nullRow"></td>
+                </tr>
+
+
+
+            </table>
+          </div>
 
 
 
