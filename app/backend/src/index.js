@@ -39,19 +39,15 @@ function verifyJWT(req, res, next) {
     next();
   });
 }
-
-//Password: hashing,compare,send token
-app.post("/login",  async (req,res) =>{
+//Password: hashing,compare,send token for superuser
+app.post("/loginsuper",  async (req,res) =>{
   try{
-    const superuser = req.body.username
-    const password = req.body.password 
-    hashPassword = await bcrypt.hash(password,10);
-
-    const userdb = await db.one("SELECT superuser FROM adminuser;")
-    console.log(userdb.superuser);
-    if (superuser === userdb.superuser){
-      const passdb = await db.one("SELECT pass FROM adminuser");
-      const isValid = await bcrypt.compare(password,passdb.pass);
+    const superuser = req.body.username;
+    const password = req.body.password;
+    const userdb = await db.one("SELECT username FROM adminuser;")
+    if (superuser == userdb.username){
+      const passdb = await db.one("SELECT adminpass FROM adminuser");
+      const isValid = await bcrypt.compare(password,passdb.adminpass);
       if(isValid){
         console.log("Logged")
         const token = jwt.sign({superuser},JWT,{
@@ -69,7 +65,35 @@ app.post("/login",  async (req,res) =>{
     console.log(error)
   }
   
-})
+});
+
+app.post("/login",async (req,res)=>{
+  try{
+    const selluser = req.body.username;
+    const password = req.body.password;
+    const userdb = await db.one("SELECT sellername FROM seller WHERE sellername=$1;",[selluser])
+    if (selluser == userdb.sellername){
+      const passdb = await db.one("SELECT sellerpass FROM seller WHERE sellername=$1;",[selluser]);
+      const isValid = await bcrypt.compare(password,passdb.sellerpass);
+      if(isValid){
+        console.log("Logged")
+        const token = jwt.sign({selluser},JWT,{
+          expiresIn:"1h"
+        })
+        res.json({auth:true,token:token});
+      }else{
+        console.log("Invalid password");
+      }
+    }else{
+      console.log("Invalid username")
+    }
+
+  }catch(error){
+    console.log(error)
+  }
+});
+
+
 
 //Checks if the token is valid
 app.get("/verifyToken", verifyJWT, (req, res) => {
@@ -80,14 +104,12 @@ app.post("/addsale", async (req, res) => {
   //Continue
 });
 
-
-app.put("")
 app.get("/salesdate/:date", async (req, res) => {
   try {
     const aux = req.params.date;
     console.log(aux);
     const sales = await db.any(
-      "SELECT s.idsell,s.descr,s.sellvalue,s.mtdpayment,sl.sellername,s.dtcash FROM sell s JOIN seller sl ON s.sellercpf=sl.cpf WHERE dtcash = $1;",
+      "SELECT s.descr,s.sellvalue,s.mtdpayment,sl.sellername FROM sell s NATURAL JOIN seller sl WHERE dtcash = $1",
       [aux]
     );
     res.json(sales).status(200);
@@ -102,7 +124,7 @@ app.get("/exitsdate/:date", async (req, res) => {
     const aux = req.params.date;
     console.log(aux);
     const exits = await db.any(
-      "SELECT s.idout,s.descr,s.outvalue,sl.sellername,s.dtcash FROM sellout s JOIN seller sl ON s.sellercpf = sl.cpf WHERE dtcash = $1;",
+      "SELECT s.idout,s.descr,s.outvalue,sl.sellername,s.dtcash FROM sellout s NATURAL JOIN seller sl WHERE dtcash = $1;",
       [aux]
     );
     res.json(exits).status(200);
@@ -111,6 +133,8 @@ app.get("/exitsdate/:date", async (req, res) => {
     res.sendStatus(400);
   }
 });
+
+
 
 app.get("/sellers", async (req, res) => {
   try {

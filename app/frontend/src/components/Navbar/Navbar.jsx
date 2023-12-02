@@ -16,13 +16,13 @@ function Navbar(){
                 <div class="collapse navbar-collapse" id="navbarText">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <Link className="nav-link active" to={"addsale"}> Adicionar Venda</Link>
+                      <Link className="nav-link active" to={"/addsale"}> Adicionar Venda</Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link active" to={"addexit"}> Adicionar Saída</Link>
+                      <Link className="nav-link active" to={"/addexit"}> Adicionar Saída</Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link active" to={"dashboard"}> Dashboard </Link>
+                      <Link className="nav-link active" to={"/dashboard"}> Dashboard </Link>
                     </li>
                   </ul>
                   <li class="nav-item dropdown">
@@ -31,9 +31,9 @@ function Navbar(){
                       </a>
                       <ul class="dropdown-menu">
                       
-                        <li> <Link className='dropdown-item' to={"salestable"}> Vendas</Link></li>
-                        <li> <Link className='dropdown-item' to={"exitstable"}> Saídas</Link></li>
-                        <li> <Link className='dropdown-item' to={"alltable"}> Geral </Link></li>
+                        <li> <Link className='dropdown-item' to={"/salestable"}> Vendas</Link></li>
+                        <li> <Link className='dropdown-item' to={"/exitstable"}> Saídas</Link></li>
+                        <li> <Link className='dropdown-item' to={"/alltable"}> Geral </Link></li>
                       </ul>
                   </li>
 
@@ -42,8 +42,8 @@ function Navbar(){
                         Usuário
                       </a>
                       <ul class="dropdown-menu">
-                      <li> <Link className='dropdown-item' to={"login/preferences"}> Preferencias </Link></li>
-                      <li> <Link className='dropdown-item' to={"login"}> Sair </Link></li>
+                      <li> <Link className='dropdown-item' to={"/loginsuper"}> Preferencias </Link></li>
+                      <li> <Link className='dropdown-item' to={"/addsale"}> Sair </Link></li>
                       </ul>
                   </li>
                 </div>

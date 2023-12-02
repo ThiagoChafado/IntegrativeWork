@@ -1,7 +1,16 @@
+import React from 'react';
 import '../AddSale/styleSale.css'
+import { useNavigate } from "react-router-dom";
 
 
 function AddSale() {
+  const navigate = useNavigate();
+  React.useEffect(()=>{
+    if(!localStorage.getItem("token")){
+      navigate("/");
+    }
+  },[navigate])
+  
   return (
     <div className='container'>
       <div className="title">

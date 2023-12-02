@@ -1,8 +1,10 @@
+
+
 drop database novatec;
 create database novatec;
 
 \c novatec
-
+SET datestyle TO 'ISO,DMY';
 create table if not exists adminuser (
 	superuser varchar(50) not null,
 	pass varchar (255) not null,
