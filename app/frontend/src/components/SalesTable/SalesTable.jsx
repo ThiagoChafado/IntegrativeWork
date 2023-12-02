@@ -63,15 +63,18 @@ function SalesTable() {
   }
   return (
     <div className="general">
-
+      <h1>Vendas</h1>
+      
+      <h2>Informe a data desejada</h2>
       <div className="dateB">
         <input
           type="date"
           id="dateInput"
-          value={date || ""}
+          value={ date || ""}
           onChange={(e) => setDate(e.currentTarget.value)}
         />
       </div>
+
       {
         sellList.length == 0 && (
         
@@ -84,33 +87,6 @@ function SalesTable() {
                   <th scope="col" className="headerTable">Valor</th>
                   <th scope="col" className="headerTable">Vendedor</th>
                 </tr>
-
-                <tr>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                </tr>
-
-                <tr>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                </tr>
-
-                <tr>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                  <td className="nullRow"></td>
-                </tr>
-
-
-
             </table>
           </div>
 
@@ -120,7 +96,7 @@ function SalesTable() {
 
       }
       {sellList.length > 0 && (
-        <div class="container-fluid p-0">
+        <div>
           <table>
             <thead>
               <tr>

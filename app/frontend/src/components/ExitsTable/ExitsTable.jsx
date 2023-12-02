@@ -58,8 +58,11 @@ function ExitsTable(){
 
 
   return(
-    <>
-      <div>
+    <div className='general'>
+      <h1>Saídas</h1>
+      
+      <h2>Informe a data desejada</h2>
+      <div className='dateB'>
         <input
           type="date"
           id="dateInput"
@@ -68,8 +71,22 @@ function ExitsTable(){
         />
       </div>
       {
-        exitList.length == 0 && <p>Empty</p> //CSS this
+        exitList.length == 0 && (
+        <div className="divTable">
+          <table className="beforeTable">
+            <tr>
+                <th scope="col" className="headerTable">ID</th>
+                <th scope="col"className="headerTable">Descrição</th>
+                <th scope="col" className="headerTable">Valor</th>
+                <th scope="col" className="headerTable">Responsável</th>
+              </tr>
+          </table>
+      </div>
+      
+      )
+      
       }
+
       {exitList.length > 0 && (
         <div class="container-fluid p-0">
           <table class="table">
@@ -98,7 +115,8 @@ function ExitsTable(){
           </table>
         </div>
       )}
-    </>
+
+    </div>
 
   );
 }
