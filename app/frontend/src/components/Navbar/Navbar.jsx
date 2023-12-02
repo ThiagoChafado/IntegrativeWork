@@ -25,7 +25,7 @@ function Navbar(){
                       <Link className="nav-link active" to={`/addexit/${shopname.shopname}`}> Adicionar Saída</Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link active" to={`/dashboard/${shopname.sho}`}> Dashboard </Link>
+                      <Link className="nav-link active" to={`/dashboard/${shopname.shopname}`}> Dashboard </Link>
                     </li>
                   </ul>
                   <li class="nav-item dropdown">

@@ -54,7 +54,7 @@ function SalesTable() {
 
   async function getData() {
     try {
-      const res = await axios.get("/salesdate/" + date +"/"+ shopname.shopname);
+      const res = await axios.get("/sales/salesdate/" + date +"/"+ shopname.shopname);
       setSellList(res.data);
       //return backend Object
     } catch (error) {

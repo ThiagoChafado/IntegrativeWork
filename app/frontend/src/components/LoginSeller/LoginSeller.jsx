@@ -13,7 +13,7 @@ function LoginSeller() {
 
    async function handleSubmit() {
     try {
-      const res = await axios.post("/login", { username, password });
+      const res = await axios.post("/auth/login", { username, password });
       if (res.data.auth) {
         const token = res.data.token;
         localStorage.setItem("token", token);

@@ -48,7 +48,7 @@ function ExitsTable(){
 
   async function getData() {
     try {
-      const res = await axios.get("/exitsdate/" + date +"/"+ shopname.shopname);
+      const res = await axios.get("/sales/exitsdate/" + date +"/"+ shopname.shopname);
       setExitList(res.data);
       //return backend Object
     } catch (error) {

@@ -12,7 +12,7 @@ function LoginSuper() {
 
   async function handleSubmit() {
     try {
-      const res = await axios.post("/loginsuper", { username, password });
+      const res = await axios.post("/auth/loginsuper", { username, password });
       if (res.data.auth) {
         const token = res.data.token;
         localStorage.setItem("tokensuper", token);

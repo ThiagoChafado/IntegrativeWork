@@ -21,7 +21,7 @@ function SelectShopPage() {
 
   async function getShops() {
     try {
-      const res = await axios.get("/shops");
+      const res = await axios.get("/shops/shops");
       setShoplist(res.data);
       //return backend shops
     } catch (error) {
