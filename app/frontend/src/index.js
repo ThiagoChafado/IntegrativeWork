@@ -4,6 +4,7 @@ import "./index.css";
 
 //routes
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import ErrorPage from "./routes/ErrorPage";
 import RSalesTable from "./routes/RSalesTable";
 import RExitsTable from "./routes/RExitsStable";
@@ -12,11 +13,15 @@ import AddSalePage from "./routes/AddSalePage";
 import AddExitPage from "./routes/AddExitPage";
 import EditSellerPage from "./routes/EditSellerPage";
 import PreferencesPageRoute from "./routes/PreferencesPageRoute";
+
 import LoginSuperPage from "./routes/LoginSuperPage";
+import DashboardPage from "./routes/DashboardPage";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
+
     element: <LoginSellerPage />,
     errorElement: <ErrorPage />,
   },

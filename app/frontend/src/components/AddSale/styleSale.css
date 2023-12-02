@@ -66,14 +66,24 @@
     color: #fff;
 }
 
+#value{
+    width: 18em;
+    color: #fff;
+}
+#seller{width: 18em;}
+#payment{width: 18em;}
+
 .dropdown{
     margin-top: 0.5em;
     text-align: center;
-    
 }
 
 .dropdown-toggle{
     margin-bottom: 0;
+}
+
+.dropdown-item{
+    color: #fff;
 }
 
 .btn-secondary{
@@ -85,7 +95,7 @@
 
 .buttonC{
     display: flex;
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
 .buttonC button{
@@ -95,6 +105,14 @@
     height: 3em;
     width: 8em;
     border-radius: 10px;
+}
+
+.bg-secondary{
+    background-color: #2b3035 !important;
+}
+
+a{
+    color: #fff;
 }
 
 /* tablet */
@@ -114,15 +132,28 @@
         flex-direction: row;
     }
     
-    .values input{
+    #value{
         margin-left: 0.5em;
-        margin-right: 0.3em;
+        margin-right: 0.1em;
         height: 2.75em;
-        width: 9em;
-    
+        width: 8em;
     }
     
-    .btn-secondary{
+    #date{
+        margin-left: 0.5em;
+        margin-right: 0.1em;
+        height: 2.4em;
+        width: 10em;
+    }
+    
+    #seller{
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        width: 10em;
+    }
+    
+    #payment{
+        margin-right: 0.1em;
         margin-left: 0.5em;
         width: 12em;
     }
@@ -150,19 +181,31 @@
     flex-direction: row;
 }
 
-.values input{
+#value{
     margin-left: 0.5em;
     margin-right: 0.1em;
     height: 2.75em;
-    width: 11em;
-
+    width: 10em;
 }
 
-.btn-secondary{
+#date{
+    margin-left: 0.5em;
+    margin-right: 0.1em;
+    height: 2.4em;
+    width: 10em;
+}
+
+#seller{
+    margin-right: 0.5em;
     margin-left: 0.5em;
     width: 12em;
 }
 
+#payment{
+    margin-right: 0.1em;
+    margin-left: 0.5em;
+    width: 12em;
+}
 .buttonC{
     margin-top: 1em;
 }

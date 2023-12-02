@@ -61,8 +61,9 @@ function SalesTable() {
     }
   }
   return (
-    <>
-      <div>
+    <div className="general">
+
+      <div className="dateB">
         <input
           type="date"
           id="dateInput"
@@ -72,17 +73,27 @@ function SalesTable() {
       </div>
       {
         sellList.length == 0 && (
-          <div>
+
             
-          </div>
+      <table className="beforeTable">
+      <tr>
+            <th scope="col" className="headerTable">ID</th>
+            <th scope="col"className="headerTable">Descrição</th>
+            <th scope="col" className="headerTable">Forma de pagamento</th>
+            <th scope="col" className="headerTable">Valor</th>
+            <th scope="col" className="headerTable">Vendedor</th>
+      </tr>
+      </table>
 
 
-        ) //CSS this
+
+        )//CSS this
+
       }
       {sellList.length > 0 && (
         <div class="container-fluid p-0">
-          <table class="table">
-            <thead class="table-dark">
+          <table>
+            <thead>
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Descrição</th>
@@ -121,7 +132,7 @@ function SalesTable() {
           </table>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
