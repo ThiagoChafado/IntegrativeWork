@@ -1,21 +1,22 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import "./stylePreferences.css";
 import React from "react";
 
 function PreferencesPage() {
   const navigate = useNavigate();
+  const shopname = useParams();
 
   React.useEffect(() => {
     if (!localStorage.getItem("tokensuper")) {
-      navigate("loginsuper");
+      navigate(`/loginsuper/:${shopname.shopname}`);
     }
   });
 
   const handlesellers = () => {
-    return navigate("/editseller");
+    return navigate(`/editseller/${shopname.shopname}`);
   };
   const handlesells = () => {
-    return navigate("/editsells");
+    return navigate(`/editsells/${shopname.shopname}`);
   };
   const handleconfig3 = () => {
     return navigate("/config3");

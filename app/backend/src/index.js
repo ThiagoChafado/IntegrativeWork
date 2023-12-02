@@ -44,10 +44,10 @@ app.post("/loginsuper", async (req, res) => {
   try {
     const superuser = req.body.username;
     const password = req.body.password;
-    const userdb = await db.one("SELECT username FROM adminuser;");
-    if (superuser == userdb.username) {
-      const passdb = await db.one("SELECT adminpass FROM adminuser");
-      const isValid = await bcrypt.compare(password, passdb.adminpass);
+    const userdb = await db.one("SELECT sellername FROM seller WHERE isadmin = TRUE;");
+    if (superuser == userdb.sellername) {
+      const passdb = await db.one("SELECT sellerpass FROM seller WHERE isadmin = TRUE;");
+      const isValid = await bcrypt.compare(password, passdb.sellerpass);
       if (isValid) {
         console.log("Logged");
         const token = jwt.sign({ superuser }, JWT, {

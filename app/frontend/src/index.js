@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     element: <RExitsTable />,
   },
   {
-    path: "/loginsuper",
+    path: "/loginsuper/:shopname",
     element: <LoginSuperPage />,
   },
   {

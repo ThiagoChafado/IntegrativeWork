@@ -2,12 +2,13 @@ import "./style.css";
 import logo from "../../assets/logoNovatecNoBackground.png";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 
 function LoginSuper() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const shopname = useParams();
 
   async function handleSubmit() {
     try {
@@ -15,7 +16,7 @@ function LoginSuper() {
       if (res.data.auth) {
         const token = res.data.token;
         localStorage.setItem("tokensuper", token);
-        navigate("/preferences");
+        navigate(`/preferences/${shopname.shopname}`);
       }
     } catch (error) {
       console.log(error);
