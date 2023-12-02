@@ -8,7 +8,7 @@ function Footer(){
                     <hr></hr>
                 </div>
                 <div className='mainFooter'>
-                    {/* icone whatsapp  */}
+                    {/* whatsapp icon  */}
                     <h2>Informações para Contato</h2>
                     <div className='icons'>
                         <div class="whatsapp">

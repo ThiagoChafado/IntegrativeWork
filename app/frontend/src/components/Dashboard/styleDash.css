@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 
 
-.mainDash{
-    height: 100vh;
+/* mobile */
+
+.titleDash h1{
     background-color: #101010;
-}
-
-.mainDash h1{
-    color: #fff;
-    text-align: center;
+    margin: 0;
     padding: 1em;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto';
 }
-
-.rowBox{
+.mainDash{
+    background-color: #101010;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -23,5 +23,78 @@
     width: 20em;
     height: 20em;
     border: 1px solid white;
-    margin-right: 3em;
+    margin-bottom: 1em;
+}
+
+.halfmain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#boxEnd{
+    width: 20em;
+    height: 20em;
+    border: 1px solid white;
+    margin-bottom: 2em;
+}
+
+
+/* tablet */
+@media (min-width: 576px) and (max-width:1024px){
+    .startbox{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .halfmain{
+        display: flex;
+        flex-direction: row;
+        align-items: normal;
+    }
+
+    #box1, #box3{margin-right: 1em;}
+
+
+}
+
+
+/* desktop */
+@media (min-width: 1024px){
+
+    .mainDash{
+        display: flex;
+        flex-direction: row;
+    }
+    .startbox{
+        display: flex;
+        flex-direction: column;
+        margin-right: 2em;
+    }
+
+    #box1, #box2{
+        height: 15em;
+        width: 30em;
+    }
+
+    #box3{
+        height: 31em;
+        margin-right: 1em;
+    }
+
+    #boxEnd{
+        height: 31em;
+        margin-bottom: 1em;
+    }
+    
+
+    .halfmain{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
 }

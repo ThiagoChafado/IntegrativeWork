@@ -36,10 +36,12 @@
     border-radius: 5px;
     background-color: #404750;
     color: #fff;
+    border: none;
 }
 .description input::placeholder{
     color: #fff;
     text-align: center;
+   
 }
 .values{
     display: flex;
@@ -60,6 +62,7 @@
     background-color: #383e45;
     text-align: center;
     padding: 5px;
+    border: none;
 }
 
 .values input::placeholder{
@@ -105,6 +108,7 @@
     height: 3em;
     width: 8em;
     border-radius: 10px;
+    border: none;
 }
 
 .bg-secondary{

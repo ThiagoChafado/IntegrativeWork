@@ -36,6 +36,7 @@
     border-radius: 5px;
     background-color: #404750;
     color: #fff;
+    border: none;
 }
 .descriptionExit input::placeholder{
     color: #fff;
@@ -63,6 +64,7 @@
     padding: 5px;
     width: 18em;
     color: #fff;
+    border: none;
 }
 
 .valuesExit input::placeholder{
@@ -73,6 +75,7 @@
 .buttonCExit{
     display: flex;
     margin-top: 2em;
+    
 }
 
 .buttonCExit button{
@@ -82,6 +85,7 @@
     height: 3em;
     width: 8em;
     border-radius: 10px;
+    border: none;
 }
 
 /* tablet */
