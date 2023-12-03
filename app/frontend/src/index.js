@@ -4,17 +4,18 @@ import "./index.css";
 
 //routes
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "./routes/ErrorPage";
-import RSalesTable from "./routes/RSalesTable";
-import RExitsTable from "./routes/RExitsStable";
-import LoginSellerPage from "./routes/LoginSellerPage";
-import AddSalePage from "./routes/AddSalePage";
-import AddExitPage from "./routes/AddExitPage";
-import EditSellerPage from "./routes/EditSellerPage";
-import PreferencesPageRoute from "./routes/PreferencesPageRoute";
-import LoginSuperPage from "./routes/LoginSuperPage";
-import DashboardPage from "./routes/DashboardPage";
-import SelectShopPage from "./routes/SelectShopPage";
+import ErrorPage from "./pages/ErrorPage";
+import RSalesTable from "./pages/RSalesTable";
+import RExitsTable from "./pages/RExitsStable";
+import LoginSellerPage from "./pages/LoginSellerPage";
+import AddSalePage from "./pages/AddSalePage";
+import AddExitPage from "./pages/AddExitPage";
+import EditSellerPage from "./pages/EditSellerPage";
+import PreferencesPageRoute from "./pages/PreferencesPageRoute";
+import LoginSuperPage from "./pages/LoginSuperPage";
+import DashboardPage from "./pages/DashboardPage";
+import SelectShopPage from "./pages/SelectShopPage";
+import AllSalesPage from "./pages/AllSalesPage";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/selectshop",
     element: <SelectShopPage/>
+  },
+  {
+    path:"/allSales/:shopname",
+    element: <AllSalesPage/>
   }
 ]);
 
