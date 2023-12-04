@@ -37,7 +37,7 @@ router.post("/opencash", async (req, res) => {
 });
 
 
-router.post("/closecash", async (req, res) => {
+router.put("/closecash", async (req, res) => {
   try {
     const date = req.body.date;
     const shopname = req.body.shopname;

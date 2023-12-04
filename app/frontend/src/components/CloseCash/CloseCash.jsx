@@ -46,7 +46,7 @@ function CloseCash() {
 
   async function handleClose(){
     try{
-        const res = await axios.post("/cash/closecash",{date,shopname});
+        const res = await axios.put("/cash/closecash",{date,shopname});
         if(res.data.closed){
             setClosed(true);
             navigate(`/preferences/${shopname}`);
