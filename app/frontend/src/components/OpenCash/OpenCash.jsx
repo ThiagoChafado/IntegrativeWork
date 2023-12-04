@@ -11,6 +11,12 @@ function OpenCash() {
   const [change, setChange] = React.useState();
   const [open,setOpen] = React.useState(false);
 
+  React.useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  });
+
   async function handleSubmit() {
     try{
         
