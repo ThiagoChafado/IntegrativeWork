@@ -9,8 +9,6 @@ body { overflow-x: hidden; }
     height: 100vh;
     width: 100vw;
     background-color: #101010;
-    
-
 }
 
 .mainPreferences h1{
@@ -32,6 +30,7 @@ body { overflow-x: hidden; }
     height: 4em;
     width: 15em;
     border-radius: 6px;
+    border: none;
 }
 
 .mainPreferences hr{display: none;}
@@ -79,6 +78,7 @@ body { overflow-x: hidden; }
     .mainPreferences{
         align-items: start;
         width: 15em;
+        position: relative;
     }
 
 
@@ -93,6 +93,7 @@ body { overflow-x: hidden; }
         margin-top: 0;
         width: 10em;
         background-color: #101010;
+        border: none;
     }
 
     .mainPreferences hr{

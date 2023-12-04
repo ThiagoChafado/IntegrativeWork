@@ -66,10 +66,6 @@
 }
 
 
-.nullRow{
-    border: 1px solid white;
-    height: 1em;
-}
 
 /* tablet */
 @media (min-width: 576px) and (max-width:1024px){ 
