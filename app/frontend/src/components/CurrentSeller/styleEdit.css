@@ -1,8 +1,5 @@
-.edit{
-    height: 30px;
-    width: 30px;
-}
-.editButton{
-    background:none;
-    
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+.editseller{
+    width: 85em;
 }

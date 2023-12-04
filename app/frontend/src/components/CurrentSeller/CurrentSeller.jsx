@@ -31,6 +31,7 @@ function CurrentSellers() {
   }
   return (
     <>
+  
       {sellerList.length > 0 && (
         <div class="container-fluid p-0">
           <table class="table">
