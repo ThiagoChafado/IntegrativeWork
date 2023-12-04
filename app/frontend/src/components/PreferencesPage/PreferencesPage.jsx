@@ -19,7 +19,7 @@ function PreferencesPage() {
     return navigate(`/editsells/${shopname.shopname}`);
   };
   const handleconfig3 = () => {
-    return navigate("/config3");
+    return navigate(`/closecash/${shopname.shopname}`);
   };
   const handleconfig4 = () => {
     return navigate("/config4");
@@ -31,7 +31,7 @@ function PreferencesPage() {
 
         <button onClick={handlesellers}>Editar funcionários</button>
         <button onClick={handlesells}>Editar Caixa</button>
-        <button onClick={handleconfig3}>Configuração 3</button>
+        <button onClick={handleconfig3}>Fechar caixa</button>
         <button onClick={handleconfig4}>Configuração 4</button>
       </div>
     </>

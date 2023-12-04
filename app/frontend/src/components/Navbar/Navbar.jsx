@@ -28,7 +28,7 @@ function Navbar(){
                       <Link className="nav-link active" to={`/dashboard/${shopname.shopname}`}> Dashboard </Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link active" to={`/cash/${shopname.shopname}`}> Caixa </Link>
+                      <Link className="nav-link active" to={`/seecash/${shopname.shopname}`}> Caixa </Link>
                     </li>
                   </ul>
                   <li class="nav-item dropdown">
