@@ -79,49 +79,64 @@ function AllSales() {
           onChange={(e) => setDate(e.currentTarget.value)}
         />
       </div>
-      {exitList.length == 0 && (
+      {sellList.length == 0 && (
         <div className="divTable">
           <table className="beforeTable">
             <tr>
-              <th scope="col" className="headerTable">
-                ID
-              </th>
-              <th scope="col" className="headerTable">
-                Descrição
-              </th>
-              <th scope="col" className="headerTable">
-                Valor
-              </th>
-              <th scope="col" className="headerTable">
-                Responsável
-              </th>
+            <th scope="col" className="headerTable">ID</th>
+                  <th scope="col"className="headerTable">Descrição</th>
+                  <th scope="col" className="headerTable">Forma de pagamento</th>
+                  <th scope="col" className="headerTable">Valor</th>
+                  <th scope="col" className="headerTable">Vendedor</th>
             </tr>
           </table>
         </div>
       )}
 
-      {exitList.length > 0 && (
+      {sellList.length > 0 && (
         <div class="container-fluid p-0">
           <table class="table">
             <thead class="table-dark">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Forma de pagamento</th>
                 <th scope="col">Valor</th>
                 <th scope="col">Responsável</th>
               </tr>
             </thead>
             <tbody>
               {/* Populate table */}
+              {sellList.map((i) => {
+                //itens
+                return (
+                  <tr>
+                     <th scope="row">{i.idsell}</th> {/* Getting elements*/}
+                      <td>{i.descr}</td>
+                      <>
+                        {i.mtdpayment == 1 && <td>Dinheiro</td>}
+                        {i.mtdpayment == 2 && <td>Cartão de crédito</td>}
+                        {i.mtdpayment == 3 && <td>Cartão de débito</td>}
+                        {i.mtdpayment == 4 && <td>Pix</td>}
+                      </>
+                      <td>{i.sellvalue}</td>
+                      <td>{i.sellername}</td>
+                  </tr>
+                  
+                );
+              })}
               {exitList.map((i) => {
                 //itens
                 return (
                   <tr>
-                    <th scope="row">{i.idout}</th> {/* Getting elements*/}
-                    <td>{i.descr}</td>
-                    <td>{i.outvalue}</td>
-                    <td>{i.sellername}</td>
+                     <th scope="row">{i.idout}</th> {/* Getting elements*/}
+                      <td>-{i.descr}</td>
+                      <td></td>
+                      <td>-{i.outvalue}</td>
+                      <td>{i.sellername}</td>
+                      
                   </tr>
+                  
                 );
               })}
             </tbody>

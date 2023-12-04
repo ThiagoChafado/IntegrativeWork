@@ -1,6 +1,5 @@
 const express = require("express");
 const { db } = require("../database/database");
-
 const router = express.Router();
 
 router.post("/addsale", async (req, res) => {
@@ -18,7 +17,7 @@ router.get("/salesdate/:date/:shopname", async (req, res) => {
     const date = req.params.date;
     const shopname = req.params.shopname;
     const sales = await db.any(
-      "SELECT s.descr, s.sellvalue, s.mtdpayment, sl.sellername FROM sell s NATURAL JOIN seller sl WHERE s.dtcash = $1 AND s.shopname = $2;",
+      "SELECT s.idsell,s.descr, s.sellvalue, s.mtdpayment, sl.sellername FROM sell s NATURAL JOIN seller sl WHERE s.dtcash = $1 AND s.shopname = $2;",
       [date, shopname]
     );
     res.json(sales).status(200);
@@ -43,23 +42,5 @@ router.get("/exitsdate/:date/:shopname", async (req, res) => {
     }
   });
 
-  router.get("/alldate/:date/:shopname",async (req,res)=>{
-    try{
-      const date = req.params.date;
-      const shopname = req.params.shopname;
-      const exits = await db.any(
-        "SELECT s.idout,s.descr,s.outvalue,sl.sellername,s.dtcash FROM sellout s NATURAL JOIN seller sl WHERE dtcash = $1 AND s.shopname=$2;",
-        [date, shopname]
-      );
-      const sales = await db.any(
-        "SELECT s.descr, s.sellvalue, s.mtdpayment, sl.sellername FROM sell s NATURAL JOIN seller sl WHERE s.dtcash = $1 AND s.shopname = $2;",
-        [date, shopname]
-      );
-      res.json([exits,sales]).status(200);
-    }catch(error){
-      console.log(error);
-      res.sendStatus(400);
-    }
-  })
 
 module.exports = router;

@@ -22,6 +22,7 @@ CREATE TABLE if NOT EXISTS cash(
     dtcash DATE NOT NULL,
     change FLOAT NOT NULL,
     shopname VARCHAR (50) NOT NULL,
+    isopen BOOLEAN NOT NULL,
     CONSTRAINT pk_cash PRIMARY KEY (dtcash,shopname),
     CONSTRAINT fk_cash_shop FOREIGN KEY (shopname) REFERENCES shop(shopname)
 );
@@ -66,9 +67,9 @@ INSERT INTO seller VALUES ('13088888812','ryan','$2b$10$.1BNPKAjS7PKKla2czdMxufQ
 INSERT INTO seller VALUES ('19988823145','vitinho','$2b$10$zN2mzhTSCrE7NtSXhLJrAOPY65/u.TMTlJ4HBUnrpVLB7htK2.F.m',5,'10-01-1999','FALSE');
 INSERT INTO shop VALUES('novatec');
 INSERT INTO shop VALUES('box10');
-INSERT INTO cash VALUES ('01-12-2023',250,'box10');
-INSERT INTO cash VALUES ('01-12-2023',250,'novatec');
-INSERT INTO cash VALUES ('30-11-2023',210,'novatec');
+INSERT INTO cash VALUES ('01-12-2023',250,'box10','TRUE');
+INSERT INTO cash VALUES ('01-12-2023',250,'novatec','TRUE');
+INSERT INTO cash VALUES ('30-11-2023',210,'novatec','TRUE');
 INSERT INTO sellerboard VALUES ('87823215266','novatec');
 INSERT INTO sellerboard VALUES ('13088888812','novatec');
 INSERT INTO sellerboard VALUES ('19988823145','novatec');

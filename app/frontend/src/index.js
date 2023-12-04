@@ -16,6 +16,7 @@ import LoginSuperPage from "./pages/LoginSuperPage";
 import DashboardPage from "./pages/DashboardPage";
 import SelectShopPage from "./pages/SelectShopPage";
 import AllSalesPage from "./pages/AllSalesPage";
+import OpenCashPage from "./pages/OpenCashPage";
 
 const router = createBrowserRouter([
   {
@@ -50,24 +51,28 @@ const router = createBrowserRouter([
   },
   {
     path: "/editseller/:shopname",
-    element: <EditSellerPage/>
+    element: <EditSellerPage />,
   },
   {
     path: "/editsells/:shopname",
-    element: <ErrorPage/>
+    element: <ErrorPage />,
   },
   {
     path: "/dashboard/:shopname",
-    element: <DashboardPage/>
+    element: <DashboardPage />,
   },
   {
     path: "/selectshop",
-    element: <SelectShopPage/>
+    element: <SelectShopPage />,
   },
   {
-    path:"/allSales/:shopname",
-    element: <AllSalesPage/>
-  }
+    path: "/allSales/:shopname",
+    element: <AllSalesPage />,
+  },
+  {
+    path: "/cash/:shopname",
+    element: <OpenCashPage />
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -27,6 +27,9 @@ function Navbar(){
                     <li class="nav-item">
                       <Link className="nav-link active" to={`/dashboard/${shopname.shopname}`}> Dashboard </Link>
                     </li>
+                    <li class="nav-item">
+                      <Link className="nav-link active" to={`/cash/${shopname.shopname}`}> Caixa </Link>
+                    </li>
                   </ul>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" id="table" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
