@@ -29,7 +29,7 @@ function PreferencesPage() {
       <div className="mainPreferences">
         <h1>CONFIGURAÇÕES GERAIS</h1>
 
-        <button onClick={handlesellers}>Editar funcionários</button>
+        <button onClick={handlesellers}>Funcionários</button>
         <button onClick={handlesells}>Editar Caixa</button>
         <button onClick={handleclose}>Fechar caixa</button>
         <button onClick={handleconfig4}>Configuração 4</button>
