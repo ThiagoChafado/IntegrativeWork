@@ -66,6 +66,10 @@
     padding-right: 1em;
 }
 
+td{
+    border-bottom: 1px solid #2b3035;
+}
+
 
 /* tablet */
 @media (min-width: 576px) and (max-width:1024px){ 

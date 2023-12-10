@@ -34,7 +34,7 @@
     height: 10em;
     width: 18em;
     border-radius: 5px;
-    background-color: #404750;
+    background-color: #2b3035;
     color: #fff;
     border: none;
 }
@@ -60,7 +60,7 @@
 .valuesExit input{
     margin-top: 0.8em;
     border-radius: 5px;
-    background-color: #383e45;
+    background-color: #2b3035;
     padding: 5px;
     width: 18em;
     color: #fff;
@@ -79,7 +79,7 @@
 }
 
 .buttonCExit button{
-    background-color: #383e45;
+    background-color: #2b3035;
     font-family: 'Roboto';
     color: #fff;
     height: 3em;

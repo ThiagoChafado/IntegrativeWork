@@ -34,7 +34,7 @@
     height: 10em;
     width: 18em;
     border-radius: 5px;
-    background-color: #404750;
+    background-color: #2b3035;
     color: #fff;
     border: none;
 }
@@ -59,7 +59,7 @@
 .values input{
     margin-top: 0.5em;
     border-radius: 5px;
-    background-color: #383e45;
+    background-color: #2b3035;
     text-align: center;
     padding: 5px;
     border: none;
@@ -90,7 +90,7 @@
 }
 
 .btn-secondary{
-    background-color: #383e45;
+    background-color: #2b3035;
     padding: 10px;
     border: none;
     width: 12em;
@@ -102,7 +102,7 @@
 }
 
 .buttonC button{
-    background-color: #383e45;
+    background-color: #2b3035;
     font-family: 'Roboto';
     color: #fff;
     height: 3em;
