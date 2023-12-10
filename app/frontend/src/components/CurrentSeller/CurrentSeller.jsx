@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import edit from "../../assets/editimg.png";
 import "./styleEdit.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { formatDate } from "../Controllers/formateDate";
@@ -54,18 +53,23 @@ function CurrentSellers() {
       setSellerList([]);
     }
   }
+
+  
   return (
     <>
-      {!editor && (
-        <div class="container-fluid p-0">
-          <table class="table">
-            <thead class="table-dark">
+
+  
+      {sellerList.length > 0 && (
+        <div className="divTableC">
+          <table className="beforeTableC" > 
+            <thead>
+
               <tr>
-                <th scope="col">Cpf</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Data de nascimento</th>
-                <th scope="col">Comissão</th>
-                <th scope="col"></th>
+                <th scope="col"className="headerTableC" >Cpf</th>
+                <th scope="col" className="headerTableC" >Nome</th>
+                <th scope="col" className="headerTableC" >Data de nascimento</th>
+                <th scope="col" className="headerTableC" >Comissão</th>
+                <th scope="col" className="headerTableC" ></th>
               </tr>
             </thead>
             <tbody>
@@ -74,19 +78,24 @@ function CurrentSellers() {
                 //itens
                 return (
                   <tr>
-                    <th scope="row">{i.sellercpf}</th> {/* Getting elements*/}
-                    <td>{i.sellername}</td>
-                    <td>{formatDate(i.dtbirth)}</td>
-                    <td>{i.pccommision}%</td>
+
+                    <td scope="row" className="rowTable" >{i.sellercpf}</td> {/* Getting elements*/}
+                    <td className="rowTable" > {i.sellername}</td>
+                    <td className="rowTable" >{i.dtbirth}</td>
+                    <td className="rowTable" >{i.pccommision}%</td>
                     <td>
-                      <button
-                        onClick={() =>
-                          handleEdit(i.sellername, i.dtbirth, i.pccommision,i.sellercpf)
-                        }
-                        className="editButton"
-                      >
-                        <img src={edit} className="edit" alt="Edit icon" />
-                      </button>
+                     
+                  
+                    <a href="">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+</svg>
+                    </a>
+                     
+
+
                     </td>
                   </tr>
                 );

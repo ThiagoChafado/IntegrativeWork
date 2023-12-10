@@ -77,16 +77,17 @@ function AllSales() {
         </div>
       )}
 
+
       {sellList.length > 0 && (
-        <div class="container-fluid p-0">
-          <table class="table">
-            <thead class="table-dark">
+        <div class="divTable">
+          <table class="beforeTable">
+            <thead>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Forma de pagamento</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Responsável</th>
+                <th scope="col" className="headerTable">ID</th>
+                <th scope="col" className="headerTable">Descrição</th>
+                <th scope="col" className="headerTable">Valor</th>
+                <th scope="col" className="headerTable">Responsável</th>
+
               </tr>
             </thead>
             <tbody>

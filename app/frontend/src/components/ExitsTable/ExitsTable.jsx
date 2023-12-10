@@ -72,16 +72,14 @@ function ExitsTable(){
       }
 
       {exitList.length > 0 && (
-        <div class="container-fluid p-0">
-          <table class="table">
-            <thead class="table-dark">
+        <div className='divTable'>
+          <table className='beforeTable'>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Responsável</th>
+                <th scope="col" className="headerTable" >ID</th>
+                <th scope="col" className="headerTable" >Descrição</th>
+                <th scope="col" className="headerTable" >Valor</th>
+                <th scope="col" className="headerTable" >Responsável</th>
               </tr>
-            </thead>
             <tbody>
               {/* Populate table */}
               {exitList.map((i) => {

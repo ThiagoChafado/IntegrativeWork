@@ -2,7 +2,7 @@
 
 body { overflow-x: hidden; }
 
-.mainPreferences{
+.mainPreferencesMobile{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +11,7 @@ body { overflow-x: hidden; }
     background-color: #101010;
 }
 
-.mainPreferences h1{
+.mainPreferencesMobile h1{
     color: #fff;
     text-align: center;
     margin-top: 2em;
@@ -19,7 +19,7 @@ body { overflow-x: hidden; }
     font-size: 1em;
 }
 
-.mainPreferences button{
+.mainPreferencesMobile button{
     background-color: #383e45;
     color: #fff;
     font-family: 'Roboto';
@@ -34,30 +34,46 @@ body { overflow-x: hidden; }
 }
 
 .mainPreferences hr{display: none;}
+.mainPreferencesR {display: none;}
+.mainPreferences {display: none;}
 
 
 /* tablet */
 @media (min-width: 576px) and (max-width:1024px){
     
+    .mainPreferencesMobile{display: none;}
+
     .mainPreferences{
-        align-items: start;
-        width: 15em;
-    }
-
-
-    .mainPreferences h1{
-        margin-left: 1.5em;
-        margin-bottom: 2em;
-    }
-
-    .mainPreferences button{
-        justify-content: left;
-        margin-left: 1em;
-        margin-top: 0;
-        width: 10em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 20em;
         background-color: #101010;
     }
-
+    
+    .mainPreferences h1{
+        color: #fff;
+        text-align: center;
+        margin-top: 2em;
+        font-family: 'Roboto';
+        font-size: 1em;
+    }
+    
+    .mainPreferences button{
+        background-color: #101010   ;
+        color: #fff;
+        font-family: 'Roboto';
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-top: 1em;
+        height: 4em;
+        width: 15em;
+        border-radius: 6px;
+        border: none;
+    }
+    
     .mainPreferences hr{
         display: flex;
         width: 100%;
@@ -68,6 +84,18 @@ body { overflow-x: hidden; }
         margin-top: 0.5em;
         color: #fff;
     }
+
+    .divB{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mainPreferencesR{
+        display: block;
+        background-color: #161616;
+        width: 30em;
+    }
+
 
 
     
@@ -75,27 +103,40 @@ body { overflow-x: hidden; }
 
 /* desktop */
 @media (min-width: 1024px){
+
+    .mainPreferencesMobile{display: none;}
+
     .mainPreferences{
-        align-items: start;
-        width: 15em;
-        position: relative;
-    }
-
-
-    .mainPreferences h1{
-        margin-left: 1.5em;
-        margin-bottom: 1em;
-    }
-
-    .mainPreferences button{
-        justify-content: left;
-        margin-left: 1em;
-        margin-top: 0;
-        width: 10em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 20em;
         background-color: #101010;
+    }
+    
+    .mainPreferences h1{
+        color: #fff;
+        text-align: center;
+        margin-top: 2em;
+        font-family: 'Roboto';
+        font-size: 1em;
+    }
+    
+    .mainPreferences button{
+        background-color: #101010   ;
+        color: #fff;
+        font-family: 'Roboto';
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-top: 1em;
+        height: 4em;
+        width: 15em;
+        border-radius: 6px;
         border: none;
     }
-
+    
     .mainPreferences hr{
         display: flex;
         width: 100%;
@@ -106,6 +147,16 @@ body { overflow-x: hidden; }
         margin-top: 0.5em;
         color: #fff;
     }
-    
-    
+
+    .divB{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mainPreferencesR{
+        display: block;
+        background-color: #161616;
+        width: 80em;
+    }
+  
 }

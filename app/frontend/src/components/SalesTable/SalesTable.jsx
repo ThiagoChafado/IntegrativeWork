@@ -79,17 +79,15 @@ function SalesTable() {
 
       }
       {sellList.length > 0 && (
-        <div>
-          <table>
-            <thead>
+        <div className="divTable">
+          <table className="beforeTable">
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Forma de pagamento</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Vendedor</th>
+                <th scope="col" className="headerTable" >ID</th>
+                <th scope="col" className="headerTable" >Descrição</th>
+                <th scope="col" className="headerTable" >Forma de pagamento</th>
+                <th scope="col" className="headerTable" >Valor</th>
+                <th scope="col" className="headerTable" >Vendedor</th>
               </tr>
-            </thead>
             <tbody>
               {/* Populate table */}
               {sellList.map((i) => {
@@ -97,7 +95,7 @@ function SalesTable() {
                 return (
                   <>
                     <tr>
-                      <th scope="row">{i.idsell}</th> {/* Getting elements*/}
+                      <td scope="row">{i.idsell}</td> {/* Getting elements*/}
                       <td>{i.descr}</td>
                       <>
                         {i.mtdpayment == 1 && <td>Dinheiro</td>}

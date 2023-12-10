@@ -58,6 +58,7 @@
 }
 
 
+
 .headerTable{
     margin-top: 5em;
     background-color: #2b3035;
@@ -65,6 +66,9 @@
     padding-right: 1em;
 }
 
+td{
+    border-bottom: 1px solid #2b3035;
+}
 
 
 /* tablet */
