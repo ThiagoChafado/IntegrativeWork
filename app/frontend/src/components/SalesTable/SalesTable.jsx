@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import "./styleSalesTable.css";
 import { useNavigate,useParams } from "react-router-dom";
+import defaultDate from "../Controllers/defaultDate";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function SalesTable() {
@@ -16,13 +17,15 @@ function SalesTable() {
     }
   })
 
-
   React.useEffect(() => {
     getData();
   }, [date]);
 
   React.useEffect(() => {
-    getDefaultDate();
+    const currentDate = defaultDate();
+    setDate(currentDate);
+    const dateControl = document.querySelector('input[type="date"]');
+    dateControl.value = currentDate;
   }, []);
 
   function subTotal() {
@@ -31,26 +34,6 @@ function SalesTable() {
       .toFixed(2);
   }
 
-  function getDefaultDate() {
-    const pcDate = new Date();
-    const year = pcDate.getFullYear();
-    const month = pcDate.getMonth() + 1; //Month 0-11
-    const day = pcDate.getDate();
-    if (day < 10) {
-      const newday = `0${day}`;
-      const currentDate = `${year}-${month}-${newday}`;
-      setDate(currentDate);
-      console.log(date);
-
-      const dateControl = document.querySelector('input[type="date"]');
-      dateControl.value = date;
-    } else {
-      const currentDate = `${year}-${month}-${day}`;
-      setDate(currentDate);
-      const dateControl = document.querySelector('input[type="date"]');
-      dateControl.value = date;
-    }
-  }
 
   async function getData() {
     try {

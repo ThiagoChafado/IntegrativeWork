@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import React from "react";
+import defaultDate from "../Controllers/defaultDate";
 axios.defaults.baseURL = "http://localhost:3001";
 
 function SeeCash() {
@@ -16,22 +17,15 @@ function SeeCash() {
   }, [navigate]);
 
   React.useEffect(() => {
-    getDefaultDate();
+    const currentDate = defaultDate();
+    setDate(currentDate);
+    const dateControl = document.querySelector('input[type="date"]');
+    dateControl.value = currentDate;
   }, []);
 
   React.useEffect(() => {
     getCash();
   }, [date]);
-
-  function getDefaultDate() {
-    const pcDate = new Date();
-    const year = pcDate.getFullYear();
-    const month = (pcDate.getMonth() + 1).toString().padStart(2, "0"); //Month 0-11
-    const day = pcDate.getDate().toString().padStart(2, "0");
-
-    const currentDate = `${year}-${month}-${day}`;
-    setDate(currentDate);
-  }
 
   function handleOpen(){
     return navigate(`/opencash/${date}/${shopname.shopname}`);

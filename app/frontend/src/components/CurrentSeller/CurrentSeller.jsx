@@ -27,8 +27,8 @@ function CurrentSellers() {
   }, []);
 
   function handleEdit(name, birth, commision,sellercpf) {
-    setSellerName(name)
-    setDtBirth(formatDate(birth));
+    setSellerName(name);
+    setDtBirth(birth);
     setPccCommision(commision);
     setSellerCpf(sellercpf)
     setEditor(true);
@@ -105,7 +105,7 @@ function CurrentSellers() {
     />
      <input
       type="text"
-      defaultValue={(dtbirth)}
+      defaultValue={formatDate(dtbirth)}
       onChange={(e) => setDtBirth(e.target.value)}
     />
     <input

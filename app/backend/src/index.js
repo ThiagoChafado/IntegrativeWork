@@ -20,6 +20,7 @@ app.use("/sellers", sellersRoutes);
 app.use("/shops", shopsRoutes);
 app.use("/cash", cashRoutes);
 
+
 app.get("/verifyToken", verifyJWT, (req, res) => {
   res.status(200).json({ valid: true, message: "Token is valid" });
 });
