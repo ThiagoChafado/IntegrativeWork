@@ -7,6 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const salesRoutes = require("./routes/salesRoutes");
 const sellersRoutes = require("./routes/sellersRoutes");
 const shopsRoutes = require("./routes/shopsRoutes");
+const cashRoutes = require("./routes/cashRoutes")
 
 const app = express();
 app.use(cors());
@@ -17,6 +18,8 @@ app.use("/auth", authRoutes);
 app.use("/sales", salesRoutes);
 app.use("/sellers", sellersRoutes);
 app.use("/shops", shopsRoutes);
+app.use("/cash", cashRoutes);
+
 
 app.get("/verifyToken", verifyJWT, (req, res) => {
   res.status(200).json({ valid: true, message: "Token is valid" });

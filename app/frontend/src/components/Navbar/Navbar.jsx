@@ -12,7 +12,7 @@ function Navbar(){
             <div class="container-fluid">
               <img src={logo} alt="Logo" />
                 
-                <Link className="navbar-brand" to={`/dashboard/${shopname.sho}`}>NOVATEC</Link>
+                <Link className="navbar-brand" to={`/dashboard/${shopname.shopname}`}>NOVATEC</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,8 +28,17 @@ function Navbar(){
                   </li>
                   <li class="nav-item">
                       <Link className="nav-link active" to={`/addexit/${shopname.shopname}`}> Adicionar Saída</Link>
-                  </li>
+
                     
+
+                    </li>
+                    <li class="nav-item">
+                      <Link className="nav-link active" to={`/dashboard/${shopname.shopname}`}> Dashboard </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link className="nav-link active" to={`/seecash/${shopname.shopname}`}> Caixa </Link>
+                    </li>
+
                   </ul>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" id="table" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

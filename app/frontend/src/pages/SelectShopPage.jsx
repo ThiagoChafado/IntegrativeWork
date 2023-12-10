@@ -1,6 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer/Footer";
-import Navbar from "../components/Navbar/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 axios.defaults.baseURL = "http://localhost:3001";
@@ -35,7 +33,9 @@ function SelectShopPage() {
   return (
     
     <div>
+
       {/* <Navbar /> */}
+
       {shopList.length > 0 &&
         shopList.map((i) => {
 
@@ -46,7 +46,6 @@ function SelectShopPage() {
           </button>;</Link>
 
         })}
-      {/* <Footer /> */}
     </div>
   );
 }

@@ -2,7 +2,7 @@ Developed by Thiago Chafado Almeida & João Eduardo Ferrari
 
 
 
-In this README.md file, there is a brief summary of the software . To view the PDF file in Portuguese, please access it in the "Documentation" directory. The conceptual model for the BD is also in the same folder.
+In this README.md file, there is a brief summary of the software . To view the PDF file in Portuguese, please access it in the "Documentation" directory. The conceptual model and the logical model for the BD is also in the same folder.
 
 <h1>Requirements</h1>
 
@@ -27,6 +27,8 @@ In this README.md file, there is a brief summary of the software . To view the P
 <img src="documentation/img/Use_Cases.png">
 <h1> Conceptual model</h1>
 <img src="documentation/img/modelbdEn-us.png">
+<h1> Logical model</h1>
+<img src="documentation/LogicalModel.png">
 <h1>Prototypes</h1>
 <h2>Wireframe Add New Sale</h2>
 <img src="documentation/img/Wireframe - 1.png">

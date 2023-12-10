@@ -35,11 +35,12 @@ function PreferencesPage() {
 
   const handlesells = () => {
     setSelectedPage('sells');
-  };
+  }; 
 
   const handleconfig3 = () => {
     setSelectedPage('config3');
-  };
+
+  
 
   const renderSelectedPage = () => {
     switch (selectedPage) {
@@ -71,14 +72,16 @@ function PreferencesPage() {
       <div className="mainPreferences">
         <h1>CONFIGURAÇÕES GERAIS</h1>
 
-        <button onClick={handlesellers}>Editar funcionários</button>
+        <button onClick={handlesellers}>Funcionários</button>
         <button onClick={handlesells}>Editar Caixa</button>
+
         <button onClick={handleconfig3}>Configuração 3</button>
         {/* <button onClick={handleconfig4}>Configuração 4</button> */}
       </div>
 
       <div className="mainPreferencesR">
         {renderSelectedPage()}
+
       </div>
     </div>
   );

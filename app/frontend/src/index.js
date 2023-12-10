@@ -16,6 +16,9 @@ import LoginSuperPage from "./pages/LoginSuperPage";
 import DashboardPage from "./pages/DashboardPage";
 import SelectShopPage from "./pages/SelectShopPage";
 import AllSalesPage from "./pages/AllSalesPage";
+import SeeCashPage from "./pages/SeeCashPage";
+import OpenCashPage from "./pages/OpenCashPage";
+import CloseCashPage from "./pages/CloseCashPage";
 
 const router = createBrowserRouter([
   {
@@ -50,23 +53,35 @@ const router = createBrowserRouter([
   },
   {
     path: "/editseller/:shopname",
-    element: <EditSellerPage/>
+    element: <EditSellerPage />,
   },
   {
     path: "/editsells/:shopname",
-    element: <ErrorPage/>
+    element: <ErrorPage />,
   },
   {
     path: "/dashboard/:shopname",
-    element: <DashboardPage/>
+    element: <DashboardPage />,
   },
   {
     path: "/selectshop",
-    element: <SelectShopPage/>
+    element: <SelectShopPage />,
   },
   {
-    path:"/allSales/:shopname",
-    element: <AllSalesPage/>
+    path: "/allSales/:shopname",
+    element: <AllSalesPage />,
+  },
+  {
+    path: "/seecash/:shopname",
+    element: <SeeCashPage />
+  },
+  {
+    path:"/opencash/:date/:shopname",
+    element: <OpenCashPage/>
+  },
+  {
+    path:"/closecash/:shopname",
+    element:<CloseCashPage/>
   }
 ]);
 
