@@ -1,61 +1,136 @@
-import './styleExit.css'
-import { useNavigate } from "react-router-dom";
 
-import React, { useState } from 'react';
-function AddExit(){
-    const navigate = useNavigate();
+import "./styleExit.css";
+import React from "react";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
+import defaultDate from "../Controllers/defaultDate";
+axios.defaults.baseURL = "http://localhost:3001";
+function AddExit() {
+  const navigate = useNavigate();
+  const [seller, setSeller] = React.useState();
+  const [cpf, setCpf] = React.useState();
+  const [outDescr, setOutDescr] = React.useState("");
+  const [outValue, setOutValue] = React.useState("");
+  const [date, setDate] = React.useState("");
+  const [sellerList, setSellerList] = React.useState([]);
+  const [selectedSeller, setSelectedSeller] = React.useState(null);
+  const aux = useParams();
+  const shopname = aux.shopname;
 
-    React.useEffect(()=>{
-        if (!localStorage.getItem("token")){
-            navigate("/");
-        }
-    },[navigate])
+  React.useEffect(() => {
+    getSeller();
+  }, []);
 
-    return(
-        <>
-            <div className='containerExit'>
-                <div className="titleExit">
-                    <h1>Adicionar Saída</h1>
-                </div>
+  React.useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
 
-                <div className='descriptionExit'>
-                    <label htmlFor="description">Descrição</label>
-                    <input type="text" placeholder='Digite aqui...'/>
-                </div>
+  async function handleSellerChange(event) {
+    const selectedSellerName = event.target.value;
+    const selectedSellerObject = sellerList.find(
+      (seller) => seller.sellername === selectedSellerName
 
-                <div className='valuesExit'>
-                    <input type="data" placeholder='Data'/>
-                    <input type="text" placeholder='Valor'/>
-                </div>
-
-                <button id='EB'  type="button" class="buttonCExit" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Adicionar
-                </button>
-
-                {/* Modal */}
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Operação Realizada Com Sucesso</h1>
-                        {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
-                    </div>
-                    <div class="modal-body">
-                        Saída Adicionada!
-                    </div>
-                    <div class="modal-footer">
-                        <button id='EB' type="button" class="buttonCExit" data-bs-dismiss="modal">Fechar</button>
-                        <button id='EB' type="button" class="buttonCExit">Salvar</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                
-
-            </div>
-        
-        </>
     );
+
+    setSelectedSeller(selectedSellerObject);
+
+    if (selectedSellerObject) {
+      handleSeller(selectedSellerObject);
+    }
+  }
+
+  async function handleSubmit() {
+    try {
+      const res = await axios.post("/sales/addexit", {
+        cpf,
+        outDescr,
+        outValue,
+        date,
+        shopname,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function handleSeller(selectedSellerObject) {
+    try {
+      const res = await axios.get(
+        `/sellers/sellers/cpf/${shopname}/${selectedSellerObject.sellername}`
+      );
+      setCpf(res.data.sellercpf);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getSeller() {
+    try {
+      const res = await axios.get(`/sellers/sellers/${shopname}`);
+      setSellerList(res.data);
+      //return backend Object
+    } catch (error) {
+      setSellerList([]);
+    }
+  }
+
+  React.useEffect(() => {
+    const currentDate = defaultDate();
+    setDate(currentDate);
+    const dateControl = document.querySelector('input[type="date"]');
+    dateControl.value = currentDate;
+  }, []);
+
+  return (
+    <>
+      <div className="containerExit">
+        <div className="titleExit">
+          <h1>Adicionar Saída</h1>
+        </div>
+
+        <div className="descriptionExit">
+          <label htmlFor="description">Descrição</label>
+          <input
+          onChange={(e) => setOutDescr(e.currentTarget.value)}
+          type="text"
+          placeholder="Digite aqui..."
+        />
+        </div>
+
+        <div className="valuesExit">
+          <input
+            id="date"
+            type="date"
+            placeholder="Data"
+            onChange={(e) => setDate(e.currentTarget.value)}
+          />
+          <input
+            id="value"
+            type="text"
+            placeholder="Valor"
+            onChange={(e) => setOutValue(e.currentTarget.value)}
+          />
+        </div>
+
+        <div className="dropdown">
+          <select id="seller" onChange={handleSellerChange}>
+            <option>Vendedor</option>
+            {sellerList.map((i) => (
+              <option key={i.id} value={i.sellername}>
+                {i.sellername}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="buttonCExit">
+          <button onClick={handleSubmit}>Adicionar</button>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default AddExit;

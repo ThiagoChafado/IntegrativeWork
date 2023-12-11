@@ -2,13 +2,56 @@ const express = require("express");
 const { db } = require("../database/database");
 const router = express.Router();
 
+router.post("/addexit", async (req, res) => {
+  try {
+    const sellercpf = req.body.cpf;
+    const descr = req.body.outDescr;
+    const outValue = req.body.outValue;
+    const outValueFloat = parseFloat(outValue);
+    const dtcash = req.body.date;
+    const shopname = req.body.shopname;
+
+    const add = await db.none(
+      "INSERT INTO sellout (descr,outvalue,sellercpf,dtcash,shopname) VALUES ($1,$2,$3,$4,$5);",
+      [descr, outValueFloat, sellercpf, dtcash, shopname]
+    );
+    res.status(200).json({ message: "Sellout added successfully" });
+  } catch (error) {
+    console.log(error);
+    res.send(400);
+  }
+});
+
 router.post("/addsale", async (req, res) => {
   try {
-    //FINISH
+    const sellercpf = req.body.cpf;
+
+    const descr = req.body.sellDescr;
+    const sellvalue = req.body.sellvalue;
+    const sellvalueFloat = parseFloat(sellvalue);
+    let mtdpayment = req.body.payment;
+    if (mtdpayment == "Dinheiro") {
+      mtdpayment = 1;
+    }
+    if (mtdpayment == "Cartão de Crédito") {
+      mtdpayment = 2;
+    }
+    if (mtdpayment == "Cartão de Débito") {
+      mtdpayment = 3;
+    }
+    if (mtdpayment == "Pix") {
+      mtdpayment = 4;
+    }
+    const dtcash = req.body.date;
+    const shopname = req.body.shopname;
+    const add = await db.none(
+      "INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ($1,$2,$3,$4,$5,$6);",
+      [descr, sellvalueFloat, mtdpayment, sellercpf, dtcash, shopname]
+    );
     res.status(200).json({ message: "Sale added successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(400).json({ message: "Internal server error" });
   }
 });
 
@@ -74,7 +117,7 @@ router.get("/sums/:selectedYear/:i/:shopname", async (req, res) => {
   }
 });
 
-router.get("/sellermonth/:month/:shopname",async (req,res)=>{
+router.get("/sellermonth/:month/:shopname", async (req, res) => {
   const month = req.params.month;
   const shopname = req.params.shopname;
   if (month < 10) {
@@ -83,8 +126,9 @@ router.get("/sellermonth/:month/:shopname",async (req,res)=>{
     const startDate = `${selectedYear}-${newMonth}-01`;
     const endDate = `${selectedYear}-${newMonth}-${lastDay}`;
     const sum = await db.one(
-      "SELECT sum(sellvalue) from sell s natural join seller sl where sl.sellername = $1; "
-      [startDate, endDate, shopname]
+      "SELECT sum(sellvalue) from sell s natural join seller sl where sl.sellername = $1; "[
+        (startDate, endDate, shopname)
+      ]
     );
     res.json(sum).status(200);
   } else {
@@ -92,12 +136,9 @@ router.get("/sellermonth/:month/:shopname",async (req,res)=>{
     const lastDay = new Date(selectedYear, newMonth, 0).getDate();
     const startDate = `${selectedYear}-${newMonth}-01`;
     const endDate = `${selectedYear}-${newMonth}-${lastDay}`;
-    const sum = await db.one(
-      ""
-      [startDate, endDate, shopname]
-    );
+    const sum = await db.one(""[(startDate, endDate, shopname)]);
     res.json(sum).status(200);
   }
-})
+});
 
 module.exports = router;

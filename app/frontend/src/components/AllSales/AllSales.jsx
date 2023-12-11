@@ -29,7 +29,6 @@ function AllSales() {
     dateControl.value = currentDate;
   }, []);
 
-
   async function getData() {
     try {
       const resExits = await axios.get(
@@ -63,69 +62,57 @@ function AllSales() {
           onChange={(e) => setDate(e.currentTarget.value)}
         />
       </div>
-      {sellList.length == 0 && (
+      {sellList.length > 0 && (
         <div className="divTable">
           <table className="beforeTable">
             <tr>
-            <th scope="col" className="headerTable">ID</th>
-                  <th scope="col"className="headerTable">Descrição</th>
-                  <th scope="col" className="headerTable">Forma de pagamento</th>
-                  <th scope="col" className="headerTable">Valor</th>
-                  <th scope="col" className="headerTable">Vendedor</th>
+              <th scope="col" className="headerTable">
+                ID
+              </th>
+              <th scope="col" className="headerTable">
+                Descrição
+              </th>
+              <th scope="col" className="headerTable">
+                Forma de pagamento
+              </th>
+              <th scope="col" className="headerTable">
+                Valor
+              </th>
+              <th scope="col" className="headerTable">
+                Vendedor
+              </th>
             </tr>
           </table>
-        </div>
-      )}
-
-
-      {sellList.length > 0 && (
-        <div class="divTable">
-          <table class="beforeTable">
-            <thead>
+          {sellList.map((i) => {
+            //itens
+            return (
               <tr>
-                <th scope="col" className="headerTable">ID</th>
-                <th scope="col" className="headerTable">Descrição</th>
-                <th scope="col" className="headerTable">Valor</th>
-                <th scope="col" className="headerTable">Responsável</th>
-
+                <th scope="row">{i.idsell}</th> {/* Getting elements*/}
+                <td>{i.descr}</td>
+                <>
+                  {i.mtdpayment == 1 && <td>Dinheiro</td>}
+                  {i.mtdpayment == 2 && <td>Cartão de crédito</td>}
+                  {i.mtdpayment == 3 && <td>Cartão de débito</td>}
+                  {i.mtdpayment == 4 && <td>Pix</td>}
+                </>
+                <td>{i.sellvalue}</td>
+                <td>{i.sellername}</td>
               </tr>
-            </thead>
-            <tbody>
-              {/* Populate table */}
-              {sellList.map((i) => {
-                //itens
-                return (
-                  <tr>
-                     <th scope="row">{i.idsell}</th> {/* Getting elements*/}
-                      <td>{i.descr}</td>
-                      <>
-                        {i.mtdpayment == 1 && <td>Dinheiro</td>}
-                        {i.mtdpayment == 2 && <td>Cartão de crédito</td>}
-                        {i.mtdpayment == 3 && <td>Cartão de débito</td>}
-                        {i.mtdpayment == 4 && <td>Pix</td>}
-                      </>
-                      <td>{i.sellvalue}</td>
-                      <td>{i.sellername}</td>
-                  </tr>
-                  
-                );
-              })}
-              {exitList.map((i) => {
-                //itens
-                return (
-                  <tr>
-                     <th scope="row">{i.idout}</th> {/* Getting elements*/}
-                      <td>-{i.descr}</td>
-                      <td></td>
-                      <td>-{i.outvalue}</td>
-                      <td>{i.sellername}</td>
-                      
-                  </tr>
-                  
-                );
-              })}
-            </tbody>
-          </table>
+            );
+          })}
+
+          {exitList.map((i) => {
+            //itens
+            return (
+              <tr>
+                <th scope="row">{i.idout}</th> {/* Getting elements*/}
+                <td>-{i.descr}</td>
+                <td></td>
+                <td>-{i.outvalue}</td>
+                <td>{i.sellername}</td>
+              </tr>
+            );
+          })}
         </div>
       )}
     </div>
