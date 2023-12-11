@@ -1,6 +1,7 @@
 import './styleExit.css'
 import { useNavigate } from "react-router-dom";
-import React from 'react';
+
+import React, { useState } from 'react';
 function AddExit(){
     const navigate = useNavigate();
 
@@ -9,6 +10,7 @@ function AddExit(){
             navigate("/");
         }
     },[navigate])
+
     return(
         <>
             <div className='containerExit'>
@@ -26,9 +28,30 @@ function AddExit(){
                     <input type="text" placeholder='Valor'/>
                 </div>
 
-                <div className='buttonCExit'>
-                    <button>Adicionar</button>
+                <button id='EB'  type="button" class="buttonCExit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Adicionar
+                </button>
+
+                {/* Modal */}
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Operação Realizada Com Sucesso</h1>
+                        {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
+                    </div>
+                    <div class="modal-body">
+                        Saída Adicionada!
+                    </div>
+                    <div class="modal-footer">
+                        <button id='EB' type="button" class="buttonCExit" data-bs-dismiss="modal">Fechar</button>
+                        <button id='EB' type="button" class="buttonCExit">Salvar</button>
+                    </div>
+                    </div>
                 </div>
+                </div>
+                
+
             </div>
         
         </>

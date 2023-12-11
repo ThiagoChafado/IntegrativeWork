@@ -21,6 +21,7 @@ function LoginSeller() {
       }
     } catch (error) {
       console.log(error);
+      window.alert('Acesso Inválido. Verifique Usuário e Senha')
     }
   }
 
