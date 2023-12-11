@@ -18,6 +18,20 @@ router.get("/sellers/:shopname", async (req, res) => {
   }
 });
 
+router.get("/sellers/cpf/:shopname/:selectedseller",async (req,res)=>{
+  try{
+    const aux = req.params.shopname;
+    const aux2 = req.params.selectedseller;
+    const seller = await db.one(
+      "SELECT s.sellercpf FROM seller s NATURAL JOIN sellerboard sl WHERE sl.shopname = $1 AND s.sellername = $2",[aux,aux2]
+    );
+    res.json(seller).status(200);
+  }catch(error){
+    console.log(error);
+    res.sendStatus(400);
+  }
+})
+
 router.get("/sellersells/:shopname/:selectedMonth", async (req, res) => {
   try {
     const shopname = req.params.shopname;

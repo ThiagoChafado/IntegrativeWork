@@ -1,69 +1,149 @@
-import React from 'react';
-import '../AddSale/styleSale.css'
-import { useNavigate,useParams } from "react-router-dom";
-
+import React from "react";
+import axios from "axios";
+import "../AddSale/styleSale.css";
+import { useNavigate, useParams } from "react-router-dom";
+import defaultDate from "../Controllers/defaultDate";
+axios.defaults.baseURL = "http://localhost:3001";
 
 function AddSale() {
-  const [seller,setSeller] = React.useState("");
-  const shopname = useParams();
+  const [seller, setSeller] = React.useState();
+  const [cpf, setCpf] = React.useState();
+  const [sellDescr, setSellDescr] = React.useState("");
+  const [sellvalue, setSellValue] = React.useState("");
+  const [payment, setPayment] = React.useState("Dinheiro");
+  const [date, setDate] = React.useState("");
+  const [sellerList, setSellerList] = React.useState([]);
+  const [selectedSeller, setSelectedSeller] = React.useState(null);
+  const aux = useParams();
+  const shopname = aux.shopname;
   const navigate = useNavigate();
-  React.useEffect(()=>{
-    if(!localStorage.getItem("token")){
+
+  React.useEffect(() => {
+    if (!localStorage.getItem("token")) {
       navigate("/");
     }
-  },[navigate]);
+  }, [navigate]);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
+    getSeller();
+  }, []);
 
-  },[])
+  async function handleSubmit() {
+    try {
+      console.log(cpf)
+      const res = await axios.post("/sales/addsale", {
+        cpf,
+        sellDescr,
+        sellvalue,
+        payment,
+        date,
+        shopname,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-  function getSeller(){
-    //continue
-    
+  async function handleSellerChange(event) {
+    const selectedSellerName = event.target.value;
+    const selectedSellerObject = sellerList.find(
+      (seller) => seller.sellername === selectedSellerName
+    );
+
+    setSelectedSeller(selectedSellerObject);
+
+    if (selectedSellerObject) {
+      handleSeller(selectedSellerObject);
+    }
+  }
+
+  async function handleSeller(selectedSellerObject) {
+    try {
+      const res = await axios.get(
+        `/sellers/sellers/cpf/${shopname}/${selectedSellerObject.sellername}`
+      );
+      setCpf(res.data.sellercpf);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getSeller() {
+    try {
+      const res = await axios.get(`/sellers/sellers/${shopname}`);
+      setSellerList(res.data);
+      //return backend Object
+    } catch (error) {
+      setSellerList([]);
+    }
+  }
+
+  React.useEffect(() => {
+    const currentDate = defaultDate();
+    setDate(currentDate);
+    const dateControl = document.querySelector('input[type="date"]');
+    dateControl.value = currentDate;
+  }, []);
+
+  function handlePaymentChange(event) {
+    setPayment(event.target.value);
   }
 
   return (
-    <div className='container'>
+    <div className="container">
       <div className="title">
         <h1>Adicionar Venda</h1>
       </div>
 
-      <div className='description'>
+      <div className="description">
         <label htmlFor="description">Descrição</label>
-        <input type="text" placeholder='Digite aqui...'/>
+        <input
+          onChange={(e) => setSellDescr(e.currentTarget.value)}
+          type="text"
+          placeholder="Digite aqui..."
+        />
       </div>
 
-      <div className='values'>
+      <div className="values">
+        <input
+          id="date"
+          type="date"
+          placeholder="Data"
+          onChange={(e) => setDate(e.currentTarget.value)}
+        />
+        <input
+          id="value"
+          type="text"
+          placeholder="Valor"
+          onChange={(e) => setSellValue(e.currentTarget.value)}
+        />
 
-        <input id='date' type="date" placeholder='Data'/>
-        <input id='value' type="text" placeholder='Valor'/>
-
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" id='payment' type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Método de Pagamento
-            </button>
-            <ul class="dropdown-menu bg-secondary">
-            <li><a class="dropdown-item bg-secondary" href="#">Dinheiro</a></li>
-              <li><a class="dropdown-item bg-secondary" href="#">Cartão de Crédito</a></li>
-              <li><a class="dropdown-item bg-secondary" href="#">Cartão de Débito</a></li>
-              <li><a class="dropdown-item bg-secondary" href="#">Pix</a></li>
-            </ul>
+        <div className="dropdown">
+          <select id="payment" onChange={handlePaymentChange}>
+            <option value={"Money"}>Dinheiro</option>
+            <option value={"Pix"}>Pix</option>
+            <option value={"Debit"}>Cartão de Débito</option>
+            <option value={"Credit"}>Cartão de Crédito</option>
+          </select>
         </div>
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" id='seller' type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              
-            </button>
+        <div className="dropdown">
+          <select id="seller" onChange={handleSellerChange}>
+            <option>Vendedor</option>
+            {sellerList.map((i) => (
+              <option key={i.id} value={i.sellername}>
+                {i.sellername}
+              </option>
+            ))}
+          </select>
         </div>
-          
       </div>
 
-      <div className='buttonC'>
-        <button>Adicionar</button>
+      <div className="buttonC">
+        <button onClick={handleSubmit}>Adicionar</button>
       </div>
-
     </div>
-
   );
 }
+
 export default AddSale;
