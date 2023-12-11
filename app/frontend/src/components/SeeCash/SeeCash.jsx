@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import React from "react";
+import './styleCash.css'
+
 import defaultDate from "../Controllers/defaultDate";
 axios.defaults.baseURL = "http://localhost:3001";
 
@@ -41,9 +43,8 @@ function SeeCash() {
   }
 
   return (
-    <div>
-      <p>Selecione uma data</p>
-
+    <div className="cash" >
+      <h1>Selecione Uma Data</h1>
       <div className="dateB">
         <input
           type="date"
@@ -52,6 +53,13 @@ function SeeCash() {
           onChange={(e) => setDate(e.currentTarget.value)}
         />
       </div>
+
+      {cash.length === 0 && (
+        <div className="buttonCash">
+          <h4>Caixa Para o Dia {date} Não Aberto</h4>
+          <button onClick={handleOpen}>Abrir Novo Caixa</button>
+        </div>
+      )}
 
       {cash.length > 0 && (
         <div>
@@ -75,12 +83,7 @@ function SeeCash() {
         </div>
       )}
 
-      {cash.length === 0 && (
-        <>
-          <p>Caixa não aberto</p>
-          <button onClick={handleOpen}>Abrir novo caixa</button>
-        </>
-      )}
+    
     </div>
   );
 }

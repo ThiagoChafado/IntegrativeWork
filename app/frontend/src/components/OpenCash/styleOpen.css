@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+.openCash{
+    height: 100vh;
+    background-color: #101010;
+}
+
+.openCash h1{
+    text-align: center;
+    color: #fff;    
+    margin-bottom: 0.5m;
+    padding-top: 0.5em;
+}
+
+.openCash h2{
+    font-size: 20px;
+    margin-top: 2em;
+}
+
+.inputOpen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.inputChange{
+    width: 15em;
+    background-color: #2b3035;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em;
+    font-family: 'Roboto';
+    color: #fff;
+
+}
+
+.buttonOpen{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.buttonOpen button{
+    font-family: 'Roboto';
+    color: #fff;
+    width: 10em;
+    background-color: #2b3035;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4em;
+}
+
+
+@media (min-width: 576px) and (max-width:1024px){
+    /* .openCash{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } */
+
+    .openCash h1{
+        font-size: 40px;
+    }
+
+    .openCash h2{
+        font-size: 20px;
+        margin-top: 2em;
+    }
+
+    .inputChange{
+        font-size: 20px;
+    }
+
+    .buttonOpen button{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1024px){
+    .openCash h1{
+        font-size: 40px;
+    }
+
+    .openCash h2{
+        font-size: 20px;
+        margin-top: 2em;
+    }
+
+    .inputChange{
+        font-size: 20px;
+    }
+
+    .buttonOpen button{
+        font-size: 20px;
+    }
+}

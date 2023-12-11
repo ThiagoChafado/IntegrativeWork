@@ -6,10 +6,26 @@
 .titleDash h1{
     background-color: #101010;
     margin: 0;
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: .5em;
     text-align: center;
     color: #fff;
     font-family: 'Roboto';
+}
+
+.dashYear{
+    background-color: #101010;
+    text-align: center;
+    border: #101010;
+}
+
+#yearInput{
+    margin-bottom: 2em;
+    background: #101010;
+    color: #fff;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 6px;
 }
 .mainDash{
     background-color: #101010;
@@ -90,7 +106,6 @@
         margin-bottom: 1em;
     }
     
-
     .halfmain{
         display: flex;
         flex-direction: row;

@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import React from "react";
+import './styleOpen.css'
+
 axios.defaults.baseURL = "http://localhost:3001";
 
 function OpenCash() {
@@ -32,17 +34,24 @@ function OpenCash() {
     }
   }
   return (
-    <div>
-      <p>Abrir caixa</p>
-      <>Digite o valor inicial</>
+    <div className="openCash">
+      <h1>Abrir caixa</h1>
+      <h2>Digite o valor inicial</h2>
+
+      <div className="inputOpen">
       <input
         type="number"
         className="inputChange"
         onChange={(e) => setChange(e.currentTarget.value)}
         placeholder="Início:"
       />
-      <p></p>
-      <button onClick={handleSubmit}>Abrir</button>
+      </div>
+
+      <div className="buttonOpen">
+        <button onClick={handleSubmit}>Abrir</button>
+      </div>
+
+      
     </div>
   );
 }

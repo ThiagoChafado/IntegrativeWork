@@ -30,7 +30,7 @@ img{
 }
 
 .navbar-toggler{
-    margin-left: 4.5em;
+    margin-left: 5em;
 }
 
 .navbar-brand{
@@ -76,7 +76,7 @@ img{
     .navbar{width: 100vw;}
 
     .dropdown-toggle#table{
-        margin-right: 22em;
+        margin-right: 19em;
         margin-bottom: 0.5em;
     }
 

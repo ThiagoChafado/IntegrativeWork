@@ -105,7 +105,8 @@ function Dashboard() {
       <div className="titleDash">
         <h1>Dashboard Novatec</h1>
       </div>
-      <div>
+      <div className="dashYear">
+        <h2>Selecione o Ano</h2>
         <input
           type="number"
           id="yearInput"
