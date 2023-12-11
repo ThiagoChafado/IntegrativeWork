@@ -8,6 +8,8 @@ axios.defaults.baseURL = "http://localhost:3001";
 function CurrentSellers() {
   const [sellerList, setSellerList] = React.useState([]);
   const [editor, setEditor] = React.useState(false);
+  const [newSeller, setNewSeller] = React.useState(false);
+  const [sellPass, setSellPass] = React.useState("");
   const [sellername, setSellerName] = React.useState("");
   const [dtbirth, setDtBirth] = React.useState("");
   const [pccommision, setPccCommision] = React.useState("");
@@ -33,7 +35,44 @@ function CurrentSellers() {
     setEditor(true);
   }
 
-  async function handleSave() {
+  function handleNew() {
+    setNewSeller(true);
+  }
+
+  async function handleSaveNew() {
+    try {
+      const res = await axios.post(`/sellers/sellernew`, {
+        sellername,
+        dtbirth,
+        pccommision,
+        shopname,
+        sellercpf,
+        sellPass,
+      });
+      if (res.data.inserted) {
+        console.log("inserted");
+        setNewSeller(false);
+        getData();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function handleRemove(selectedcpf) {
+    try {
+      const res = await axios.delete("/sellers/sellerdelete", {
+        data: { sellercpf: selectedcpf },
+      });
+      getData();
+    } catch (error) {
+      console.log(error);
+    }
+  
+  }
+  
+
+  async function handleSaveEdit() {
     try {
       const res = await axios.put(`/sellers/sellersedit`, {
         sellername,
@@ -44,6 +83,8 @@ function CurrentSellers() {
       });
       if (res.data.update) {
         console.log("Updated");
+        setEditor(false);
+        getData();
       }
     } catch (error) {
       console.log(error);
@@ -62,7 +103,7 @@ function CurrentSellers() {
 
   return (
     <>
-      {sellerList.length > 0 && (
+      {sellerList.length > 0 && !editor && !newSeller && (
         <div className="divTableC">
           <table className="beforeTableC">
             <thead>
@@ -96,8 +137,21 @@ function CurrentSellers() {
                     <td className="rowTable">{formatDate(i.dtbirth)}</td>
                     <td className="rowTable">{i.pccommision}%</td>
                     <td>
-                      <button className="editB">
-                      <svg
+                      <button onClick={() => handleRemove (i.sellercpf) }>
+                        REMOVER
+                      </button>
+                      <button
+                        onClick={() =>
+                          handleEdit(
+                            i.sellername,
+                            i.dtbirth,
+                            i.pccommision,
+                            i.sellercpf
+                          )
+                        }
+                        className="editB"
+                      >
+                        <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -118,6 +172,7 @@ function CurrentSellers() {
               })}
             </tbody>
           </table>
+          <button onClick={handleNew}>Novo Funcionário</button>
         </div>
       )}
 
@@ -138,7 +193,37 @@ function CurrentSellers() {
             defaultValue={pccommision}
             onChange={(e) => setPccCommision(e.target.value)}
           />
-          <button onClick={handleSave}>SALVAR</button>
+          <button onClick={handleSaveEdit}>SALVAR</button>
+        </div>
+      )}
+      {newSeller && (
+        <div>
+          <input
+            type="text"
+            placeholder="CPF"
+            onChange={(e) => setSellerCpf(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Nome"
+            onChange={(e) => setSellerName(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Senha"
+            onChange={(e) => setSellPass(e.target.value)}
+          />
+          <input
+            type="date"
+            placeholder="Data de nascimento"
+            onChange={(e) => setDtBirth(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Comissão"
+            onChange={(e) => setPccCommision(e.target.value)}
+          />
+          <button onClick={handleSaveNew}>SALVAR</button>
         </div>
       )}
     </>

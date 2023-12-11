@@ -55,6 +55,7 @@ function Navbar(){
                       </a>
                       <ul class="dropdown-menu">
                       <li> <Link className='dropdown-item' to={`/loginsuper/${shopname.shopname}`}> Preferencias </Link></li>
+                      <li> <Link className='dropdown-item' to={`/selectshop`}>Trocar loja</Link></li>
                       <li> <Link className='dropdown-item' to={"/"}> Trocar usuário </Link></li>
                       </ul>
                   </li>

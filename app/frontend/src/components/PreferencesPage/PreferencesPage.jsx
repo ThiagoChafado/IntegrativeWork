@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./stylePreferences.css";
 import CurrentSeller from "../../components/CurrentSeller/CurrentSeller";
+import Calculator from "../Calculator/Calculator";
 
 function PreferencesPage() {
   const navigate = useNavigate();
@@ -23,8 +24,8 @@ function PreferencesPage() {
     return navigate(`/editsells/${shopname.shopname}`);
   };
 
-  const handleconfig3Mobile = () => {
-    return navigate("/config3");
+  const handleCalculatorMobile = () => {
+    return navigate("/calculator");
   };
 
   // demais midias
@@ -36,8 +37,8 @@ function PreferencesPage() {
     setSelectedPage("sells");
   };
 
-  const handleconfig3 = () => {
-    setSelectedPage("config3");
+  const handleCalculator = () => {
+    setSelectedPage("calculator");
   };
 
   const renderSelectedPage = () => {
@@ -47,8 +48,8 @@ function PreferencesPage() {
       case "sells":
         // return <EditSells shopname={shopname} />;
         break;
-      case "config3":
-        // return <Config3 />;
+      case "calculator":
+         return <Calculator shopname={shopname} />;
         break;
       default:
         return null;
@@ -63,7 +64,7 @@ function PreferencesPage() {
 
         <button onClick={handlesellersMobile}>Editar funcionários</button>
         <button onClick={handlesellsMobile}>Editar Caixa</button>
-        <button onClick={handleconfig3Mobile}>Configuração 3</button>
+        <button onClick={handleCalculator}>Calculadora de comissões</button>
         {/* <button onClick={handleconfig4}>Configuração 4</button> */}
       </div>
 
@@ -73,7 +74,7 @@ function PreferencesPage() {
 
         <button onClick={handlesellers}>Funcionários</button>
         <button onClick={handlesells}>Editar Caixa</button>
-        <button onClick={handleconfig3}>Configuração 3</button>
+        <button onClick={handleCalculator}>Calculadora de comissões</button>
         {/* <button onClick={handleconfig4}>Configuração 4</button> */}
       </div>
 
