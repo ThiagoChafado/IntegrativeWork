@@ -93,7 +93,7 @@ function CurrentSellers() {
                     </td>{" "}
                     {/* Getting elements*/}
                     <td className="rowTable"> {i.sellername}</td>
-                    <td className="rowTable">{i.dtbirth}</td>
+                    <td className="rowTable">{formatDate(i.dtbirth)}</td>
                     <td className="rowTable">{i.pccommision}%</td>
                     <td>
                       

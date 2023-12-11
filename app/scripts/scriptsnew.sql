@@ -72,6 +72,7 @@ INSERT INTO cash VALUES ('2023-12-01',250,'box10','TRUE');
 INSERT INTO cash VALUES ('2023-12-01',250,'novatec','TRUE');
 INSERT INTO cash VALUES ('2023-11-30',210,'novatec','TRUE');
 INSERT INTO sellerboard VALUES ('87823215266','novatec');
+INSERT INTO sellerboard VALUES ('87823215266','box10')
 INSERT INTO sellerboard VALUES ('13088888812','novatec');
 INSERT INTO sellerboard VALUES ('19988823145','novatec');
 INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ('1 Mouse',35,1,'13088888812','2023-12-01','novatec');
