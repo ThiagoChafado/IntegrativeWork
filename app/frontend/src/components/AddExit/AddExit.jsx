@@ -1,3 +1,4 @@
+
 import "./styleExit.css";
 import React from "react";
 import axios from "axios";
@@ -30,6 +31,7 @@ function AddExit() {
     const selectedSellerName = event.target.value;
     const selectedSellerObject = sellerList.find(
       (seller) => seller.sellername === selectedSellerName
+
     );
 
     setSelectedSeller(selectedSellerObject);

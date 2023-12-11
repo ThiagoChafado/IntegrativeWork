@@ -78,7 +78,7 @@
     
 }
 
-.buttonCExit button{
+#EB{
     background-color: #2b3035;
     font-family: 'Roboto';
     color: #fff;
@@ -86,6 +86,17 @@
     width: 8em;
     border-radius: 10px;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-title, .modal-body, .btn-close{
+    color: #fff;
+}
+
+.modal{
+    --bs-modal-bg: #2b3035; 
 }
 
 /* tablet */

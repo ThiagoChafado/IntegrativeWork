@@ -139,9 +139,11 @@ function AddSale() {
         </div>
       </div>
 
+
       <div className="buttonC">
         <button onClick={handleSubmit}>Adicionar</button>
       </div>
+
     </div>
   );
 }
