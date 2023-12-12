@@ -5,7 +5,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { formatDate } from "../Controllers/formateDate";
 axios.defaults.baseURL = "http://localhost:3001";
 
-function CurrentSellers() {
+function  CurrentSellers() {
   const [sellerList, setSellerList] = React.useState([]);
   const [editor, setEditor] = React.useState(false);
   const [newSeller, setNewSeller] = React.useState(false);
@@ -19,9 +19,9 @@ function CurrentSellers() {
   const shopname = aux.shopname;
   React.useEffect(() => {
     if (!localStorage.getItem("tokensuper")) {
-      navigate("/loginsuper");
+      navigate(`/loginsuper/${shopname}`);
     }
-  }, []);
+  }, [navigate]);
 
   React.useEffect(() => {
     getData();

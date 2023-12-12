@@ -4,6 +4,7 @@ import "./stylePreferences.css";
 import CurrentSeller from "../../components/CurrentSeller/CurrentSeller";
 import Calculator from "../Calculator/Calculator";
 import RemoveSell from "../RemoveSell/RemoveSell";
+import CloseCash from "../CloseCash/CloseCash";
 
 function PreferencesPage() {
   const navigate = useNavigate();
@@ -51,6 +52,10 @@ function PreferencesPage() {
     setSelectedPage("back");
   };
 
+  const handleCloseCash = () =>{
+    setSelectedPage("close");
+  }
+
   const renderSelectedPage = () => {
     switch (selectedPage) {
       case "sellers":
@@ -61,6 +66,10 @@ function PreferencesPage() {
         break;
       case "removesell":
         return <RemoveSell shopname={shopname} />;
+        break;
+      case "close":
+        return <CloseCash shopname={shopname}/>
+        break;
       default:
         return null;
     }
@@ -84,6 +93,7 @@ function PreferencesPage() {
         <button onClick={handlesellers}>Funcionários</button>
         <button onClick={handleCalculator}>Calculadora de comissões</button>
         <button onClick={handleRemoveSell}>Remover venda</button>
+        <button onClick={handleCloseCash}>Fechar caixa</button>
         <a id="back" href="">
           Voltar
         </a>

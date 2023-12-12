@@ -15,10 +15,11 @@ function Calculator() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      navigate("/");
+    if (!localStorage.getItem("tokensuper")) {
+      navigate("/loginsuper");
     }
   }, [navigate]);
+
 
   React.useEffect(() => {
     getDefaultMonth();
