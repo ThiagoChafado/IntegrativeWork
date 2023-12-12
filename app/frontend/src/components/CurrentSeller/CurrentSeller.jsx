@@ -102,7 +102,8 @@ function CurrentSellers() {
   }
 
   return (
-    <>
+    <div className="divTableC">
+      <button id="newF" onClick={handleNew}>Novo Funcionário</button>
       {sellerList.length > 0 && !editor && !newSeller && (
         <div className="divTableC">
           <table className="beforeTableC">
@@ -172,7 +173,7 @@ function CurrentSellers() {
               })}
             </tbody>
           </table>
-          <button id="newF" onClick={handleNew}>Novo Funcionário</button>
+         
         </div>
       )}
 
@@ -242,7 +243,7 @@ function CurrentSellers() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 export default CurrentSellers;

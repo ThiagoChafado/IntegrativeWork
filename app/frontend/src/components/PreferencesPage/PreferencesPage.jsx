@@ -47,9 +47,6 @@ function PreferencesPage() {
     setSelectedPage("removesell");
   };
 
-  const handleBack = () => {
-    setSelectedPage("back");
-  };
 
   const renderSelectedPage = () => {
     switch (selectedPage) {

@@ -45,7 +45,6 @@ function Navbar(){
                       
                         <li> <Link className='dropdown-item' to={`/salestable/${shopname.shopname}`}> Vendas</Link></li>
                         <li> <Link className='dropdown-item' to={`/exitstable/${shopname.shopname}`}> Saídas</Link></li>
-                        <li> <Link className='dropdown-item' to={`/allsales/${shopname.shopname}`}> Geral </Link></li>
                       </ul>
                   </li>
 

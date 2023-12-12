@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
+import './styleRemove.css'
+
 axios.defaults.baseURL = "http://localhost:3001";
 
 function RemoveSell() {
@@ -30,13 +32,15 @@ function RemoveSell() {
   }
 
   return (
-    <div>
+    <div className="removeS" >
+      <h1>Excluir Venda</h1>
       <input
+        className="inputRemove"
         placeholder="Digite o ID da venda "
         type="number"
         onChange={(e) => setSelectedId(e.currentTarget.value)}
       ></input>
-      <button onClick={handleRemoveSell}>Remover</button>
+      <button  id="removeB" className="inputRemove" onClick={handleRemoveSell}>Remover</button>
     </div>
   );
 }

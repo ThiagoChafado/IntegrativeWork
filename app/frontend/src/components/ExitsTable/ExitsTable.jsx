@@ -86,7 +86,7 @@ function ExitsTable(){
                 //itens
                 return (
                   <tr>
-                    <th scope="row">{i.idout}</th> {/* Getting elements*/}
+                    <td scope="row">{i.idout}</td> {/* Getting elements*/}
                     <td>{i.descr}</td>
                     <td>{i.outvalue}</td>
                     <td>{i.sellername}</td>

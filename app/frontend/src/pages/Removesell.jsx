@@ -1,14 +1,15 @@
-import AllSales from "../components/AllSales/AllSales";
+
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import RemoveSell from "../components/RemoveSell/RemoveSell";
 
-function AllSalesPage() {
+function RemoveSellPage() {
   return (
     <div>
       <Navbar />
-        <AllSales/>
+      <RemoveSell />
       <Footer />
     </div>
   );
 }
-export default AllSalesPage;
+export default RemoveSellPage;
