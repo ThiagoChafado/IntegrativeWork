@@ -19,6 +19,7 @@ import AllSalesPage from "./pages/AllSalesPage";
 import SeeCashPage from "./pages/SeeCashPage";
 import OpenCashPage from "./pages/OpenCashPage";
 import CloseCashPage from "./pages/CloseCashPage";
+import CalcPage from "./pages/CalcPage";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: "/editseller/:shopname",
     element: <EditSellerPage />,
+  },
+  {
+    path: "/calcpage/:shopname",
+    element: <CalcPage />,
   },
   {
     path: "/editsells/:shopname",

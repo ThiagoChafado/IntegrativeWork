@@ -33,6 +33,22 @@
     border-radius: 6px;
 }
 
+.openCash{
+    display: flex;
+    justify-content: center;
+}
+
+.openC{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#hopen{
+    margin-top: 1em;
+
+}
+
 @media (min-width: 576px) and (max-width:1024px){
     .cash h1{
         font-size:  40px;

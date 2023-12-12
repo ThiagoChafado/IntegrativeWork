@@ -137,8 +137,8 @@ function CurrentSellers() {
                     <td className="rowTable">{formatDate(i.dtbirth)}</td>
                     <td className="rowTable">{i.pccommision}%</td>
                     <td>
-                      <button onClick={() => handleRemove (i.sellercpf) }>
-                        REMOVER
+                      <button id="rem" onClick={() => handleRemove (i.sellercpf) }>
+                        Remover
                       </button>
                       <button
                         onClick={() =>
@@ -172,58 +172,74 @@ function CurrentSellers() {
               })}
             </tbody>
           </table>
-          <button onClick={handleNew}>Novo Funcionário</button>
+          <button id="newF" onClick={handleNew}>Novo Funcionário</button>
         </div>
       )}
 
       {editor && (
-        <div>
-          <input
-            type="text"
-            defaultValue={sellername}
-            onChange={(e) => setSellerName(e.target.value)}
-          />
-          <input
-            type="text"
-            defaultValue={formatDate(dtbirth)}
-            onChange={(e) => setDtBirth(e.target.value)}
-          />
-          <input
-            type="text"
-            defaultValue={pccommision}
-            onChange={(e) => setPccCommision(e.target.value)}
-          />
-          <button onClick={handleSaveEdit}>SALVAR</button>
+        <div className="mainEdit">
+          <div className="editBox">
+            <h2>Altere os Dados Necessários</h2>
+              
+              <input
+                className="inputEdit"
+                type="text"
+                defaultValue={sellername}
+                onChange={(e) => setSellerName(e.target.value)}
+              />
+              <input
+              className="inputEdit"
+                type="text"
+                defaultValue={formatDate(dtbirth)}
+                onChange={(e) => setDtBirth(e.target.value)}
+              />
+              <input
+              className="inputEdit"
+                type="text"
+                defaultValue={pccommision}
+                onChange={(e) => setPccCommision(e.target.value)}
+              />
+              <button  id="saveEdit" className="inputEdit" onClick={handleSaveEdit}>Salvar</button>
+              </div>
         </div>
       )}
       {newSeller && (
-        <div>
-          <input
-            type="text"
-            placeholder="CPF"
-            onChange={(e) => setSellerCpf(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Nome"
-            onChange={(e) => setSellerName(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            onChange={(e) => setSellPass(e.target.value)}
-          />
-          <input
-            type="date"
-            placeholder="Data de nascimento"
-            onChange={(e) => setDtBirth(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Comissão"
-            onChange={(e) => setPccCommision(e.target.value)}
-          />
-          <button onClick={handleSaveNew}>SALVAR</button>
+        <div className="mainEdit">
+          <div className="editBox">
+            <h2>Novo Funcionário</h2>
+            <input
+              className="inputEdit"
+              type="text"
+              placeholder="CPF"
+              onChange={(e) => setSellerCpf(e.target.value)}
+            />
+            <input
+              className="inputEdit"
+              type="text"
+              placeholder="Nome"
+              onChange={(e) => setSellerName(e.target.value)}
+            />
+            <input
+             className="inputEdit"
+              type="password"
+              placeholder="Senha"
+              onChange={(e) => setSellPass(e.target.value)}
+            />
+            <input
+              id="editDate"
+              className="inputEdit"
+              type="date"
+              placeholder="Data de nascimento"
+              onChange={(e) => setDtBirth(e.target.value)}
+            />
+            <input
+              className="inputEdit"
+              type="text"
+              placeholder="Comissão"
+              onChange={(e) => setPccCommision(e.target.value)}
+            />
+            <button id="save" className="inputEdit" onClick={handleSaveNew}>Salvar</button>
+          </div>
         </div>
       )}
     </>

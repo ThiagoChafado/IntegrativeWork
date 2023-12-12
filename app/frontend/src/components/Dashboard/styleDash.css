@@ -37,42 +37,57 @@
 
 .box{
     width: 20em;
-    height: 20em;
+    height: 13em;
     border: 1px solid white;
+    padding: .5em;
     margin-bottom: 1em;
-    background-color: #fff;
+    background-color: #101010;
 }
 
-.halfmain{
+.box h3{
+    color: #fff;
+    text-align: center;
+}
+
+#box2{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#boxEnd{
-    width: 20em;
-    height: 20em;
-    border: 1px solid white;
-    margin-bottom: 2em;
+.sellerDash{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.sellerDash svg{
+    font-size: 11px;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 
 /* tablet */
 @media (min-width: 576px) and (max-width:1024px){
-    .startbox{
+    
+    .mainDash{
+        height: 100vh;
         display: flex;
-        flex-direction: row;
-
+        justify-content: start;
+        padding-top: 1em;
+        font-size: 30px;
     }
 
-    .halfmain{
-        display: flex;
-        flex-direction: row;
-        align-items: normal;
+    .box h3{
+        font-size: 40px;
     }
 
-    #box1, #box3{margin-right: 1em;}
+    .titleDash h1, .dashYear h2{
+        font-size: 40px;
+    }
+
 
 
 }
@@ -91,25 +106,17 @@
         margin-right: 2em;
     }
 
-    #box1, #box2{
-        height: 15em;
-        width: 30em;
+    .box{
+        height: 17em;
+        width: 28em;
+        margin-bottom: 3em;
+        
     }
 
-    #box3{
-        height: 31em;
+    #box1{
         margin-right: 1em;
     }
 
-    #boxEnd{
-        height: 31em;
-        margin-bottom: 1em;
-    }
-    
-    .halfmain{
-        display: flex;
-        flex-direction: row;
-    }
 
 
 

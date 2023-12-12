@@ -112,30 +112,31 @@ function AddExit() {
 
         <div className="valuesExit">
           <input
-            id="date"
+            id="dateE"
             type="date"
             placeholder="Data"
             onChange={(e) => setDate(e.currentTarget.value)}
           />
           <input
-            id="value"
+            id="valueE"
             type="text"
             placeholder="Valor"
             onChange={(e) => setOutValue(e.currentTarget.value)}
           />
-        </div>
 
-        <div className="dropdown">
-          <select id="seller" onChange={handleSellerChange}>
-            <option>Vendedor</option>
-            {sellerList.map((i) => (
+          <div className="dropdown">
+            <select className="options" id="sellerE" onChange={handleSellerChange}>
+              <option>Vendedor</option>
+                {sellerList.map((i) => (
               <option key={i.id} value={i.sellername}>
                 {i.sellername}
               </option>
             ))}
-          </select>
+            </select>
+          </div>
         </div>
 
+    
         <div className="buttonCExit">
           <button onClick={handleSubmit}>Adicionar</button>
         </div>
