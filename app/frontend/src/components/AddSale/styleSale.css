@@ -71,21 +71,37 @@
 
 #value{
     width: 18em;
+    height: 3em;
     color: #fff;
 }
-#seller{width: 18em;}
-#payment{width: 18em;}
+
+#payment, #seller, #date{ 
+    width: 18em;
+    border-radius: 5px;
+    background-color: #2b3035;
+    color: fff;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    height: 3em;
+}
 
 .dropdown{
     margin-top: 0.5em;
     text-align: center;
+    color: #fff;
 }
 
 .dropdown-toggle{
     margin-bottom: 0;
+    color: #fff;
 }
 
 .dropdown-item{
+    color: #fff;
+}
+
+.options{
     color: #fff;
 }
 
@@ -98,28 +114,16 @@
 
 .buttonC{
     display: flex;
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
-#EB{
+.buttonC button{
     background-color: #2b3035;
-    font-family: 'Roboto';
-    color: #fff;
-    height: 3em;
-    width: 8em;
-    border-radius: 10px;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-title, .modal-body, .btn-close{
     color: #fff;
-}
-
-.modal{
-    --bs-modal-bg: #2b3035; 
+    padding: 0.8em;
+    border-radius: 6px;
+    width: 8em;
 }
 
 .bg-secondary{
@@ -150,14 +154,14 @@ a{
     #value{
         margin-left: 0.5em;
         margin-right: 0.1em;
-        height: 2.75em;
+        height: 3em;
         width: 8em;
     }
     
     #date{
         margin-left: 0.5em;
         margin-right: 0.1em;
-        height: 2.4em;
+        height: 3em;
         width: 10em;
     }
     
@@ -165,6 +169,7 @@ a{
         margin-right: 0.5em;
         margin-left: 0.5em;
         width: 10em;
+        height: 3em;
     }
     
     #payment{
@@ -199,27 +204,29 @@ a{
 #value{
     margin-left: 0.5em;
     margin-right: 0.1em;
-    height: 2.75em;
+    height: 3em;
     width: 10em;
 }
 
 #date{
     margin-left: 0.5em;
     margin-right: 0.1em;
-    height: 2.4em;
-    width: 10em;
+    height: 3em;
+    width: 12em;
 }
 
 #seller{
-    margin-right: 0.5em;
+    margin-right: 1em;
     margin-left: 0.5em;
     width: 12em;
+    height: 3em;
 }
 
 #payment{
     margin-right: 0.1em;
     margin-left: 0.5em;
     width: 12em;
+    height: 3em;
 }
 .buttonC{
     margin-top: 1em;

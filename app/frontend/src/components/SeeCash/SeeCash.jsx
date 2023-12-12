@@ -65,19 +65,19 @@ function SeeCash() {
         <div>
           {cash.map((i) => {
             return (
-              <>
+              <div className="openCash">
                 {i.isopen == true && (
-                  <>
-                    <h4>ABERTO</h4>
-                    <h4>TROCO:{i.change}</h4>
-                  </>
+                  <div className="openC">
+                    <h4 id="hopen">Caixa Aberto</h4>
+                    <h4>Troco: {i.change}</h4>
+                  </div>
                 )}
                 {i.isopen == false && (
                   <>
                     <p>FECHADO</p>
                   </>
                 )}
-              </>
+              </div>
             );
           })}
         </div>

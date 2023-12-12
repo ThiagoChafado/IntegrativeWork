@@ -12,7 +12,7 @@ function PreferencesPage() {
 
   useEffect(() => {
     if (!localStorage.getItem("tokensuper")) {
-      navigate(`/loginsuper/${shopname}`);
+      navigate("");
     }
   }, [navigate, shopname]);
 
@@ -23,10 +23,11 @@ function PreferencesPage() {
 
   const handlesellsMobile = () => {
     return navigate(`/editsells/${shopname}`);
+
   };
 
   const handleCalculatorMobile = () => {
-    return navigate("/calculator");
+    return navigate(`/calcPage/${shopname}`);
   };
 
   // demais midias
@@ -34,20 +35,18 @@ function PreferencesPage() {
     setSelectedPage("sellers");
   };
 
-  const handlesells = () => {
-    setSelectedPage("sells");
-  };
-
   const handleCalculator = () => {
     setSelectedPage("calculator");
+  };
+
+  const handleBack = () => {
+    setSelectedPage("back");
   };
 
   const renderSelectedPage = () => {
     switch (selectedPage) {
       case "sellers":
         return <CurrentSeller shopname={shopname} />;
-      case "sells":
-        // return <EditSells shopname={shopname} />;
         break;
       case "calculator":
          return <Calculator shopname={shopname} />;
@@ -62,19 +61,17 @@ function PreferencesPage() {
       {/* mobile */}
       <div className="mainPreferencesMobile">
         <h1>CONFIGURAÇÕES GERAIS</h1>
-
         <button onClick={handlesellersMobile}>Editar funcionários</button>
-        <button onClick={handleCalculator}>Calculadora de comissões</button>
-        {/* <button onClick={handleconfig4}>Configuração 4</button> */}
+        <button onClick={handleCalculatorMobile}>Calculadora de comissões</button>
+
       </div>
 
       {/* demais midias */}
       <div className="mainPreferences">
         <h1>CONFIGURAÇÕES GERAIS</h1>
-
         <button onClick={handlesellers}>Funcionários</button>
         <button onClick={handleCalculator}>Calculadora de comissões</button>
-        {/* <button onClick={handleconfig4}>Configuração 4</button> */}
+        <a id="back" href="">Voltar</a>
       </div>
 
       <div className="mainPreferencesR">{renderSelectedPage()}</div>

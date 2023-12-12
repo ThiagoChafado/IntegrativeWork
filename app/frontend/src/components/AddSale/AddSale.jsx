@@ -125,6 +125,7 @@ function AddSale() {
           id="date"
           type="date"
           placeholder="Data"
+          className="options"
           onChange={(e) => setDate(e.currentTarget.value)}
         />
         <input
@@ -135,19 +136,19 @@ function AddSale() {
         />
 
         <div className="dropdown">
-          <select id="payment" onChange={handlePaymentChange}>
-            <option value={"Dinheiro"}>Dinheiro</option>
-            <option value={"Pix"}>Pix</option>
-            <option value={"Cartão de Débito"}>Cartão de Débito</option>
-            <option value={"Cartão de Crédito"}>Cartão de Crédito</option>
+          <select  className="options" id="payment" onChange={handlePaymentChange}>
+            <option className="options" value={"Dinheiro"}>Dinheiro</option>
+            <option className="options" value={"Pix"}>Pix</option>
+            <option className="options" value={"Cartão de Débito"}>Cartão de Débito</option>
+            <option className="options" value={"Cartão de Crédito"}>Cartão de Crédito</option>
           </select>
         </div>
 
         <div className="dropdown">
-          <select id="seller" onChange={handleSellerChange}>
+          <select className="options"  id="seller" onChange={handleSellerChange}>
             <option>Vendedor</option>
             {sellerList.map((i) => (
-              <option key={i.id} value={i.sellername}>
+              <option  className="options" key={i.id} value={i.sellername}>
                 {i.sellername}
               </option>
             ))}

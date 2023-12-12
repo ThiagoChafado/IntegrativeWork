@@ -96,6 +96,12 @@ body { overflow-x: hidden; }
         width: 30em;
     }
 
+    #back{
+        text-decoration: none;
+        margin-right: 11em;
+        margin-top: 1em;
+    }
+
 
 
     
@@ -123,7 +129,7 @@ body { overflow-x: hidden; }
         font-size: 1em;
     }
     
-    .mainPreferences button{
+    .mainPreferences button, #back{
         background-color: #101010   ;
         color: #fff;
         font-family: 'Roboto';
@@ -135,6 +141,11 @@ body { overflow-x: hidden; }
         width: 15em;
         border-radius: 6px;
         border: none;
+    }
+
+    #back{
+        text-decoration: none;
+        margin-left: 1em;
     }
     
     .mainPreferences hr{
