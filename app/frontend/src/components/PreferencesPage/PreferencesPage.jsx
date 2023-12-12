@@ -6,7 +6,8 @@ import Calculator from "../Calculator/Calculator";
 
 function PreferencesPage() {
   const navigate = useNavigate();
-  const { shopname } = useParams();
+  const aux = useParams();
+  const shopname = aux.shopname;
   const [selectedPage, setSelectedPage] = useState(null);
 
   useEffect(() => {
@@ -17,11 +18,11 @@ function PreferencesPage() {
 
   // mobile
   const handlesellersMobile = () => {
-    navigate(`/editseller/${shopname.shopname}`);
+    navigate(`/editseller/${shopname}`);
   };
 
   const handlesellsMobile = () => {
-    return navigate(`/editsells/${shopname.shopname}`);
+    return navigate(`/editsells/${shopname}`);
   };
 
   const handleCalculatorMobile = () => {
