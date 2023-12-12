@@ -66,7 +66,6 @@ function OpenCash() {
                     </div>
                     <div class="modal-footer">
                         <button id='EB' type="button" class="buttonCExit" data-bs-dismiss="modal">Fechar</button>
-                        <button id='EB' type="button" class="buttonCExit">Salvar</button>
                     </div>
                     </div>
                 </div>

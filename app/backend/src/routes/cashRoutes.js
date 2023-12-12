@@ -14,7 +14,7 @@ router.get("/:date/:shopname", async (req, res) => {
       "SELECT c.isopen,c.change,c.dtcash FROM cash c NATURAL JOIN shop s WHERE c.dtcash = $1 AND s.shopname = $2;",
       [date, shopname]
     );
-    console.log(cash);
+    
     res.json(cash).status(200);
   } catch (error) {
     console.log(error);

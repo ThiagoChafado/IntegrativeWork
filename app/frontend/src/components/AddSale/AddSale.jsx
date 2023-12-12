@@ -30,23 +30,30 @@ function AddSale() {
 
   async function handleSubmit() {
     try {
-      const res = await axios.post("/sales/addsale", {
-        cpf,
-        sellDescr,
-        sellvalue,
-        payment,
-        date,
-        shopname,
-      });
-      if (res.data.inserted) {
-        window.alert("INSERIDO");
-      } else if (res.data.fkerror) {
-        window.alert("Caixa não aberto!");
+      const open = await axios.get(`/cash/${date}/${shopname}`);
+      if (open.data.length > 0) {
+        if (open.data[0].isopen == true) {
+          const res = await axios.post("/sales/addsale", {
+            cpf,
+            sellDescr,
+            sellvalue,
+            payment,
+            date,
+            shopname,
+          });
+          if (res.data.inserted) {
+            window.alert("INSERIDO");
+          } else if (res.data.fkerror) {
+            window.alert("Caixa não aberto!");
+          } else {
+            // Outros tipos de erro
+            window.alert(
+              "Erro.Verifique se todos os dados foram inseridos corretamente"
+            );
+          }
+        }
       } else {
-        // Outros tipos de erro
-        window.alert(
-          "Erro.Verifique se todos os dados foram inseridos corretamente"
-        );
+        window.alert("Caixa não aberto!");
       }
     } catch (error) {
       console.log(error);

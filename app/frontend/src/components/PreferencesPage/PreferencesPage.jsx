@@ -21,6 +21,11 @@ function PreferencesPage() {
     navigate(`/editseller/${shopname}`);
   };
 
+  const handlesellsMobile = () => {
+    return navigate(`/editsells/${shopname}`);
+
+  };
+
   const handleCalculatorMobile = () => {
     return navigate(`/calcPage/${shopname}`);
   };

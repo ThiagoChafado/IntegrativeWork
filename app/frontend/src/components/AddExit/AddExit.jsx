@@ -1,4 +1,3 @@
-
 import "./styleExit.css";
 import React from "react";
 import axios from "axios";
@@ -31,7 +30,6 @@ function AddExit() {
     const selectedSellerName = event.target.value;
     const selectedSellerObject = sellerList.find(
       (seller) => seller.sellername === selectedSellerName
-
     );
 
     setSelectedSeller(selectedSellerObject);
@@ -43,24 +41,33 @@ function AddExit() {
 
   async function handleSubmit() {
     try {
-      const res = await axios.post("/sales/addexit", {
-        cpf,
-        outDescr,
-        outValue,
-        date,
-        shopname,
-      });
-      if (res.data.inserted) {
-        window.alert("INSERIDO");
-      } else if (res.data.fkerror) {
-        window.alert("Caixa não aberto!");
+      const open = await axios.get(`/cash/${date}/${shopname}`);
+      console.log(open.data.length);
+      if (open.data.length > 0) {
+        console.log('entrou')
+        if (open.data[0].isopen == true) {
+          
+          const res = await axios.post("/sales/addexit", {
+            cpf,
+            outDescr,
+            outValue,
+            date,
+            shopname,
+          });
+          if (res.data.inserted) {
+            window.alert("INSERIDO");
+          } else if (res.data.fkerror) {
+            window.alert("Caixa não aberto!");
+          } else {
+            // Outros tipos de erro
+            window.alert(
+              "Erro.Verifique se todos os dados foram inseridos corretamente"
+            );
+          }
+        }
       } else {
-        // Outros tipos de erro
-        window.alert(
-          "Erro.Verifique se todos os dados foram inseridos corretamente"
-        );
+        window.alert("Caixa não aberto!");
       }
-
     } catch (error) {
       console.log(error);
     }
@@ -104,10 +111,10 @@ function AddExit() {
         <div className="descriptionExit">
           <label htmlFor="description">Descrição</label>
           <input
-          onChange={(e) => setOutDescr(e.currentTarget.value)}
-          type="text"
-          placeholder="Digite aqui..."
-        />
+            onChange={(e) => setOutDescr(e.currentTarget.value)}
+            type="text"
+            placeholder="Digite aqui..."
+          />
         </div>
 
         <div className="valuesExit">
