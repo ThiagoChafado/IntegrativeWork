@@ -68,8 +68,8 @@ function SeeCash() {
               <>
                 {i.isopen == true && (
                   <>
-                    <p>ABERTO</p>
-                    <p>TROCO:{i.change}</p>
+                    <h4>ABERTO</h4>
+                    <h4>TROCO:{i.change}</h4>
                   </>
                 )}
                 {i.isopen == false && (

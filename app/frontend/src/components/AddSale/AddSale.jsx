@@ -30,7 +30,6 @@ function AddSale() {
 
   async function handleSubmit() {
     try {
-      console.log(cpf)
       const res = await axios.post("/sales/addsale", {
         cpf,
         sellDescr,
@@ -39,6 +38,16 @@ function AddSale() {
         date,
         shopname,
       });
+      if (res.data.inserted) {
+        window.alert("INSERIDO");
+      } else if (res.data.fkerror) {
+        window.alert("Caixa não aberto!");
+      } else {
+        // Outros tipos de erro
+        window.alert(
+          "Erro.Verifique se todos os dados foram inseridos corretamente"
+        );
+      }
     } catch (error) {
       console.log(error);
     }
@@ -120,10 +129,10 @@ function AddSale() {
 
         <div className="dropdown">
           <select id="payment" onChange={handlePaymentChange}>
-            <option value={"Money"}>Dinheiro</option>
+            <option value={"Dinheiro"}>Dinheiro</option>
             <option value={"Pix"}>Pix</option>
-            <option value={"Debit"}>Cartão de Débito</option>
-            <option value={"Credit"}>Cartão de Crédito</option>
+            <option value={"Cartão de Débito"}>Cartão de Débito</option>
+            <option value={"Cartão de Crédito"}>Cartão de Crédito</option>
           </select>
         </div>
 
@@ -139,11 +148,9 @@ function AddSale() {
         </div>
       </div>
 
-
       <div className="buttonC">
         <button onClick={handleSubmit}>Adicionar</button>
       </div>
-
     </div>
   );
 }

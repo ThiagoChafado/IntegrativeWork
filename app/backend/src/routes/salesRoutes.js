@@ -15,10 +15,14 @@ router.post("/addexit", async (req, res) => {
       "INSERT INTO sellout (descr,outvalue,sellercpf,dtcash,shopname) VALUES ($1,$2,$3,$4,$5);",
       [descr, outValueFloat, sellercpf, dtcash, shopname]
     );
-    res.status(200).json({ message: "Sellout added successfully" });
+    res.status(200).json({inserted: true});
   } catch (error) {
     console.log(error);
-    res.send(400);
+    if(error.code=='23503'){
+      //FK ERROR
+      return res.json({fkerror: true});
+    }
+    return res.json({inserted: false});
   }
 });
 
@@ -48,10 +52,15 @@ router.post("/addsale", async (req, res) => {
       "INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ($1,$2,$3,$4,$5,$6);",
       [descr, sellvalueFloat, mtdpayment, sellercpf, dtcash, shopname]
     );
-    res.status(200).json({ message: "Sale added successfully" });
+    res.status(200).json({inserted: true});
   } catch (error) {
     console.log(error);
-    res.status(400).json({ message: "Internal server error" });
+    if(error.code=='23503'){
+      //FK ERROR
+      return res.json({fkerror: true});
+    }
+    return res.json({inserted: false});
+    
   }
 });
 

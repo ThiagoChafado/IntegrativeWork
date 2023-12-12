@@ -50,6 +50,17 @@ function AddExit() {
         date,
         shopname,
       });
+      if (res.data.inserted) {
+        window.alert("INSERIDO");
+      } else if (res.data.fkerror) {
+        window.alert("Caixa não aberto!");
+      } else {
+        // Outros tipos de erro
+        window.alert(
+          "Erro.Verifique se todos os dados foram inseridos corretamente"
+        );
+      }
+
     } catch (error) {
       console.log(error);
     }
