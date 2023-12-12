@@ -4,6 +4,8 @@ const { route } = require("./authRoutes");
 
 const router = express.Router();
 
+
+//Checks if the cash is open for seecash page
 router.get("/:date/:shopname", async (req, res) => {
   try {
     const date = req.params.date;
@@ -20,6 +22,7 @@ router.get("/:date/:shopname", async (req, res) => {
   }
 });
 
+//Open a new cash
 router.post("/opencash", async (req, res) => {
   try {
     const date = req.body.date;
@@ -36,7 +39,7 @@ router.post("/opencash", async (req, res) => {
   }
 });
 
-
+//Close a cash
 router.put("/closecash", async (req, res) => {
   try {
     const date = req.body.date;

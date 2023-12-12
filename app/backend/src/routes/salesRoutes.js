@@ -2,6 +2,8 @@ const express = require("express");
 const { db } = require("../database/database");
 const router = express.Router();
 
+
+//Add a new exit if a cash is valid
 router.post("/addexit", async (req, res) => {
   try {
     const sellercpf = req.body.cpf;
@@ -26,6 +28,7 @@ router.post("/addexit", async (req, res) => {
   }
 });
 
+//Add a new sale if the cash is valid
 router.post("/addsale", async (req, res) => {
   try {
     const sellercpf = req.body.cpf;
@@ -64,6 +67,7 @@ router.post("/addsale", async (req, res) => {
   }
 });
 
+//Get sales for salestable page
 router.get("/salesdate/:date/:shopname", async (req, res) => {
   try {
     const date = req.params.date;
@@ -79,6 +83,7 @@ router.get("/salesdate/:date/:shopname", async (req, res) => {
   }
 });
 
+//Get exits for selloutstable page
 router.get("/exitsdate/:date/:shopname", async (req, res) => {
   try {
     const date = req.params.date;
@@ -94,6 +99,7 @@ router.get("/exitsdate/:date/:shopname", async (req, res) => {
   }
 });
 
+//Gets sum for dashboard 1
 router.get("/sums/:selectedYear/:i/:shopname", async (req, res) => {
   try {
     const selectedYear = req.params.selectedYear;
@@ -126,6 +132,7 @@ router.get("/sums/:selectedYear/:i/:shopname", async (req, res) => {
   }
 });
 
+//Get sum for dashboard 2
 router.get("/sellermonth/:month/:shopname", async (req, res) => {
   const month = req.params.month;
   const shopname = req.params.shopname;

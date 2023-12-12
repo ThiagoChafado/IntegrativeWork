@@ -63,7 +63,6 @@ function PreferencesPage() {
         <h1>CONFIGURAÇÕES GERAIS</h1>
 
         <button onClick={handlesellersMobile}>Editar funcionários</button>
-        <button onClick={handlesellsMobile}>Editar Caixa</button>
         <button onClick={handleCalculator}>Calculadora de comissões</button>
         {/* <button onClick={handleconfig4}>Configuração 4</button> */}
       </div>
@@ -73,7 +72,6 @@ function PreferencesPage() {
         <h1>CONFIGURAÇÕES GERAIS</h1>
 
         <button onClick={handlesellers}>Funcionários</button>
-        <button onClick={handlesells}>Editar Caixa</button>
         <button onClick={handleCalculator}>Calculadora de comissões</button>
         {/* <button onClick={handleconfig4}>Configuração 4</button> */}
       </div>

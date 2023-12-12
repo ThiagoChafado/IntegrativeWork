@@ -3,6 +3,8 @@ const { generateToken, authenticateSuperuser, authenticateUser } = require("../a
 
 const router = express.Router();
 
+
+//Checking credentials
 router.post("/loginsuper", async (req, res) => {
   try {
     const superuser = req.body.username;

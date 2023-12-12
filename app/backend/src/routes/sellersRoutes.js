@@ -4,6 +4,7 @@ const { db } = require("../database/database");
 
 const router = express.Router();
 
+//Get all sellers from a shop
 router.get("/sellers/:shopname", async (req, res) => {
   try {
     const aux = req.params.shopname;
@@ -18,6 +19,7 @@ router.get("/sellers/:shopname", async (req, res) => {
   }
 });
 
+//Get cpf for add new sales and exits
 router.get("/sellers/cpf/:shopname/:selectedseller",async (req,res)=>{
   try{
     const aux = req.params.shopname;
@@ -32,6 +34,7 @@ router.get("/sellers/cpf/:shopname/:selectedseller",async (req,res)=>{
   }
 })
 
+//Used in dashboard 2
 router.get("/sellersells/:shopname/:selectedMonth", async (req, res) => {
   try {
     const shopname = req.params.shopname;
@@ -55,6 +58,7 @@ router.get("/sellersells/:shopname/:selectedMonth", async (req, res) => {
   }
 });
 
+//Editing a seller
 router.put("/sellersedit", async (req, res) => {
   try {
     const sellername = req.body.sellername;
@@ -73,6 +77,7 @@ router.put("/sellersedit", async (req, res) => {
   }
 });
 
+//Adds a new seller
 router.post("/sellernew", async (req, res) => {
   try {
     const sellername = req.body.sellername;
@@ -102,6 +107,7 @@ router.post("/sellernew", async (req, res) => {
   }
 });
 
+//Deletes a seller
 router.delete("/sellerdelete",async (req,res)=>{
 
   try{
