@@ -93,7 +93,7 @@ function CurrentSellers() {
 
   async function getData() {
     try {
-      const res = await axios.get(`/sellers/sellers/${shopname}`);
+      const res = await axios.get(`/sellers/sellersnoadmin/${shopname}`);
       setSellerList(res.data);
       //return backend Object
     } catch (error) {

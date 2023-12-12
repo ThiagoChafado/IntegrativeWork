@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./stylePreferences.css";
 import CurrentSeller from "../../components/CurrentSeller/CurrentSeller";
 import Calculator from "../Calculator/Calculator";
+import RemoveSell from "../RemoveSell/RemoveSell";
 
 function PreferencesPage() {
   const navigate = useNavigate();
@@ -23,11 +24,14 @@ function PreferencesPage() {
 
   const handlesellsMobile = () => {
     return navigate(`/editsells/${shopname}`);
-
   };
 
   const handleCalculatorMobile = () => {
     return navigate(`/calcPage/${shopname}`);
+  };
+
+  const handleRemoveSellMobile = () => {
+    return navigate(`/removeSell/${shopname}`);
   };
 
   // demais midias
@@ -37,6 +41,10 @@ function PreferencesPage() {
 
   const handleCalculator = () => {
     setSelectedPage("calculator");
+  };
+
+  const handleRemoveSell = () => {
+    setSelectedPage("removesell");
   };
 
   const handleBack = () => {
@@ -49,8 +57,10 @@ function PreferencesPage() {
         return <CurrentSeller shopname={shopname} />;
         break;
       case "calculator":
-         return <Calculator shopname={shopname} />;
+        return <Calculator shopname={shopname} />;
         break;
+      case "removesell":
+        return <RemoveSell shopname={shopname} />;
       default:
         return null;
     }
@@ -61,9 +71,11 @@ function PreferencesPage() {
       {/* mobile */}
       <div className="mainPreferencesMobile">
         <h1>CONFIGURAÇÕES GERAIS</h1>
-        <button onClick={handlesellersMobile}>Editar funcionários</button>
-        <button onClick={handleCalculatorMobile}>Calculadora de comissões</button>
-
+        <button onClick={handlesellersMobile}>Funcionários</button>
+        <button onClick={handleCalculatorMobile}>
+          Calculadora de comissões
+        </button>
+        <button onClick={handleRemoveSellMobile}>Remover venda</button>
       </div>
 
       {/* demais midias */}
@@ -71,7 +83,10 @@ function PreferencesPage() {
         <h1>CONFIGURAÇÕES GERAIS</h1>
         <button onClick={handlesellers}>Funcionários</button>
         <button onClick={handleCalculator}>Calculadora de comissões</button>
-        <a id="back" href="">Voltar</a>
+        <button onClick={handleRemoveSell}>Remover venda</button>
+        <a id="back" href="">
+          Voltar
+        </a>
       </div>
 
       <div className="mainPreferencesR">{renderSelectedPage()}</div>

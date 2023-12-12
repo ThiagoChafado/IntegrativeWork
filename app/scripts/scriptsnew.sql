@@ -63,23 +63,21 @@ CREATE TABLE if NOT EXISTS sellout(
 );
 
 --INSERTS TESTS
-INSERT INTO seller VALUES ('87823215266','Dieyson','$2b$10$VvDnMc5hvZ8yPZVo.AJY7uofKDnNx/FSrsIQHdomiLyALRqznpMlu',1,'1996-01-20','TRUE');
-INSERT INTO seller VALUES ('13088888812','Ryan','$2b$10$.1BNPKAjS7PKKla2czdMxufQzyfS6WHmjXTBPmJu9/6lEjpAY.I3S',5,'2000-02-10','FALSE');
-INSERT INTO seller VALUES ('19988823145','Joao','$2b$10$zN2mzhTSCrE7NtSXhLJrAOPY65/u.TMTlJ4HBUnrpVLB7htK2.F.m',5,'1999-11-10','FALSE');
+INSERT INTO seller VALUES ('87823215266','dieyson','$2b$10$VvDnMc5hvZ8yPZVo.AJY7uofKDnNx/FSrsIQHdomiLyALRqznpMlu',1,'1996-01-20','TRUE');
+INSERT INTO seller VALUES ('13088888812','ryan','$2b$10$.1BNPKAjS7PKKla2czdMxufQzyfS6WHmjXTBPmJu9/6lEjpAY.I3S',5,'2000-02-10','FALSE');
+INSERT INTO seller VALUES ('19988823145','vitinho','$2b$10$zN2mzhTSCrE7NtSXhLJrAOPY65/u.TMTlJ4HBUnrpVLB7htK2.F.m',5,'1999-11-10','FALSE');
 INSERT INTO shop VALUES('Novatec');
-INSERT INTO shop VALUES('Box 10');
-INSERT INTO cash VALUES ('2023-12-01',250,'Box 10','TRUE');
+INSERT INTO shop VALUES('Box10');
+INSERT INTO cash VALUES ('2023-12-01',250,'Box10','TRUE');
 INSERT INTO cash VALUES ('2023-12-01',250,'Novatec','TRUE');
 INSERT INTO cash VALUES ('2023-11-30',210,'Novatec','TRUE');
 INSERT INTO sellerboard VALUES ('87823215266','Novatec');
-INSERT INTO sellerboard VALUES ('87823215266','Box 10');
+INSERT INTO sellerboard VALUES ('87823215266','Box10');
 INSERT INTO sellerboard VALUES ('13088888812','Novatec');
-INSERT INTO sellerboard VALUES ('13088888812','Box 10');
 INSERT INTO sellerboard VALUES ('19988823145','Novatec');
-INSERT INTO sellerboard VALUES ('19988823145','Box 10');
 INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ('1 Mouse',35,1,'13088888812','2023-12-01','Novatec');
-INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ('1 Teclado',55,1,'19988823145','2023-12-01','Box 10');
+INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ('1 Teclado',55,1,'19988823145','2023-12-01','Box10');
 INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ('1 Carregador',25,1,'19988823145','2023-11-30','Novatec');
-INSERT INTO sellout (descr,outvalue,sellercpf,dtcash,shopname) VALUES ('Pastel',15,'19988823145','2023-12-01','Box 10');
+INSERT INTO sellout (descr,outvalue,sellercpf,dtcash,shopname) VALUES ('Pastel',15,'19988823145','2023-12-01','Box10');
 
 

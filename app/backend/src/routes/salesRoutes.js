@@ -2,7 +2,6 @@ const express = require("express");
 const { db } = require("../database/database");
 const router = express.Router();
 
-
 //Add a new exit if a cash is valid
 router.post("/addexit", async (req, res) => {
   try {
@@ -17,14 +16,14 @@ router.post("/addexit", async (req, res) => {
       "INSERT INTO sellout (descr,outvalue,sellercpf,dtcash,shopname) VALUES ($1,$2,$3,$4,$5);",
       [descr, outValueFloat, sellercpf, dtcash, shopname]
     );
-    res.status(200).json({inserted: true});
+    res.status(200).json({ inserted: true });
   } catch (error) {
     console.log(error);
-    if(error.code=='23503'){
+    if (error.code == "23503") {
       //FK ERROR
-      return res.json({fkerror: true});
+      return res.json({ fkerror: true });
     }
-    return res.json({inserted: false});
+    return res.json({ inserted: false });
   }
 });
 
@@ -55,15 +54,14 @@ router.post("/addsale", async (req, res) => {
       "INSERT INTO sell (descr,sellvalue,mtdpayment,sellercpf,dtcash,shopname) VALUES ($1,$2,$3,$4,$5,$6);",
       [descr, sellvalueFloat, mtdpayment, sellercpf, dtcash, shopname]
     );
-    res.status(200).json({inserted: true});
+    res.status(200).json({ inserted: true });
   } catch (error) {
     console.log(error);
-    if(error.code=='23503'){
+    if (error.code == "23503") {
       //FK ERROR
-      return res.json({fkerror: true});
+      return res.json({ fkerror: true });
     }
-    return res.json({inserted: false});
-    
+    return res.json({ inserted: false });
   }
 });
 
@@ -129,6 +127,22 @@ router.get("/sums/:selectedYear/:i/:shopname", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.sendStatus(400);
+  }
+});
+
+router.delete("/selldelete/:shopname/:selectedId", async (req, res) => {
+  try {
+    const aux = req.params.selectedId;
+    const selectedId = parseInt(aux);
+    const shopname = req.params.shopname;
+    const action = await db.none(
+      "DELETE FROM sell WHERE idsell = $1 AND shopname = $2",
+      [selectedId, shopname]
+    );
+    return res.json({deleted: true}).status(200);
+  } catch (error) {
+    console.log(error);
+    return res.json({deleted: false}).status(400);
   }
 });
 

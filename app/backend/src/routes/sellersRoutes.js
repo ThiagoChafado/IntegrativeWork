@@ -19,6 +19,19 @@ router.get("/sellers/:shopname", async (req, res) => {
   }
 });
 
+router.get("/sellersnoadmin/:shopname", async (req,res)=>{
+  try{
+    const aux = req.params.shopname;
+    const sellers = await db.any(
+      "SELECT s.* FROM seller s NATURAL JOIN sellerboard sl WHERE sl.shopname = $1 AND s.isadmin = false",[aux]
+    );
+    res.json(sellers).status(200);
+  }catch(error){
+    console.log(error);
+    res.sendStatus(400);
+  }
+})
+
 //Get cpf for add new sales and exits
 router.get("/sellers/cpf/:shopname/:selectedseller",async (req,res)=>{
   try{
