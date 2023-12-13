@@ -37,7 +37,7 @@
 
 .box{
     width: 20em;
-    height: 13em;
+    height: 25em;
     border: 1px solid white;
     padding: .5em;
     margin-bottom: 1em;
@@ -107,7 +107,7 @@
     }
 
     .box{
-        height: 17em;
+        height: 30em;
         width: 28em;
         margin-bottom: 3em;
         
@@ -115,6 +115,10 @@
 
     #box1{
         margin-right: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
 

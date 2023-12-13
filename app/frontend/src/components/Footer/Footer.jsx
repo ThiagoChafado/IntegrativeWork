@@ -12,7 +12,7 @@ function Footer(){
                     <h2>Informações para Contato</h2>
                     <div className='icons'>
                         <div class="whatsapp">
-                            <a href="https://api.whatsapp.com/send?phone= 55 49 9830-1488&text=Gostaria%20de%20receber%20mais%20informações?" class="icon" target="_blank">
+                            <a href="https://api.whatsapp.com/send?phone= 55 49 98411-1957&text=Gostaria%20de%20receber%20mais%20informações?" class="icon" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <h4>Clique para conversar no Whatsapp</h4>
                             </a>

@@ -103,7 +103,7 @@ function Dashboard() {
   return (
     <>
       <div className="titleDash">
-        <h1>Dashboard Novatec</h1>
+        <h1>Dashboard {shopname}</h1>
       </div>
       <div className="dashYear">
         <h2>Selecione o Ano</h2>
