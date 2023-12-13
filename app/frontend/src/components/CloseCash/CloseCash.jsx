@@ -2,6 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import React from "react";
 import defaultDate from '../Controllers/defaultDate';
 import axios from "axios";
+import './closeStyle.css'
+
 axios.defaults.baseURL = "http://localhost:3001";
 
 function CloseCash() {
@@ -53,9 +55,9 @@ function CloseCash() {
   }
 
   return (
-    <div>
-      <p>FECHAR CAIXA</p>
-      <p>Selecione uma data</p>
+    <div className="removeS">
+      <h1>Fechar Caixa</h1>
+      <h2>Selecione Uma Data</h2>
 
       <div className="dateB">
         <input
@@ -69,14 +71,14 @@ function CloseCash() {
         return (
           <>
             {i.isopen == true && (
-              <>
-                <p>Caixa Aberto</p>
-                <button onClick={handleClose}>Fechar</button>
-              </>
+              <div className="organize">
+                <h3 className="marginC" >Caixa Aberto</h3>
+                <button className="inputRemove"  onClick={handleClose}>Fechar</button>
+              </div>
             )}
             {i.isopen == false && (
               <>
-                <p>FECHADO</p>
+                <h2>Fechado</h2>
               </>
             )}
             
@@ -85,7 +87,7 @@ function CloseCash() {
       })}
       {cash.length === 0 && (
         <>
-          <p>Caixa não aberto</p>
+          <h3 className="marginC" >Caixa Não Aberto</h3>
         </>
       )}
     </div>

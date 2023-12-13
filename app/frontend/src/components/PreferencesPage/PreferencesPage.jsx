@@ -35,6 +35,10 @@ function PreferencesPage() {
     return navigate(`/removeSell/${shopname}`);
   };
 
+  const handleCloseCashMobile = () => {
+    return navigate(`/closecash/${shopname}`);
+  };
+
   // demais midias
   const handlesellers = () => {
     setSelectedPage("sellers");
@@ -82,6 +86,7 @@ function PreferencesPage() {
           Calculadora de comissões
         </button>
         <button onClick={handleRemoveSellMobile}>Remover venda</button>
+        <button onClick={handleCloseCashMobile}>Fechar caixa</button>
       </div>
 
       {/* demais midias */}

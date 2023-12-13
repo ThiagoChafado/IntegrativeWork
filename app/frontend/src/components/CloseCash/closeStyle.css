@@ -1,0 +1,10 @@
+.marginC{
+    margin-top: 1em;
+    text-align: center;
+}
+
+.organize{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
