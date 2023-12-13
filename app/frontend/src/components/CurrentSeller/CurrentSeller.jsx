@@ -103,9 +103,11 @@ function  CurrentSellers() {
 
   return (
     <div className="divTableC">
-      <button id="newF" onClick={handleNew}>Novo Funcionário</button>
+      {sellerList.length ==0 && (<button id="newF" onClick={handleNew}>Novo Funcionário</button>)}
       {sellerList.length > 0 && !editor && !newSeller && (
+        
         <div className="divTableC">
+          <button id="newF" onClick={handleNew}>Novo Funcionário</button>
           <table className="beforeTableC">
             <thead>
               <tr>
