@@ -95,10 +95,7 @@ td{
     border: none;
 }
 
-.mainEdit{
-    height: 100vh;
-    background-color: #101010;
-}
+
 
 .editBox{
     display: flex;
@@ -177,5 +174,8 @@ td{
     
     #editDate{width: 12.5em;}
     #save{width: 6em;}
+    .divTableC{
+        font-size: 14px;
+    }
 }
 

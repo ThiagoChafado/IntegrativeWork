@@ -178,7 +178,9 @@ function  CurrentSellers() {
       )}
 
       {editor && (
-        <div className="mainEdit">
+        
+        <div className="divTableC">
+          
           <div className="editBox">
             <h2>Altere os Dados Necessários</h2>
               
@@ -205,7 +207,7 @@ function  CurrentSellers() {
         </div>
       )}
       {newSeller && (
-        <div className="mainEdit">
+        <div className="divTableC">
           <div className="editBox">
             <h2>Novo Funcionário</h2>
             <input
